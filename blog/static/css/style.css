@@ -1,0 +1,73 @@
+body,html{
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    min-height: 100%;
+    width: 100%;
+}
+
+a {
+    color: #ff5353;
+    font-weight: 500;
+}
+
+.drip {
+width: 23%;
+min-height: 100px;
+padding: 0;
+background: #fff;
+margin-left: 8px;
+margin-right: 8px;
+margin-bottom: 8px;
+margin-top: 10px;
+font-size: 12px;
+float: left;
+box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+text-align: center;
+}
+
+.drip .content {
+    text-decoration: none;
+}
+
+.drip .picture {
+    overflow: hidden;
+}
+
+.drip .picture img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    max-width: 100%;
+    background: #ccc;
+    transition: opacity .5s ease,transform .2s ease,-webkit-transform .2s ease;
+}
+
+.drip .title {
+    margin: 1px 0;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.drip .title span {
+    font-size: 12px;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+}
+
+.drip .brief {
+    line-height: 1;
+    padding:10px;
+    margin: 8px 0;
+    font-size: 10px;
+    overflow: hidden;
+} 
+
+.drip .brief span {
+    color:#555;
+    font-weight: 700;
+    font-size: 12px;
+}
