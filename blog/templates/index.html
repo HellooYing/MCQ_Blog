@@ -6,44 +6,54 @@
 <link rel="stylesheet" href="{% static "css/style.css" %}">
 </head>
 <body>
-<div class="drip">
+    <div class="">
+
+    </div>
+{% for a in all_blog %}
+<div class="drip" id="{{a.id}}" style="position:absolute;top:0px;left:22%;">
     <a class="content" href="#">
         <div class="picture">
-            <img src="https://api.pixiv.moe/v2/image/i.pximg.net/c/480x960/img-master/img/2017/10/19/00/15/58/65493506_p0_master1200.jpg" style="transform-origin:105px 215px 0px;">
+            <img src="{{a.picture}}" style="transform-origin:105px 215px 0px;">
         </div>
         <div class="title">
-            <span>标题</span>
+            <span>{{a.title}}</span>
         </div>
         <div class="brief">
-            <span>简介什么的</span>
+            <span>{{a.brief}}</span>
         </div>
     </a>
 </div>
-<div class="drip">
-    <a class="content" href="#">
-        <div class="picture">
-            <img src="https://api.pixiv.moe/v2/image/i.pximg.net/c/480x960/img-master/img/2017/10/19/00/15/58/65493506_p0_master1200.jpg" style="transform-origin:105px 215px 0px;">
-        </div>
-        <div class="title">
-            <span>标题</span>
-        </div>
-        <div class="brief">
-            <span>简介什么的</span>
-        </div>
-    </a>
-</div>
-<div class="drip">
-    <a class="content" href="#">
-        <div class="picture">
-            <img src="https://api.pixiv.moe/v2/image/i.pximg.net/c/480x960/img-master/img/2017/10/19/00/15/58/65493506_p0_master1200.jpg" style="transform-origin:105px 215px 0px;">
-        </div>
-        <div class="title">
-            <span>标题</span>
-        </div>
-        <div class="brief">
-            <span>简介什么的</span>
-        </div>
-    </a>
-</div>
+{% endfor %}
 </body>
+<script type="text/javascript">
+var l=document.getElementsByClassName("drip").length
+var list1=0
+var list2=0
+var list3=0
+for(var i=l+1;i>1;i--)
+{
+    if(list1<=list2||list1<=list3)
+    {
+        document.getElementById(i).style.left="22%";
+        document.getElementById(i).style.top=list1+'px';
+        list1=list1+document.getElementById(i).offsetHeight+20;
+        console.log(list1)
+    }
+    else if (list2<=list3)
+    {
+        document.getElementById(i).style.left="48%";
+        document.getElementById(i).style.top=list2+'px';
+        list2=list2+document.getElementById(i).offsetHeight+20;
+        console.log(list2)
+    }
+    else
+    {
+        document.getElementById(i).style.left="74%";
+        document.getElementById(i).style.top=list3+'px';
+        list3=list3+document.getElementById(i).offsetHeight+20;
+        console.log(list3)
+    }
+}
+
+</script>
 </html>

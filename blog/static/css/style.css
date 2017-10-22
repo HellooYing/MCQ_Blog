@@ -5,6 +5,7 @@ body,html{
     line-height: 20px;
     min-height: 100%;
     width: 100%;
+    background-color: #FFEEDD;
 }
 
 a {
@@ -13,8 +14,9 @@ a {
 }
 
 .drip {
-width: 23%;
+width: 24%;
 min-height: 100px;
+min-width: 150px;
 padding: 0;
 background: #fff;
 margin-left: 8px;
@@ -52,7 +54,7 @@ text-align: center;
 }
 
 .drip .title span {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
     color: #000;
     text-decoration: none;

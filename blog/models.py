@@ -1,11 +1,14 @@
 from django.db import models
 import datetime
 class Blog(models.Model):
+    id = models.IntegerField(auto_created=True,primary_key=True)
     title = models.CharField('文章标题',max_length = 150)
     brief = models.CharField('文章简介',max_length = 150)
     article = models.TextField('正文')
-    time = models.DateTimeField('时间',default=datetime.datetime.now)
-    picture = models.ImageField('配图')
+    time = models.DateTimeField('时间',default = datetime.datetime.now)
+    picture = models.CharField('配图地址',max_length = 150,default = '../static/picture/'+str(id)+'.jpg')
+    class Meta:
+        ordering = ["-time"]
 
 # class Img(models.Model):
 #     blog = models.ForeignKey(Blog, blank=True,null=True,verbose_name='文章标题')
