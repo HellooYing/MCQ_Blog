@@ -6,7 +6,7 @@ class Blog(models.Model):
     brief = models.CharField('文章简介',max_length = 150)
     article = models.TextField('正文')
     time = models.DateTimeField('时间',default = datetime.datetime.now)
-    picture = models.CharField('配图地址',max_length = 150,default = '../static/picture/'+str(id)+'.jpg')
+    picture = models.CharField('配图地址',max_length = 150,default = '../static/picture/i.jpg')
     class Meta:
         ordering = ["-time"]
 
