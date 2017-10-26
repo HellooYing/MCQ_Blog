@@ -24,33 +24,62 @@
 </body>
 <script src="../static/js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
-var width=document.body.clientWidth;
-var num=Math.floor(width*0.77/236);
-var nav_width=width*0.23;
-var drip_width=width*0.77/num;
-var drip_left=(drip_width-220)/2
-var drip_height=new Array();
-var min//=Math.min.apply(null, list)
-for(var n=0;n<num;n++)
-{
-    var list=new Array();
-    var drips_left=new Array();
-    list[n]=0;
-    drips_left[n]=drip_width*(num-1)+drip_left
-}
+var strlen = {};
+strlen.GetLength = function(str) {
+    var realLength = 0, len = str.length, charCode = -1;
+    for (var i = 0; i < len; i++) {
+        charCode = str.charCodeAt(i);
+        if (charCode >= 0 && charCode <= 128) 
+        realLength += 1;
+        else
+            realLength += 2;
+    }
+    return realLength;
+};
 $.ajax({
     async: false,
     url:"/index_waterfall",
     success:function(result){
+        var width=document.body.clientWidth;
+        var num=Math.floor(width*0.77/236);
+        var nav_width=width*0.23;
+        var drip_width=width*0.77/num;
+        var drip_left=(drip_width-220)/2
+        var drip_height=new Array();
+        var list=new Array();
+        var drips_left=new Array();
+        for(var n=0;n<num;n++){
+            list[n]=0;
+            drips_left[n]=drip_width*n+drip_left
+        }
         var i=result.length+1;
-        var i_oppose=0;
         for(i;i>1;i--){  
-            i_oppose++;
-            drip_height[i]=drip_width/result['wch['+i+']']+90
-            console.log(drip_height[i])
+            var min=Math.min.apply(null, list)
+            title_len=strlen.GetLength(result['title['+i+']'])
+            brief_len=strlen.GetLength(result['brief['+i+']'])
+            var title_add_height;
+            var brief_add_height;
+            if(title_len<22){title_add_height=0;}
+            else if(title_len<44){title_add_height=16;}
+            else if(title_len<66){title_add_height=32;}
+            else{title_add_height=48;}
+            if(brief_len<33){brief_add_height=0;}
+            else if(brief_len<66){brief_add_height=12;}
+            else if(brief_len<99){brief_add_height=24;}
+            else{brief_add_height=36;}
+            drip_height[i]=drip_width/result['wch['+i+']']+70+title_add_height+brief_add_height
             var a=document.createElement("div");
             a.className="drip";
             a.id="drip"+i;
+            a.style.minHeight=drip_height[i]+'px';
+            for(var n=0;n<num;n++){
+                if (list[n]==min){
+                    a.style.left=drips_left[n]+'px';
+                    a.style.top=list[n]+'px';
+                    list[n]=list[n]+drip_height[i]+30;
+                    break;
+                }
+            }
             document.body.appendChild(a);
             var b=document.createElement("a");
             b.className="content";
@@ -80,6 +109,9 @@ $.ajax({
             var k=document.createTextNode(result['brief['+i+']']);
             j.appendChild(k);
             document.getElementById("brief"+i).appendChild(j);
+            
+            
+
     }
 }
 });
