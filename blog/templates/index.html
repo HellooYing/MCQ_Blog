@@ -24,11 +24,19 @@
 </body>
 <script src="../static/js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
-num=Math.floor(document.body.clientWidth*0.77/220)
-for(var n=1;n<=num;n++)
+var width=document.body.clientWidth;
+var num=Math.floor(width*0.77/236);
+var nav_width=width*0.23;
+var drip_width=width*0.77/num;
+var drip_left=(drip_width-220)/2
+var drip_height=new Array();
+var min//=Math.min.apply(null, list)
+for(var n=0;n<num;n++)
 {
     var list=new Array();
+    var drips_left=new Array();
     list[n]=0;
+    drips_left[n]=drip_width*(num-1)+drip_left
 }
 $.ajax({
     async: false,
@@ -38,41 +46,44 @@ $.ajax({
         var i_oppose=0;
         for(i;i>1;i--){  
             i_oppose++;
-           var a=document.createElement("div");
-           a.className="drip";
-           a.id="drip"+i;
-           document.body.appendChild(a);
-           var b=document.createElement("a");
-           b.className="content";
-           b.id="content"+i;
-           b.href="#";
-           document.getElementById("drip"+i).appendChild(b);
-           var c=document.createElement("div");
-           c.className="picture";
-           c.id="picture"+i;
-           document.getElementById("content"+i).appendChild(c);
-           var d=document.createElement("img");
-           d.src=result['picture['+i+']'];
-           document.getElementById("picture"+i).appendChild(d);
-           var e=document.createElement("div");
-           e.className="title";
-           e.id="title"+i;
-           document.getElementById("content"+i).appendChild(e);
-           var f=document.createElement("span");
-           var g=document.createTextNode(result['title['+i+']']);
-           f.appendChild(g);
-           document.getElementById("title"+i).appendChild(f);
-           var h=document.createElement("div");
-           h.className="brief";
-           h.id="brief"+i;
-           document.getElementById("content"+i).appendChild(h);
-           var j=document.createElement("span");
-           var k=document.createTextNode(result['brief['+i+']']);
-           j.appendChild(k);
-           document.getElementById("brief"+i).appendChild(j);
+            drip_height[i]=drip_width/result['wch['+i+']']+90
+            console.log(drip_height[i])
+            var a=document.createElement("div");
+            a.className="drip";
+            a.id="drip"+i;
+            document.body.appendChild(a);
+            var b=document.createElement("a");
+            b.className="content";
+            b.id="content"+i;
+            b.href="#";
+            document.getElementById("drip"+i).appendChild(b);
+            var c=document.createElement("div");
+            c.className="picture";
+            c.id="picture"+i;
+            document.getElementById("content"+i).appendChild(c);
+            var d=document.createElement("img");
+            d.src=result['picture['+i+']'];
+            document.getElementById("picture"+i).appendChild(d);
+            var e=document.createElement("div");
+            e.className="title";
+            e.id="title"+i;
+            document.getElementById("content"+i).appendChild(e);
+            var f=document.createElement("span");
+            var g=document.createTextNode(result['title['+i+']']);
+            f.appendChild(g);
+            document.getElementById("title"+i).appendChild(f);
+            var h=document.createElement("div");
+            h.className="brief";
+            h.id="brief"+i;
+            document.getElementById("content"+i).appendChild(h);
+            var j=document.createElement("span");
+            var k=document.createTextNode(result['brief['+i+']']);
+            j.appendChild(k);
+            document.getElementById("brief"+i).appendChild(j);
     }
 }
 });
+
 </script>
 <!-- <script type="text/javascript">
 var l=document.getElementsByClassName("drip").length
