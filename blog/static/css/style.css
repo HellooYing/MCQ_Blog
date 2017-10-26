@@ -13,21 +13,31 @@ a {
     font-weight: 500;
 }
 
+.nav_left{
+    position: fixed;
+    top: 0px;
+    left: 0;
+    bottom: 0;
+    width: 21%;
+    background-color:#663333;
+    opacity: 0.3;
+}
+
 .drip {
-width: 220px;
-min-height: 100px;
-min-width: 150px;
-padding: 0;
-background: #fff;
-margin-left: 8px;
-margin-right: 8px;
-margin-bottom: 8px;
-margin-top: 10px;
-font-size: 12px;
-float: left;
-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
-text-align: center;
-position:absolute;
+    width: 220px;
+    min-height: 100px;
+    min-width: 150px;
+    padding: 0;
+    background: #fff;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    font-size: 12px;
+    float: left;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    text-align: center;
+    position:absolute;
 }
 
 .drip .content {

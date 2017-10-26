@@ -4,10 +4,24 @@
 
 <head>
     <title>从未想过如此之好</title>
-    <link rel="stylesheet" href="{% static " css/style.css " %}">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
+    <div id="nav_left" class="nav_left">
+        <div class="nav_left_head">
+            <span>毛草球</span>
+        </div>
+        <div class="nav_left_word">
+            <span>Space,the final frontier.</span>
+        </div>
+        <div class="nav_left_content">
+            <a>Home</a>
+            <a>Categories</a>
+            <a>…</a>
+        </div>
+    </div>
     <div id="water">
     </div>
 </body>
@@ -53,31 +67,32 @@
                         var min = Math.min.apply(null, list)
                         title_len = strlen.GetLength(result['title[' + i + ']'])
                         brief_len = strlen.GetLength(result['brief[' + i + ']'])
+                        console.log(strlen.GetLength(result['title[29]']))
                         var title_add_height;
                         var brief_add_height;
-                        if (title_len < 22) {
+                        if (title_len < 15) {
                             title_add_height = 0;
                         }
-                        else if (title_len < 44) {
-                            title_add_height = 16;
+                        else if (title_len < 31) {
+                            title_add_height = 20;
                         }
-                        else if (title_len < 66) {
-                            title_add_height = 32;
+                        else if (title_len < 46) {
+                            title_add_height = 40;
                         }
                         else {
-                            title_add_height = 48;
+                            title_add_height = 60;
                         }
-                        if (brief_len < 33) {
+                        if (brief_len < 32) {
                             brief_add_height = 0;
                         }
-                        else if (brief_len < 66) {
-                            brief_add_height = 12;
+                        else if (brief_len < 64) {
+                            brief_add_height = 16;
                         }
-                        else if (brief_len < 99) {
-                            brief_add_height = 24;
+                        else if (brief_len < 96) {
+                            brief_add_height = 32;
                         }
                         else {
-                            brief_add_height = 36;
+                            brief_add_height = 48;
                         }
                         drip_height[i] = drip_width / result['wch[' + i + ']'] + 70 + title_add_height + brief_add_height
                         var a = document.createElement("div");
@@ -88,7 +103,7 @@
                             if (list[n] == min) {
                                 a.style.left = drips_left[n] + 'px';
                                 a.style.top = list[n] + 200 + 'px';
-                                list[n] = list[n] + drip_height[i] + 30;
+                                list[n] = list[n] + drip_height[i] + 35;
                                 break;
                             }
                         }
