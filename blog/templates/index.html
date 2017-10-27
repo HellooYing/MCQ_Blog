@@ -9,17 +9,32 @@
 </head>
 
 <body>
-    <div id="nav_left" class="nav_left">
-        <div class="nav_left_head">
+    <div class="img_background" id="img_background">
+    <div class="img_top" id="img-0">
+        <img src="../static/picture/img0.jpg">
+    </div>
+    <div class="img_top" id="img-1">
+    <img src="../static/picture/img2.jpg">
+    </div>
+    <div class="img_top"  id="img-2">
+    <img src="../static/picture/img1.jpg">
+    </div>
+    </div>
+    <div id="nav_left" class="nav_left_temporary">
+        <div id="nav_left_head" class="nav_left_head">
             <span>毛草球</span>
         </div>
-        <div class="nav_left_word">
-            <span>Space,the final frontier.</span>
+       
+        <div id="nav_left_content" class="nav_left_content">
+            <a href="#">Home</a>
+            <br></br></br>
+            <a href="#">Categories</a>
+            </br></br></br>
+            <a href="#">…</a>
         </div>
-        <div class="nav_left_content">
-            <a>Home</a>
-            <a>Categories</a>
-            <a>…</a>
+
+        <div id="nav_left_word" class="nav_left_word">
+                <span>一切源于热爱</br></br>早上好,世界</span>
         </div>
     </div>
     <div id="water">
@@ -39,7 +54,10 @@
         var drip_height = new Array();
         var list = new Array();
         var drips_left = new Array();
-
+        var img_num= 2;
+        var clientHeight=document.documentElement.clientHeight;
+        if(document.body.clientWidth<750){document.getElementById("nav_left").className="sr-only"}
+        else{document.getElementById("nav_left").className="nav_left_temporary"}
         strlen.GetLength = function (str) {
             var realLength = 0, len = str.length, charCode = -1;
             for (var i = 0; i < len; i++) {
@@ -67,7 +85,6 @@
                         var min = Math.min.apply(null, list)
                         title_len = strlen.GetLength(result['title[' + i + ']'])
                         brief_len = strlen.GetLength(result['brief[' + i + ']'])
-                        console.log(strlen.GetLength(result['title[29]']))
                         var title_add_height;
                         var brief_add_height;
                         if (title_len < 15) {
@@ -102,7 +119,7 @@
                         for (var n = 0; n < num; n++) {
                             if (list[n] == min) {
                                 a.style.left = drips_left[n] + 'px';
-                                a.style.top = list[n] + 200 + 'px';
+                                a.style.top = list[n] + 500 + 'px';
                                 list[n] = list[n] + drip_height[i] + 35;
                                 break;
                             }
@@ -143,22 +160,32 @@
                     var scrollTop = $(this).scrollTop();
                     var scrollHeight = $(document).height();
                     var clientHeight = $(this).height();
-                    if (scrollTop + clientHeight >= scrollHeight && Window.newload > 2) {
+                    if(scrollTop>=500){
+                        if(document.getElementById("nav_left").className=="nav_left_temporary"){
+                        document.getElementById("nav_left").className="nav_left"}}
+                    if(scrollTop<500){
+                        if(document.getElementById("nav_left").className=="nav_left"){
+                        document.getElementById("nav_left").className="nav_left_temporary"}}
+                    if (scrollTop + clientHeight+300 >= scrollHeight && Window.newload > 2) {
                         load(Window.newload)
+                        var new_img_top = document.createElement("div");
+                        new_img_top.className = "img_top";
+                        img_num=img_num+1;
+                        new_img_top.id="img-"+img_num;
+                        document.getElementById("img_background").appendChild(new_img_top);
+                        var new_img = document.createElement("img");
+                        new_img_id=img_num%5;
+                        new_img.src = "../static/picture/img"+new_img_id+".jpg";
+                        document.getElementById("img-"+img_num).appendChild(new_img);
                     }
                 });
             }
         });
+        document.getElementById("nav_left_head").style.paddingTop=clientHeight*0.25+'px'
+        document.getElementById("nav_left_content").style.paddingTop=clientHeight*0.1+'px'
+        document.getElementById("nav_left_word").style.paddingTop=clientHeight*0.15+'px'
     }
-    function sleep(numberMillis) {
-        var now = new Date();
-        var exitTime = now.getTime() + numberMillis;
-        while (true) {
-            now = new Date();
-            if (now.getTime() > exitTime)
-                return;
-        }
-    }
+    
     main()
     window.onresize = function () {
         var parent = document.body;
@@ -168,7 +195,6 @@
         water.id = "water";
         document.body.appendChild(water);
         main()
-        sleep(180)
     }
 </script>
 
