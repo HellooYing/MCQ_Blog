@@ -5,36 +5,122 @@
 <head>
     <title>从未想过如此之好</title>
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/htmleaf-demo.css">
+    <link rel="stylesheet" href="../static/css/style1.css">
     <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
+    <div class="wrapper">
+        <div class="cols">
+            <div id="fan0" class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(../static/img/2.jpg)">
+                        <div class="inner">
+                            <p></p>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>从未想过如此之好</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fan1" class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image:url(../static/img/5.jpg)">
+                        <div class="inner">
+                            <p></p>
+                            <span>毛</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>宇宙</br>星空</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fan2" class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(../static/img/3.jpg)">
+                        <div class="inner">
+                            <p></p>
+                            <span>草</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>我想成为一棵树!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fan3" class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(../static/img/6.jpg)">
+                        <div class="inner">
+                            <p></p>
+                            <span>球</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>世界那么美好又善良</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fan4" class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url(../static/img/4.jpg)">
+                        <div class="inner">
+                            <p></p>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>愿平凡的我们在彼此眼中闪闪发亮</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="img_background" id="img_background">
-    <div class="img_top" id="img-0">
-        <img src="../static/picture/img0.jpg">
-    </div>
-    <div class="img_top" id="img-1">
-    <img src="../static/picture/img2.jpg">
-    </div>
-    <div class="img_top"  id="img-2">
-    <img src="../static/picture/img1.jpg">
-    </div>
+        <div class="img_top" id="img-0">
+            <img src="../static/picture/img0.jpg">
+        </div>
+        <div class="img_top" id="img-1">
+            <img src="../static/picture/img2.jpg">
+        </div>
+        <div class="img_top" id="img-2">
+            <img src="../static/picture/img1.jpg">
+        </div>
     </div>
     <div id="nav_left" class="nav_left_temporary">
         <div id="nav_left_head" class="nav_left_head">
             <span>毛草球</span>
         </div>
-       
+
         <div id="nav_left_content" class="nav_left_content">
             <a href="#">Home</a>
-            <br></br></br>
+            <br></br>
+            </br>
             <a href="#">Categories</a>
-            </br></br></br>
+            </br>
+            </br>
+            </br>
             <a href="#">…</a>
         </div>
 
         <div id="nav_left_word" class="nav_left_word">
-                <span>一切源于热爱</br></br>早上好,世界</span>
+            <span>一切源于热爱</br>
+                </br>早上好,世界</span>
         </div>
     </div>
     <div id="water">
@@ -54,10 +140,22 @@
         var drip_height = new Array();
         var list = new Array();
         var drips_left = new Array();
-        var img_num= 2;
-        var clientHeight=document.documentElement.clientHeight;
-        if(document.body.clientWidth<750){document.getElementById("nav_left").className="sr-only"}
-        else{document.getElementById("nav_left").className="nav_left_temporary"}
+        var img_num = 2;
+        var clientHeight = document.documentElement.clientHeight;
+        document.getElementById("fan0").className = "col";
+        document.getElementById("fan4").className = "col";
+        document.getElementById("fan1").className = "col";
+        document.getElementById("fan3").className = "col";
+        if (document.body.clientWidth < 1020) { 
+            document.getElementById("fan0").className = "sr-only";
+            document.getElementById("fan4").className = "sr-only";
+                 }
+        if (document.body.clientWidth < 800) { 
+            document.getElementById("fan1").className = "sr-only";
+            document.getElementById("fan3").className = "sr-only";
+                 }
+        if (document.body.clientWidth < 750) { document.getElementById("nav_left").className = "sr-only" }
+        else { document.getElementById("nav_left").className = "nav_left_temporary" }
         strlen.GetLength = function (str) {
             var realLength = 0, len = str.length, charCode = -1;
             for (var i = 0; i < len; i++) {
@@ -154,38 +252,42 @@
                         j.appendChild(k);
                         document.getElementById("brief" + i).appendChild(j);
                         Window.newload = i - 1;
-                    }                
-}
+                    }
+                }
                 $(window).scroll(function () {
                     var scrollTop = $(this).scrollTop();
                     var scrollHeight = $(document).height();
                     var clientHeight = $(this).height();
-                    if(scrollTop>=500){
-                        if(document.getElementById("nav_left").className=="nav_left_temporary"){
-                        document.getElementById("nav_left").className="nav_left"}}
-                    if(scrollTop<500){
-                        if(document.getElementById("nav_left").className=="nav_left"){
-                        document.getElementById("nav_left").className="nav_left_temporary"}}
-                    if (scrollTop + clientHeight+300 >= scrollHeight && Window.newload > 2) {
+                    if (scrollTop >= 500) {
+                        if (document.getElementById("nav_left").className == "nav_left_temporary") {
+                            document.getElementById("nav_left").className = "nav_left"
+                        }
+                    }
+                    if (scrollTop < 500) {
+                        if (document.getElementById("nav_left").className == "nav_left") {
+                            document.getElementById("nav_left").className = "nav_left_temporary"                        
+}
+                    }
+                    if (scrollTop + clientHeight + 300 >= scrollHeight && Window.newload > 2) {
                         load(Window.newload)
                         var new_img_top = document.createElement("div");
                         new_img_top.className = "img_top";
-                        img_num=img_num+1;
-                        new_img_top.id="img-"+img_num;
+                        img_num = img_num + 1;
+                        new_img_top.id = "img-" + img_num;
                         document.getElementById("img_background").appendChild(new_img_top);
                         var new_img = document.createElement("img");
-                        new_img_id=img_num%5;
-                        new_img.src = "../static/picture/img"+new_img_id+".jpg";
-                        document.getElementById("img-"+img_num).appendChild(new_img);
+                        new_img_id = img_num % 5;
+                        new_img.src = "../static/picture/img" + new_img_id + ".jpg";
+                        document.getElementById("img-" + img_num).appendChild(new_img);
                     }
                 });
             }
         });
-        document.getElementById("nav_left_head").style.paddingTop=clientHeight*0.25+'px'
-        document.getElementById("nav_left_content").style.paddingTop=clientHeight*0.1+'px'
-        document.getElementById("nav_left_word").style.paddingTop=clientHeight*0.15+'px'
+        document.getElementById("nav_left_head").style.paddingTop = clientHeight * 0.25 + 'px'
+        document.getElementById("nav_left_content").style.paddingTop = clientHeight * 0.1 + 'px'
+        document.getElementById("nav_left_word").style.paddingTop = clientHeight * 0.15 + 'px'
     }
-    
+
     main()
     window.onresize = function () {
         var parent = document.body;

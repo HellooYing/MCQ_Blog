@@ -12,8 +12,7 @@ def index(request):
         Olddir = os.path.join('c:/code/myblog/blog/static/picture', files)
         filename = os.path.splitext(files)[0]
         filetype = os.path.splitext(files)[1]
-        Newdir = os.path.join(
-            'c:/code/myblog/blog/static/picture', filename + ".jpg")
+        Newdir = os.path.join('c:/code/myblog/blog/static/picture', filename + ".jpg")
         os.rename(Olddir, Newdir)
     a = Blog.objects.all()
     return render(request, "index.html",context={"all_blogs": a})
