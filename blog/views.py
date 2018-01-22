@@ -1,3 +1,4 @@
+#encoding: utf-8
 from django.urls import reverse
 from blog.models import Blog
 from django.shortcuts import render, redirect, render_to_response
@@ -7,12 +8,14 @@ import json
 from datetime import datetime
 from PIL import Image
 def index(request):
-    filelist = os.listdir('c:/code/myblog/blog/static/picture')
+    path=os.path.realpath(__file__)
+    path1=path.strip(r'views.py')
+    filelist = os.listdir(path1+'static/picture')
     for files in filelist:
-        Olddir = os.path.join('c:/code/myblog/blog/static/picture', files)
+        Olddir = os.path.join(path1+'static/picture', files)
         filename = os.path.splitext(files)[0]
         filetype = os.path.splitext(files)[1]
-        Newdir = os.path.join('c:/code/myblog/blog/static/picture', filename + ".jpg")
+        Newdir = os.path.join(path1+'static/picture', filename + ".jpg")
         os.rename(Olddir, Newdir)
     a = Blog.objects.all()
     return render(request, "index.html",context={"all_blogs": a})
@@ -21,7 +24,8 @@ def index_waterfall(request):
     a = Blog.objects.all()
     dict1={}
     length=[]
-    path=os.getcwd()+r'\blog\static\picture\i'
+    path=os.getcwd()+r'/blog/static/picture/i'
+    print(os.getcwd())
     for i in a:
         dict1['title['+str(i.id)+']']=i.title
         length.append(i.id)

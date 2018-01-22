@@ -1,3 +1,4 @@
+#encoding: utf-8
 from django.db import models
 import datetime
 class Blog(models.Model):
