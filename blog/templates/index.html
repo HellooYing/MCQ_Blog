@@ -4,11 +4,11 @@
 
 <head>
     <title>从未想过如此之好</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="../static/css/htmleaf-demo.css">
-    <link rel="stylesheet" href="../static/css/style1.css">
-    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/htmleaf-demo.css" %}">
+    <link rel="stylesheet" href="{% static "css/style1.css" %}">
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon" />
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <div class="cols">
             <div id="fan0" class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image: url(../static/img/2.jpg)">
+                    <div class="front" style="background-image: url({% static "img/2.jpg" %})">
                         <div class="inner">
                             <p></p>
                             <span></span>
@@ -31,7 +31,7 @@
             </div>
             <div id="fan1" class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image:url(../static/img/5.jpg)">
+                    <div class="front" style="background-image:url({% static "img/5.jpg" %})">
                         <div class="inner">
                             <p></p>
                             <span></span>
@@ -46,7 +46,7 @@
             </div>
             <div id="fan2" class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image: url(../static/img/3.jpg)">
+                    <div class="front" style="background-image: url({% static "img/3.jpg" %})">
                         <div class="inner">
                             <p></p>
                             <span></span>
@@ -61,7 +61,7 @@
             </div>
             <div id="fan3" class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image: url(../static/img/6.jpg)">
+                    <div class="front" style="background-image:url({% static "img/6.jpg" %})">
                         <div class="inner">
                             <p></p>
                             <span></span>
@@ -76,7 +76,7 @@
             </div>
             <div id="fan4" class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
-                    <div class="front" style="background-image: url(../static/img/4.jpg)">
+                    <div class="front" style="background-image: url({% static "img/4.jpg" %})">
                         <div class="inner">
                             <p></p>
                             <span></span>
@@ -93,13 +93,13 @@
     </div>
     <div class="img_background" id="img_background">
         <div class="img_top" id="img-0">
-            <img src="../static/picture/img0.jpg">
+            <img src="{% static "picture/img0.jpg" %}">
         </div>
         <div class="img_top" id="img-1">
-            <img src="../static/picture/img2.jpg">
+            <img src="{% static "picture/img2.jpg" %}">
         </div>
         <div class="img_top" id="img-2">
-            <img src="../static/picture/img1.jpg">
+            <img src="{% static "picture/img1.jpg" %}">
         </div>
     </div>
     <div id="nav_left" class="nav_left_temporary">
@@ -127,7 +127,7 @@
     </div>
 </body>
 
-<script src="../static/js/jquery-1.11.1.min.js"></script>
+<script src="{% static "js/jquery-1.11.1.min.js" %}"></script>
 
 <script type="text/javascript">
     function main() {
