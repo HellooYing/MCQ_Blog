@@ -5,7 +5,7 @@ body,html{
     line-height: 20px;
     min-height: 100%;
     width: 100%;
-    background-color: #FFEEDD;
+    background-color: #FFFFFF;
 }
 
 a {
@@ -156,3 +156,4 @@ a {
     clip:rect(0,0,0,0);
     border:0;
 }
+

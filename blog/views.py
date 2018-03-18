@@ -1,7 +1,7 @@
 #encoding: utf-8
 from django.urls import reverse
 from blog.models import Blog
-from django.shortcuts import render, redirect, render_to_response
+from django.shortcuts import render, redirect, render_to_response,get_object_or_404
 from django.http import HttpResponse
 import os
 import json
@@ -48,3 +48,7 @@ def index_waterfall(request):
             else:
                 return json.JSONEncoder.default(self, obj)
     return HttpResponse(json.dumps(dict1, cls=CJsonEncoder), content_type="application/json")
+
+def detail(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+    return render(request, 'detail.html', context={'post': post})

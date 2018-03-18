@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>世界之大</title>
+    <link rel="stylesheet" href="{% static "css/style-detail.css" %}">
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon" />
+</head>
+<body>
+<div id="container">
+    <div id="main">
+        <header>
+            <div id="logo"><h1>毛草球</h1></div>
+            <nav>
+                <ul class="nav-head">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/categories">Categories</a></li>
+                    <li><a href="/link">Link</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="site_content">
+                <div id="content">
+                    <h1>{{post.title}}</h1>
+                    <p>{{post.article}}</p>
+                </div>
+
+        </div>
+        <footer>
+                <p><a href="/">Categories</a> | <a href="/categories">Home</a> | <a href="/link">Link</a> </p>
+                <p>2018.3.18 毛草球</p>
+            </footer>
+    </div>
+</div>
+</body>

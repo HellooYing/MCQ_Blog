@@ -1,6 +1,9 @@
 #encoding: utf-8
 from django.db import models
 import datetime
+from django.urls import reverse
+from django.utils.six import python_2_unicode_compatible
+@python_2_unicode_compatible
 class Blog(models.Model):
     id = models.IntegerField(auto_created=True,primary_key=True)
     title = models.CharField('文章标题',max_length = 150)
@@ -8,6 +11,10 @@ class Blog(models.Model):
     article = models.TextField('正文')
     time = models.DateTimeField('时间',default = datetime.datetime.now)
     picture = models.CharField('配图地址',max_length = 150,default = '../static/picture/i.jpg')
+    def __str__(self):
+        return self.title
+    def get_absolute_url(self):
+        return reverse('blog:detail', kwargs={'pk': self.pk})
     class Meta:
         ordering = ["-time"]
 
