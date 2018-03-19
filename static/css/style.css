@@ -1,11 +1,21 @@
-body,html{
+html{
     font-family: Helvetica,Arial,sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
     min-height: 100%;
     width: 100%;
-    background-color: #FFEEDD;
+    background-color: #FFFFFF;
+    background: #fff url(../picture/background.jpg) no-repeat fixed top;
+}
+body{
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    min-height: 100%;
+    width: 100%;
+    background: #fff url(../picture/background.jpg) no-repeat fixed top;
 }
 
 a {
@@ -156,3 +166,4 @@ a {
     clip:rect(0,0,0,0);
     border:0;
 }
+
