@@ -52,3 +52,6 @@ def index_waterfall(request):
 def detail(request, pk):
     post = get_object_or_404(Blog, pk=pk)
     return render(request, 'detail.html', context={'post': post})
+
+def test(request):
+    return render(request, 'test.html', context={})
