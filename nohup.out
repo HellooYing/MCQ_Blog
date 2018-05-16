@@ -235,3 +235,1285 @@ Not Found: /phpmyadmin2016/
 Not Found: /phpmyadmin2017/
 Not Found: /phpmyadmin2018/
 Not Found: /phpmanager/
+[2018-04-21 15:54:18 +0800] [2362] [INFO] Starting gunicorn 19.7.1
+[2018-04-21 15:54:18 +0800] [2362] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (2362)
+[2018-04-21 15:54:18 +0800] [2362] [INFO] Using worker: sync
+[2018-04-21 15:54:18 +0800] [2365] [INFO] Booting worker with pid: 2365
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 303, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: auth_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/contrib/admin/sites.py", line 398, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/utils/decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/utils/decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/utils/decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/utils/decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/utils/decorators.py", line 62, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/utils/decorators.py", line 58, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/contrib/auth/views.py", line 66, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/forms/forms.py", line 179, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/forms/forms.py", line 174, in errors
+    self.full_clean()
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/forms/forms.py", line 377, in full_clean
+    self._clean_form()
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/forms/forms.py", line 404, in _clean_form
+    cleaned_data = self.clean()
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/contrib/auth/forms.py", line 195, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 70, in authenticate
+    user = _authenticate_with_backend(backend, backend_path, request, credentials)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 116, in _authenticate_with_backend
+    return backend.authenticate(*args, **credentials)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/contrib/auth/backends.py", line 16, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/contrib/auth/base_user.py", line 44, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/models/query.py", line 397, in get
+    num = len(clone)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/models/query.py", line 254, in __len__
+    self._fetch_all()
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/models/query.py", line 1179, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1067, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 303, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: auth_user
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 303, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: blog_blog
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/hellooying.xyz/MCQ_Blog/blog/views.py", line 29, in index_waterfall
+    for i in a:
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/models/query.py", line 272, in __iter__
+    self._fetch_all()
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/models/query.py", line 1179, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 1067, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mcq/sites/hellooying.xyz/env/lib/python3.5/site-packages/django/db/backends/sqlite3/base.py", line 303, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: blog_blog
+[2018-04-21 15:54:53 +0800] [2362] [INFO] Handling signal: int
+[2018-04-21 07:54:53 +0000] [2365] [INFO] Worker exiting (pid: 2365)
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+[2018-04-21 15:54:53 +0800] [2362] [INFO] Shutting down: Master
+[2018-04-21 15:55:20 +0800] [2376] [INFO] Starting gunicorn 19.7.1
+[2018-04-21 15:55:20 +0800] [2376] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (2376)
+[2018-04-21 15:55:20 +0800] [2376] [INFO] Using worker: sync
+[2018-04-21 15:55:20 +0800] [2379] [INFO] Booting worker with pid: 2379
+Not Found: /cache/global/img/gs.gif
+[2018-04-21 19:39:14 +0800] [2602] [INFO] Booting worker with pid: 2602
+[2018-04-21 19:39:14 +0800] [2376] [INFO] Handling signal: hup
+[2018-04-21 19:39:14 +0800] [2376] [INFO] Hang up: Master
+[2018-04-21 19:39:14 +0800] [2606] [INFO] Booting worker with pid: 2606
+[2018-04-21 11:39:14 +0000] [2602] [INFO] Worker exiting (pid: 2602)
+Not Found: /robots.txt
+Not Found: /w00tw00t.at.blackhats.romanian.anti-sec:)
+Not Found: /phpMyAdmin/scripts/setup.php
+Not Found: /phpmyadmin/scripts/setup.php
+Not Found: /pma/scripts/setup.php
+Not Found: /myadmin/scripts/setup.php
+Not Found: /MyAdmin/scripts/setup.php
+Not Found: /robots.txt
+Not Found: /manager/html
+Not Found: /cache/global/img/gs.gif
+Not Found: /admij
+Not Found: /webservice/proxy/validate
+Not Found: /cache/global/img/gs.gif
+Not Found: /manager/html
+Not Found: /cache/global/img/gs.gif
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /a/
+Not Found: /templets/plus/car.htm
+Not Found: /templets/plus/car.htm
+Not Found: /cache/global/img/gs.gif
+Not Found: /muieblackcat
+Not Found: /phpMyAdmin/scripts/setup.php
+Not Found: /pma/scripts/setup.php
+Not Found: /myadmin/scripts/setup.php
+Not Found: /MyAdmin/scripts/setup.php
+Not Found: /scripts/setup.php
+Not Found: /admin/scripts/setup.php
+Not Found: /admin/pma/scripts/setup.php
+Not Found: /admin/phpmyadmin/scripts/setup.php
+Not Found: /db/scripts/setup.php
+Not Found: /dbadmin/scripts/setup.php
+Not Found: /myadmin/scripts/setup.php
+Not Found: /mysql/scripts/setup.php
+Not Found: /mysqladmin/scripts/setup.php
+Not Found: /typo3/phpmyadmin/scripts/setup.php
+Not Found: /phpadmin/scripts/setup.php
+Not Found: /pma/scripts/setup.php
+Not Found: /web/phpMyAdmin/scripts/setup.php
+Not Found: /xampp/phpmyadmin/scripts/setup.php
+Not Found: /web/scripts/setup.php
+Not Found: /php-my-admin/scripts/setup.php
+Not Found: /websql/scripts/setup.php
+Not Found: /phpMyAdmin-2/scripts/setup.php
+Not Found: /_phpmyadmin/scripts/setup.php
+Not Found: /administrator/components/com_joommyadmin/phpmyadmin/scripts/setup.php
+Not Found: /apache-default/phpmyadmin/scripts/setup.php
+Not Found: /cpanelphpmyadmin/scripts/setup.php
+Not Found: /cpphpmyadmin/scripts/setup.php
+Not Found: /forum/phpmyadmin/scripts/setup.php
+Not Found: /php/phpmyadmin/scripts/setup.php
+Not Found: /phpmyadmin/scripts/setup.php
+Not Found: /phpMyAdmin-2.10.0.0/scripts/setup.php
+Not Found: /phpMyAdmin-2.10.0.1/scripts/setup.php
+Not Found: /phpMyAdmin-2.10.0.2/scripts/setup.php
+Not Found: /phpMyAdmin-2.10.0/scripts/setup.php
+Not Found: /phpMyAdmin-2.10.1.0/scripts/setup.php
+Not Found: /phpMyAdmin-2.10.2.0/scripts/setup.php
+Not Found: /phpMyAdmin-2.11.0.0/scripts/setup.php
+Not Found: /phpMyAdmin-2.11.1-all-languages/scripts/setup.php
+Not Found: /phpMyAdmin-2.11.1.0/scripts/setup.php
+Not Found: /phpMyAdmin-2.11.1.1/scripts/setup.php
+Not Found: /phpMyAdmin-2.11.1.2/scripts/setup.php
+Not Found: /phpMyAdmin-2.6.1-pl2/scripts/setup.php
+Not Found: /phpMyAdmin-2.6.1-pl3/scripts/setup.php
+Not Found: /phpMyAdmin-2.6.4-pl3/scripts/setup.php
+Not Found: /phpMyAdmin-2.6.4-pl4/scripts/setup.php
+Not Found: /phpMyAdmin-2.6.4-rc1/scripts/setup.php
+Not Found: /phpMyAdmin-2.6.5/scripts/setup.php
+Not Found: /phpMyAdmin-2.6.6/scripts/setup.php
+Not Found: /phpMyAdmin-2.6.9/scripts/setup.php
+Not Found: /phpMyAdmin-2.7.0-beta1/scripts/setup.php
+Not Found: /phpMyAdmin-2.7.0-pl1/scripts/setup.php
+Not Found: /phpMyAdmin-2.7.0-pl2/scripts/setup.php
+Not Found: /phpMyAdmin-2.7.0-rc1/scripts/setup.php
+Not Found: /phpMyAdmin-2.7.5/scripts/setup.php
+Not Found: /phpMyAdmin-2.7.6/scripts/setup.php
+Not Found: /phpMyAdmin-2.7.7/scripts/setup.php
+Not Found: /phpMyAdmin-2.8.2.3/scripts/setup.php
+Not Found: /phpMyAdmin-2.8.2/scripts/setup.php
+Not Found: /phpMyAdmin-2.8.3/scripts/setup.php
+Not Found: /phpMyAdmin-2.8.4/scripts/setup.php
+Not Found: /phpMyAdmin-2.8.5/scripts/setup.php
+Not Found: /phpMyAdmin-2.8.7/scripts/setup.php
+Not Found: /phpMyAdmin-2.8.8/scripts/setup.php
+Not Found: /phpMyAdmin-2.8.9/scripts/setup.php
+Not Found: /phpMyAdmin-2.9.0-rc1/scripts/setup.php
+Not Found: /phpMyAdmin-2.9.0.2/scripts/setup.php
+Not Found: /phpMyAdmin-2.9.0/scripts/setup.php
+Not Found: /phpMyAdmin-2.9.1/scripts/setup.php
+Not Found: /phpMyAdmin-2.9.2/scripts/setup.php
+Not Found: /phpMyAdmin-2/scripts/setup.php
+Not Found: /phpMyAdmin-3.0.0-rc1-english/scripts/setup.php
+Not Found: /phpMyAdmin-3.0.0.0-all-languages/scripts/setup.php
+Not Found: /phpMyAdmin-3.0.1.0-english/scripts/setup.php
+Not Found: /phpMyAdmin-3.0.1.0/scripts/setup.php
+Not Found: /phpMyAdmin-3.0.1.1/scripts/setup.php
+Not Found: /phpMyAdmin-3.1.0.0/scripts/setup.php
+Not Found: /phpMyAdmin-3.1.2.0-all-languages/scripts/setup.php
+Not Found: /phpMyAdmin-3.1.2.0/scripts/setup.php
+Not Found: /phpMyAdmin-3.4.3.1/scripts/setup.php
+Not Found: /phpMyAdmin2/scripts/setup.php
+Not Found: /phpMyAdmin3/scripts/setup.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /webservice/proxy/validate
+Not Found: /webdav
+Not Found: /robots.txt
+Not Found: /templets/plus/car.htm
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /cache/global/img/gs.gif
+Not Found: /admin/config.php
+Not Found: /admin/config.php
+Not Found: /404/search_children.js
+Not Found: /ccvv
+Not Found: /phpmyadmin/
+[2018-04-24 16:36:19 +0800] [2376] [CRITICAL] WORKER TIMEOUT (pid:2606)
+[2018-04-24 08:36:19 +0000] [2606] [INFO] Worker exiting (pid: 2606)
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+[2018-04-24 16:36:19 +0800] [5496] [INFO] Booting worker with pid: 5496
+Not Found: /robots.txt
+Not Found: /core/modules/language/language.info.yml
+Not Found: /index.php
+Not Found: /phpmyadmin/index.php
+Not Found: /phpMyAdmin/index.php
+Not Found: /pmd/index.php
+Not Found: /pma/index.php
+Not Found: /PMA/index.php
+Not Found: /PMA2/index.php
+Not Found: /pmamy/index.php
+Not Found: /pmamy2/index.php
+Not Found: /mysql/index.php
+Not Found: /admin/index.php
+Not Found: /db/index.php
+Not Found: /dbadmin/index.php
+Not Found: /web/phpMyAdmin/index.php
+Not Found: /admin/pma/index.php
+Not Found: /admin/PMA/index.php
+Not Found: /admin/mysql/index.php
+Not Found: /admin/mysql2/index.php
+Not Found: /admin/phpmyadmin/index.php
+Not Found: /admin/phpMyAdmin/index.php
+Not Found: /admin/phpmyadmin2/index.php
+Not Found: /mysqladmin/index.php
+Not Found: /mysql-admin/index.php
+Not Found: /phpadmin/index.php
+Not Found: /phpmyadmin0/index.php
+Not Found: /phpmyadmin1/index.php
+Not Found: /phpmyadmin2/index.php
+Not Found: /myadmin/index.php
+Not Found: /myadmin2/index.php
+Not Found: /xampp/phpmyadmin/index.php
+Not Found: /phpMyadmin_bak/index.php
+Not Found: /www/phpMyAdmin/index.php
+Not Found: /tools/phpMyAdmin/index.php
+Not Found: /phpmyadmin-old/index.php
+Not Found: /pma-old/index.php
+Not Found: /claroline/phpMyAdmin/index.php
+Not Found: /typo3/phpmyadmin/index.php
+Not Found: /phpma/index.php
+Not Found: /phpmyadmin/phpmyadmin/index.php
+Not Found: /phpMyAdmin/phpMyAdmin/index.php
+Not Found: /web.config
+Not Found: /robots.txt
+Not Found: /cache/global/img/gs.gif
+Not Found: /user/register
+Not Found: /user/register
+Not Found: /current_config/passwd
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /robots.txt
+Not Found: /sdk
+Not Found: /nmaplowercheck1524655547
+Not Found: /HNAP1
+Not Found: /web_caps/webCapsConfig
+Not Found: /ifixwebspace/
+Not Found: /navigation.html
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /w00tw00t.at.blackhats.romanian.anti-sec:)
+Not Found: /phpMyAdmin/scripts/setup.php
+Not Found: /phpmyadmin/scripts/setup.php
+Not Found: /pma/scripts/setup.php
+Not Found: /myadmin/scripts/setup.php
+Not Found: /MyAdmin/scripts/setup.php
+Not Found: /sdk
+Not Found: /nmaplowercheck1524696731
+Not Found: /HNAP1
+[2018-04-26 08:31:02 +0800] [2376] [CRITICAL] WORKER TIMEOUT (pid:5496)
+[2018-04-26 00:31:02 +0000] [5496] [INFO] Worker exiting (pid: 5496)
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+[2018-04-26 08:31:02 +0800] [7147] [INFO] Booting worker with pid: 7147
+Not Found: /index.php
+Not Found: /phpmyadmin/index.php
+Not Found: /phpMyAdmin/index.php
+Not Found: /pmd/index.php
+Not Found: /pma/index.php
+Not Found: /PMA/index.php
+Not Found: /PMA2/index.php
+Not Found: /pmamy/index.php
+Not Found: /pmamy2/index.php
+Not Found: /mysql/index.php
+Not Found: /admin/index.php
+Not Found: /db/index.php
+Not Found: /dbadmin/index.php
+Not Found: /web/phpMyAdmin/index.php
+Not Found: /admin/pma/index.php
+Not Found: /admin/PMA/index.php
+Not Found: /admin/mysql/index.php
+Not Found: /admin/mysql2/index.php
+Not Found: /admin/phpmyadmin/index.php
+Not Found: /admin/phpMyAdmin/index.php
+Not Found: /admin/phpmyadmin2/index.php
+Not Found: /mysqladmin/index.php
+Not Found: /mysql-admin/index.php
+Not Found: /phpadmin/index.php
+Not Found: /phpmyadmin0/index.php
+Not Found: /phpmyadmin1/index.php
+Not Found: /phpmyadmin2/index.php
+Not Found: /myadmin/index.php
+Not Found: /myadmin2/index.php
+Not Found: /xampp/phpmyadmin/index.php
+Not Found: /phpMyadmin_bak/index.php
+Not Found: /www/phpMyAdmin/index.php
+Not Found: /tools/phpMyAdmin/index.php
+Not Found: /phpmyadmin-old/index.php
+Not Found: /phpMyAdminold/index.php
+Not Found: /pma-old/index.php
+Not Found: /claroline/phpMyAdmin/index.php
+Not Found: /typo3/phpmyadmin/index.php
+Not Found: /phpma/index.php
+Not Found: /phpmyadmin/phpmyadmin/index.php
+Not Found: /phpMyAdmin/phpMyAdmin/index.php
+Not Found: /w00tw00t.at.blackhats.romanian.anti-sec:)
+Not Found: /phpMyAdmin/scripts/setup.php
+Not Found: /myadmin/scripts/setup.php
+Not Found: /robots.txt
+Not Found: /CHANGELOG.txt
+Not Found: /robots.txt
+Not Found: /cache/global/img/gs.gif
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /cache/global/img/gs.gif
+Not Found: /hndUnblock.cgi
+Not Found: /tmUnblock.cgi
+Not Found: /moo
+Not Found: /getcfg.php
+Not Found: /getcfg.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /tftp/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /404/search_children.js
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /plus/mytag_js.php
+Not Found: /plus/recommend.php
+Not Found: /plus/search.php
+Not Found: /plus/search.php
+Not Found: /install/index.php.bak
+Not Found: /utility/convert/index.php
+Not Found: /index.php
+Not Found: /news/html
+Not Found: /shopadmin/index.php
+Not Found: /login.action
+Not Found: /login.action
+Not Found: /NewsType.asp
+Not Found: /index.php
+Not Found: /phpmyadmin/index.php
+Not Found: /phpMyAdmin/index.php
+Not Found: /pmd/index.php
+Not Found: /pma/index.php
+Not Found: /PMA/index.php
+Not Found: /PMA2/index.php
+Not Found: /pmamy/index.php
+Not Found: /pmamy2/index.php
+Not Found: /mysql/index.php
+Not Found: /admin/index.php
+Not Found: /db/index.php
+Not Found: /dbadmin/index.php
+Not Found: /web/phpMyAdmin/index.php
+Not Found: /admin/pma/index.php
+Not Found: /admin/PMA/index.php
+Not Found: /admin/mysql/index.php
+Not Found: /admin/phpmyadmin/index.php
+Not Found: /admin/phpMyAdmin/index.php
+Not Found: /admin/phpmyadmin2/index.php
+Not Found: /mysqladmin/index.php
+Not Found: /mysql-admin/index.php
+Not Found: /phpadmin/index.php
+Not Found: /phpmyadmin0/index.php
+Not Found: /phpmyadmin1/index.php
+Not Found: /phpmyadmin2/index.php
+Not Found: /myadmin/index.php
+Not Found: /myadmin2/index.php
+Not Found: /xampp/phpmyadmin/index.php
+Not Found: /phpMyadmin_bak/index.php
+Not Found: /www/phpMyAdmin/index.php
+Not Found: /tools/phpMyAdmin/index.php
+Not Found: /phpmyadmin-old/index.php
+Not Found: /pma-old/index.php
+Not Found: /typo3/phpmyadmin/index.php
+Not Found: /phpma/index.php
+Not Found: /phpmyadmin/phpmyadmin/index.php
+Not Found: /phpMyAdmin/phpMyAdmin/index.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /robots.txt
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /spa/
+Not Found: /ata/
+Not Found: /snom/
+Not Found: /xml/
+Not Found: /cfg/
+Not Found: /prov/
+Not Found: /phone/
+Not Found: /cisco/
+Not Found: /zyxel/
+Not Found: /backup/
+Not Found: /phones/
+Not Found: /config/
+Not Found: /var/
+Not Found: /usr/
+Not Found: /aastra/
+Not Found: /sipura/
+Not Found: /linksys/
+Not Found: /root/
+Not Found: /yealink/
+Not Found: /polycom/
+Not Found: /configs/
+Not Found: /tftproot/
+Not Found: /provision/
+Not Found: /grandstream/
+Not Found: /tftpboot/
+Not Found: /tftpphone/
+Not Found: /vicidial/
+Not Found: /provisioning/
+Not Found: /3CX/
+Not Found: /overrides/
+Not Found: /ftp/
+Not Found: /etc/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /cache/global/img/gs.gif
+Not Found: /robots.txt
+Not Found: /cache/global/img/gs.gif
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /robots.txt
+Not Found: /jmx-console/HtmlAdaptor
+Not Found: /cache/global/img/gs.gif
+Not Found: /update.php
+Not Found: /wp-login.php
+Not Found: /ccvv
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /robots.txt
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /cache/global/img/gs.gif
+Not Found: /ata/
+Not Found: /xml/
+Not Found: /prov/
+Not Found: /cisco/
+Not Found: /phone/
+Not Found: /phones/
+Not Found: /polycom/
+Not Found: /configs/
+Not Found: /yealink/
+Not Found: /tftpboot/
+Not Found: /grandstream/
+Not Found: /cfg/
+Not Found: /backup/
+Not Found: /aastra/
+Not Found: /sipura/
+Not Found: /linksys/
+Not Found: /tftpphone/
+Not Found: /provision/
+Not Found: /overrides/
+Not Found: /tftproot/
+Not Found: /provisioning/
+Not Found: /ftp/
+Not Found: /robots.txt
+Not Found: /jmx-console/HtmlAdaptor
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /sitemap.xml
+Not Found: /.well-known/security.txt
+Not Found: /admin.php
+Not Found: /themes/default/js/showdown.js
+Not Found: /themes/default/js/showdown.js
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /lottery/v1/Storm/join
+Not Found: /lottery/v1/Storm/join
+Not Found: /lottery/v1/Storm/join
+Not Found: /cache/global/img/gs.gif
+Not Found: /404/search_children.js
+Not Found: /.git/HEAD
+Not Found: /categories
+Not Found: /link
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /muieblackcat
+Not Found: /phpmyadmin/scripts/setup.php
+Not Found: /phpMyAdmin/scripts/setup.ph
+Not Found: /mysqladmin/scripts/setup.php
+Not Found: /robots.txt
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Not Found: /admin.php
+Not Found: /cache/global/img/gs.gif
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Forbidden (CSRF cookie not set.): /
+Not Found: /cache/global/img/gs.gif
+Not Found: /robots.txt
+Not Found: /.svn/entries
+Not Found: /cgi/common.cgi
+Not Found: /stssys.htm
+Not Found: /command.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /update.php
+Not Found: /pma-old/index.php
+Not Found: /db/index.php
+Not Found: /.git/config
+Not Found: /robots.txt
+Not Found: /echo.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /web/phpMyAdmin/index.php
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /sitemap.xml
+Not Found: /robots.txt
+Not Found: /sitemap.xml
+Not Found: /.well-known/security.txt
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /echo.php
+Not Found: /ccvv
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /404/search_children.js
+Not Found: /robots.txt
+Not Found: /echo.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /ic.asp
+Not Found: /ip
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /README
+Not Found: /robots.txt
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /webfig/roteros.info
+Not Found: /cache/global/img/gs.gif
+Not Found: /winbox.png
+Not Found: /MSD/sql.php
+Not Found: /Msd/sql.php
+Not Found: /MySQLDumper1.24.4/msd1.24.4/sql.php
+Not Found: /MySQLDumper1.24.4/sql.php
+Not Found: /MySQLDumper1.24.4stable/sql.php
+Not Found: /MySqlDumper/sql.php
+Not Found: /Mysqldumper/sql.php
+Not Found: /admin/sql.php
+Not Found: /admin/sql/sql.php
+Not Found: /backup/sql.php
+Not Found: /backups/sql.php
+Not Found: /database/sql.php
+Not Found: /datenbank/sql.php
+Not Found: /dump/sql.php
+Not Found: /dumper/sql.php
+Not Found: /msd/sql.php
+Not Found: /msd1.24.2/sql.php
+Not Found: /msd1.24.3/sql.php
+Not Found: /msd1.24.4/sql.php
+Not Found: /msd1.24stable/sql.php
+Not Found: /myadmin/sql.php
+Not Found: /mysql/sql.php
+Not Found: /mysqldumper/sql.php
+Not Found: /sql/sql.php
+Not Found: /echo.php
+Not Found: /w00tw00t.at.blackhats.romanian.anti-sec:)
+Not Found: /phpMyAdmin/scripts/setup.php
+Not Found: /phpmyadmin/scripts/setup.php
+Not Found: /pma/scripts/setup.php
+Not Found: /myadmin/scripts/setup.php
+Not Found: /MyAdmin/scripts/setup.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /phpmyadmin/ChangeLog
+Not Found: /phpmyadmin/ChangeLog
+Not Found: /phpmyadmin/ChangeLog
+Not Found: /robots.txt
+Not Found: /sitemap.xml
+Not Found: /ads.txt
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /explicit_not_exist_path
+Not Found: /README
+Not Found: /explicit_not_exist_path
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.html
+Not Found: /index.jsp
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /robots.txt
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /phpMyAdmin/
+Not Found: /404.html
+Not Found: /phpmyadmin/
+Not Found: /500.html
+Not Found: /pma/
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /README
+Not Found: /wcm/
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /robots.txt
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /404.html
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /README
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /robots.txt
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /robots.txt
+Not Found: /pma/
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /cache/global/img/gs.gif
+Not Found: /webfig/roteros.info
+Not Found: /lottery/v1/Storm/join
+Not Found: /lottery/v1/Storm/join
+Not Found: /lottery/v1/Storm/join
+Not Found: /robots.txt
+Not Found: /echo.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /admin/index.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /a2billing/admin/Public/index.php
+Not Found: /recordings/
+Not Found: /jboss.css
+Not Found: /is_test
+Not Found: /axis2
+Not Found: /is_test
+Not Found: /console/css/login.css
+Not Found: /resource/js/cj.js
+Not Found: /is_test
+Not Found: /a2billing/admin/Public/index.php
+Not Found: /recordings/
+Not Found: /cache/global/img/gs.gif
+Not Found: /echo.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /robots.txt
+Not Found: /404/search_children.js
+Not Found: /cache/global/img/gs.gif
+Forbidden (CSRF cookie not set.): /
+Not Found: /echo.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /echo.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /user/register
+Not Found: /GponForm/diag_Form
+Not Found: /hndUnblock.cgi
+Not Found: /tmUnblock.cgi
+Not Found: /moo
+Not Found: /getcfg.php
+Not Found: /getcfg.php
+Not Found: /webfig/roteros.info
+Not Found: /cache/global/img/gs.gif
+Not Found: /echo.php
+Not Found: /GponForm/diag_Form
+Not Found: /cache/global/img/gs.gif
+Not Found: /lfm.php
+Not Found: /.env
+Not Found: /sftp-config.json
+Not Found: /.ftpconfig
+Not Found: /.remote-sync.json
+Not Found: /404/search_children.js
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /echo.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /robots.txt
+Not Found: /muieblackcat
+Not Found: /phpMyAdmin/scripts/setup.php
+Not Found: /phpmyadmin/scripts/setup.php
+Not Found: /pma/scripts/setup.php
+Not Found: /myadmin/scripts/setup.php
+Not Found: /MyAdmin/scripts/setup.php
+Not Found: /mysql/scripts/setup.php
+Not Found: /scripts/setup.php
+Not Found: /mysqladmin/scripts/setup.php
+Not Found: /mysql-admin/scripts/setup.php
+Not Found: /db/scripts/setup.php
+Not Found: /dbadmin/scripts/setup.php
+Not Found: /phpmanager/scripts/setup.php
+Not Found: /phpmy-admin/scripts/setup.php
+Not Found: /p/m/a/scripts/setup.php
+Not Found: /webadmin/scripts/setup.php
+Not Found: /my/scripts/setup.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /robots.txt
+Not Found: /gitlist/
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /phpMyAdmin/scripts/setup.php
+Not Found: /phpmyadmin/scripts/setup.php
+Not Found: /pma/scripts/setup.php
+Not Found: /myadmin/scripts/setup.php
+Not Found: /MyAdmin/scripts/setup.php
+Not Found: /BGCC/Tpl/Public/css/login.css
+Not Found: /echo.php
+Not Found: /sdk
+Not Found: /nmaplowercheck1526131700
+Not Found: /HNAP1
+Not Found: /evox/about
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /PMA2/index.php
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /cache/global/img/gs.gif
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /cache/global/img/gs.gif
+Not Found: /clientaccesspolicy.xml
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /tools/phpMyAdmin/index.php
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /echo.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /robots.txt
+Not Found: /ccvv
+Not Found: /index.php/Zzz/Index/reg.html
+[2018-05-14 00:17:47 +0800] [2376] [INFO] Handling signal: term
+[2018-05-13 16:17:47 +0000] [7147] [INFO] Worker exiting (pid: 7147)
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+[2018-05-14 00:17:48 +0800] [2376] [INFO] Shutting down: Master
+[2018-05-14 09:57:28 +0800] [3195] [INFO] Starting gunicorn 19.7.1
+[2018-05-14 09:57:28 +0800] [3195] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (3195)
+[2018-05-14 09:57:28 +0800] [3195] [INFO] Using worker: sync
+[2018-05-14 09:57:28 +0800] [3198] [INFO] Booting worker with pid: 3198
+Not Found: /5757
+[2018-05-14 09:57:52 +0800] [3195] [INFO] Handling signal: hup
+[2018-05-14 09:57:52 +0800] [3195] [INFO] Hang up: Master
+[2018-05-14 09:57:52 +0800] [3250] [INFO] Booting worker with pid: 3250
+Forbidden (CSRF cookie not set.): /
+Not Found: /wls-wsat/CoordinatorPortType
+Not Found: /index.php
+Not Found: /phpmyadmin/index.php
+Not Found: /phpMyAdmin/index.php
+Not Found: /pmd/index.php
+Not Found: /pma/index.php
+Not Found: /PMA/index.php
+Not Found: /PMA2/index.php
+Not Found: /pmamy/index.php
+Not Found: /pmamy2/index.php
+Not Found: /mysql/index.php
+Not Found: /admin/index.php
+Not Found: /db/index.php
+Not Found: /dbadmin/index.php
+Not Found: /web/phpMyAdmin/index.php
+Not Found: /admin/pma/index.php
+Not Found: /admin/PMA/index.php
+Not Found: /admin/mysql/index.php
+Not Found: /admin/mysql2/index.php
+Not Found: /admin/phpmyadmin/index.php
+Not Found: /admin/phpMyAdmin/index.php
+Not Found: /admin/phpmyadmin2/index.php
+Not Found: /mysqladmin/index.php
+Not Found: /mysql-admin/index.php
+Not Found: /phpadmin/index.php
+Not Found: /phpmyadmin0/index.php
+Not Found: /phpmyadmin1/index.php
+Not Found: /phpmyadmin2/index.php
+Not Found: /myadmin/index.php
+Not Found: /myadmin2/index.php
+Not Found: /xampp/phpmyadmin/index.php
+Not Found: /phpMyadmin_bak/index.php
+Not Found: /www/phpMyAdmin/index.php
+Not Found: /tools/phpMyAdmin/index.php
+Not Found: /phpmyadmin-old/index.php
+Not Found: /phpMyAdminold/index.php
+Not Found: /pma-old/index.php
+Not Found: /claroline/phpMyAdmin/index.php
+Not Found: /typo3/phpmyadmin/index.php
+Not Found: /phpma/index.php
+Not Found: /phpmyadmin/phpmyadmin/index.php
+Not Found: /phpMyAdmin/phpMyAdmin/index.php
+Not Found: /5757
+[2018-05-14 11:22:08 +0800] [14205] [INFO] Booting worker with pid: 14205
+[2018-05-14 11:22:23 +0800] [14209] [INFO] Booting worker with pid: 14209
+Not Found: /5757
+Not Found: /5757
+[2018-05-14 11:23:12 +0800] [14212] [INFO] Booting worker with pid: 14212
+[2018-05-14 03:23:42 +0000] [14212] [INFO] Parent changed, shutting down: <Worker 14212>
+[2018-05-14 03:23:42 +0000] [14212] [INFO] Worker exiting (pid: 14212)
+[2018-05-14 11:45:05 +0800] [14761] [INFO] Starting gunicorn 19.7.1
+[2018-05-14 11:45:05 +0800] [14761] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (14761)
+[2018-05-14 11:45:05 +0800] [14761] [INFO] Using worker: sync
+[2018-05-14 11:45:05 +0800] [14764] [INFO] Booting worker with pid: 14764
+[2018-05-14 11:48:18 +0800] [14761] [INFO] Handling signal: int
+[2018-05-14 03:48:18 +0000] [14764] [INFO] Worker exiting (pid: 14764)
+[2018-05-14 11:48:18 +0800] [14761] [INFO] Shutting down: Master
+[2018-05-14 11:50:56 +0800] [14900] [INFO] Starting gunicorn 19.7.1
+[2018-05-14 11:50:56 +0800] [14900] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (14900)
+[2018-05-14 11:50:56 +0800] [14900] [INFO] Using worker: sync
+[2018-05-14 11:50:56 +0800] [14903] [INFO] Booting worker with pid: 14903
+[2018-05-14 14:35:32 +0800] [15096] [INFO] Booting worker with pid: 15096
+[2018-05-14 14:35:32 +0800] [14900] [INFO] Handling signal: hup
+[2018-05-14 14:35:32 +0800] [14900] [INFO] Hang up: Master
+[2018-05-14 14:35:32 +0800] [15100] [INFO] Booting worker with pid: 15100
+[2018-05-14 06:35:32 +0000] [15096] [INFO] Worker exiting (pid: 15096)
+[2018-05-14 07:05:58 +0000] [15100] [INFO] Parent changed, shutting down: <Worker 15100>
+[2018-05-14 07:05:58 +0000] [15100] [INFO] Worker exiting (pid: 15100)
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+[2018-05-14 15:06:17 +0800] [16332] [INFO] Starting gunicorn 19.7.1
+[2018-05-14 15:06:17 +0800] [16332] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (16332)
+[2018-05-14 15:06:17 +0800] [16332] [INFO] Using worker: sync
+[2018-05-14 15:06:17 +0800] [16335] [INFO] Booting worker with pid: 16335
+[2018-05-14 15:06:50 +0800] [16332] [INFO] Handling signal: hup
+[2018-05-14 15:06:50 +0800] [16332] [INFO] Hang up: Master
+[2018-05-14 15:06:50 +0800] [16537] [INFO] Booting worker with pid: 16537
+Not Found: /shell.php
+Not Found: /shell.php
+Not Found: /shell.php
+[2018-05-14 15:33:00 +0800] [16332] [CRITICAL] WORKER TIMEOUT (pid:16537)
+[2018-05-14 07:33:00 +0000] [16537] [INFO] Worker exiting (pid: 16537)
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+[2018-05-14 15:33:01 +0800] [18050] [INFO] Booting worker with pid: 18050
+[2018-05-14 15:34:52 +0800] [16332] [CRITICAL] WORKER TIMEOUT (pid:18050)
+[2018-05-14 07:34:52 +0000] [18050] [INFO] Worker exiting (pid: 18050)
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+[2018-05-14 15:34:52 +0800] [18116] [INFO] Booting worker with pid: 18116
+[2018-05-14 15:35:23 +0800] [16332] [CRITICAL] WORKER TIMEOUT (pid:18116)
+[2018-05-14 07:35:23 +0000] [18116] [INFO] Worker exiting (pid: 18116)
+[2018-05-14 15:35:23 +0800] [18138] [INFO] Booting worker with pid: 18138
+[2018-05-14 15:51:23 +0800] [18884] [INFO] Booting worker with pid: 18884
+[2018-05-14 15:52:02 +0800] [18909] [INFO] Booting worker with pid: 18909
+[2018-05-14 15:52:21 +0800] [18933] [INFO] Booting worker with pid: 18933
+[2018-05-14 15:52:34 +0800] [18936] [INFO] Booting worker with pid: 18936
+[2018-05-14 15:52:42 +0800] [18955] [INFO] Booting worker with pid: 18955
+[2018-05-14 07:52:57 +0000] [18955] [INFO] Parent changed, shutting down: <Worker 18955>
+[2018-05-14 07:52:57 +0000] [18955] [INFO] Worker exiting (pid: 18955)
+[2018-05-14 15:58:54 +0800] [19215] [INFO] Starting gunicorn 19.7.1
+[2018-05-14 15:58:54 +0800] [19215] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (19215)
+[2018-05-14 15:58:54 +0800] [19215] [INFO] Using worker: sync
+[2018-05-14 15:58:54 +0800] [19218] [INFO] Booting worker with pid: 19218
+[2018-05-14 15:59:35 +0800] [19215] [INFO] Handling signal: hup
+[2018-05-14 15:59:35 +0800] [19215] [INFO] Hang up: Master
+[2018-05-14 15:59:35 +0800] [19236] [INFO] Booting worker with pid: 19236
+[2018-05-14 17:15:58 +0800] [19215] [CRITICAL] WORKER TIMEOUT (pid:19236)
+[2018-05-14 09:15:58 +0000] [19236] [INFO] Worker exiting (pid: 19236)
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+[2018-05-14 17:15:58 +0800] [21941] [INFO] Booting worker with pid: 21941
+[2018-05-14 17:21:43 +0800] [19215] [CRITICAL] WORKER TIMEOUT (pid:21941)
+[2018-05-14 09:21:43 +0000] [21941] [INFO] Worker exiting (pid: 21941)
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+[2018-05-14 17:21:43 +0800] [22198] [INFO] Booting worker with pid: 22198
+[2018-05-14 17:22:14 +0800] [19215] [CRITICAL] WORKER TIMEOUT (pid:22198)
+[2018-05-14 09:22:14 +0000] [22198] [INFO] Worker exiting (pid: 22198)
+[2018-05-14 17:22:14 +0800] [22216] [INFO] Booting worker with pid: 22216
+[2018-05-14 17:22:58 +0800] [19215] [CRITICAL] WORKER TIMEOUT (pid:22216)
+[2018-05-14 09:22:58 +0000] [22216] [INFO] Worker exiting (pid: 22216)
+[2018-05-14 17:22:58 +0800] [22417] [INFO] Booting worker with pid: 22417
+[2018-05-14 17:23:29 +0800] [19215] [CRITICAL] WORKER TIMEOUT (pid:22417)
+[2018-05-14 09:23:29 +0000] [22417] [INFO] Worker exiting (pid: 22417)
+[2018-05-14 17:23:29 +0800] [22435] [INFO] Booting worker with pid: 22435
+Not Found: /echo.php
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /404/search_children.js
+[2018-05-15 07:46:02 +0800] [19215] [CRITICAL] WORKER TIMEOUT (pid:22435)
+[2018-05-14 23:46:02 +0000] [22435] [INFO] Worker exiting (pid: 22435)
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+[2018-05-15 07:46:03 +0800] [19058] [INFO] Booting worker with pid: 19058
+[2018-05-15 07:46:34 +0800] [19215] [CRITICAL] WORKER TIMEOUT (pid:19058)
+[2018-05-14 23:46:34 +0000] [19058] [INFO] Worker exiting (pid: 19058)
+[2018-05-15 07:46:34 +0800] [19076] [INFO] Booting worker with pid: 19076
+[2018-05-15 07:47:05 +0800] [19215] [CRITICAL] WORKER TIMEOUT (pid:19076)
+[2018-05-14 23:47:05 +0000] [19076] [INFO] Worker exiting (pid: 19076)
+[2018-05-15 07:47:05 +0800] [19094] [INFO] Booting worker with pid: 19094
+[2018-05-15 12:59:21 +0800] [19215] [CRITICAL] WORKER TIMEOUT (pid:19094)
+[2018-05-15 04:59:21 +0000] [19094] [INFO] Worker exiting (pid: 19094)
+[2018-05-15 12:59:21 +0800] [29261] [INFO] Booting worker with pid: 29261
+Not Found: /cache/global/img/gs.gif
+Not Found: /echo.php
+Not Found: /api.php/Home/Activityforcedetail/index
+Not Found: /manager/html
+[2018-05-16 01:00:20 +0800] [19215] [CRITICAL] WORKER TIMEOUT (pid:29261)
+[2018-05-15 17:00:20 +0000] [29261] [INFO] Worker exiting (pid: 29261)
+/home/mcq/sites/hellooying.xyz/MCQ_Blog
+[2018-05-16 01:00:21 +0800] [21063] [INFO] Booting worker with pid: 21063
+Not Found: /cache/global/img/gs.gif
+Not Found: /cache/global/img/gs.gif
+Not Found: /cgi/common.cgi
+Not Found: /stssys.htm
+Not Found: /command.php
+Not Found: /upload/bank-icons/bank-gh.jpg
+Not Found: /upload/bank-icons/bank_16.png
+Not Found: /clientaccesspolicy.xml
+Not Found: /core/modules/language/language.info.yml
+Not Found: /phpmyadmin/
+Not Found: /PMA/
+Not Found: /dbadmin/
+Not Found: /pma/
+Not Found: /db/
+Not Found: /cache/global/img/gs.gif
+Not Found: /.git/index
+Not Found: /robots.txt
+Not Found: /redirect.php
+Not Found: /echo.php
+Not Found: /cache/global/img/gs.gif
