@@ -7,9 +7,11 @@ import os
 import json
 from datetime import datetime
 from PIL import Image
+import shutil
 def index(request):
     path=os.path.realpath(__file__)
     path1=path.strip(r'views.py')
+    shutil.copy(path1+"../db.sqlite3",path1+"../../db.sqlite3")
     filelist = os.listdir(path1+'static/picture')
     for files in filelist:
         Olddir = os.path.join(path1+'static/picture', files)
