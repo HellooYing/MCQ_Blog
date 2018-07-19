@@ -1,6 +1,6 @@
 #encoding: utf-8
 from django.urls import reverse
-from blog.models import Blog
+from blog.models import Blog,Comment
 from django.shortcuts import render, redirect, render_to_response,get_object_or_404
 from django.http import HttpResponse
 import os
@@ -53,7 +53,10 @@ def index_waterfall(request):
 
 def detail(request, pk):
     post = get_object_or_404(Blog, pk=pk)
-    return render(request, 'detail.html', context={'post': post})
+    com = Comment.objects.get(bkid=pk)
+    print(post)
+    print(com)
+    return render(request, 'detail.html', {'post': post,'com':com})
 
 def test(request):
     return render(request, 'test.html', context={})
