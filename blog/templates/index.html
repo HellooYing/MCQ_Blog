@@ -231,10 +231,21 @@
                         var c = document.createElement("div");
                         c.className = "picture";
                         c.id = "picture" + i;
-                        c.onmouseover=function(){this.className="wc"} 
-                        c.onmouseout= function(){this.className="picture"}
+                        c.onmouseover=function(){
+                            this.className="wc";
+                            var zan= document.createElement("img");
+                            zan.className="zan"
+                            zan.id="zan"
+                            zan.src="../static/img/baizan.png"
+                            zan.onmouseover=function(){console.log(123)}
+                            this.appendChild(zan)
+                        } 
+                        c.onmouseout= function(){this.className="picture";
+                        this.removeChild(document.getElementById("zan")) 
+                        }
                         document.getElementById("content" + i).appendChild(c);
                         var d = document.createElement("img");
+                        d.className="imgg"
                         d.src = result['picture[' + i + ']'];
                         document.getElementById("picture" + i).appendChild(d);
                         var e = document.createElement("div");

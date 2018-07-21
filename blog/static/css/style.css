@@ -120,7 +120,7 @@ a {
 }
 
     
-.drip .picture img {
+.drip .picture .imgg {
     display: block;
     width: 100%;
     height: 100%;
@@ -129,17 +129,31 @@ a {
     background: #ccc;
     transition: opacity .5s ease,transform .2s ease,-webkit-transform .2s ease;
 }
-
-.wc img{
+.wc{
+    background: #000;
+}
+.wc .imgg{
+    overflow: hidden;
     display: block;
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     border: 0;
     max-width: 100%;
-    background: #ccc;
-    transition: opacity .5s ease,transform .2s ease,-webkit-transform .2s ease;
+    opacity: 0.8;
+    transition: transform .2s ease,-webkit-transform .2s ease;
     }
-
+.zan{
+    margin-top:-20%;
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+    width: 20%;
+    height: 20%;
+    border: 0;
+    max-width: 20%;
+    opacity: 0.8;
+    transition: transform .2s ease,-webkit-transform .2s ease;
+}
 .drip .title {
     margin: 20px;
     font-size: 16px;
