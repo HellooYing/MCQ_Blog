@@ -119,6 +119,7 @@ a {
     overflow: hidden;
 }
 
+    
 .drip .picture img {
     display: block;
     width: 100%;
@@ -128,6 +129,16 @@ a {
     background: #ccc;
     transition: opacity .5s ease,transform .2s ease,-webkit-transform .2s ease;
 }
+
+.wc img{
+    display: block;
+    width: 90%;
+    height: 90%;
+    border: 0;
+    max-width: 100%;
+    background: #ccc;
+    transition: opacity .5s ease,transform .2s ease,-webkit-transform .2s ease;
+    }
 
 .drip .title {
     margin: 20px;

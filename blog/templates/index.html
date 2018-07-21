@@ -231,6 +231,8 @@
                         var c = document.createElement("div");
                         c.className = "picture";
                         c.id = "picture" + i;
+                        c.onmouseover=function(){this.className="wc"} 
+                        c.onmouseout= function(){this.className="picture"}
                         document.getElementById("content" + i).appendChild(c);
                         var d = document.createElement("img");
                         d.src = result['picture[' + i + ']'];
