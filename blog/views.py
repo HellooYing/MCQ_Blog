@@ -35,6 +35,7 @@ def index_waterfall(request):
         dict1['time['+str(i.id)+']']=i.time
         dict1['picture['+str(i.id)+']']=i.picture
         dict1['article['+str(i.id)+']']=i.article
+        dict1['zan['+str(i.id)+']']=i.zan
         path2=str(i.id)+'.jpg'
         img=os.path.join(path+path2)
         img2=Image.open(img)

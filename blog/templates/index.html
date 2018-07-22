@@ -233,15 +233,21 @@
                         c.id = "picture" + i;
                         c.onmouseover=function(){
                             this.className="wc";
-                            var zan= document.createElement("img");
-                            zan.className="zan"
+                            var zan= document.createElement("div");
                             zan.id="zan"
-                            zan.src="../static/img/baizan.png"
-                            zan.onmouseover=function(){console.log(123)}
-                            this.appendChild(zan)
+                            this.parentNode.appendChild(zan)
+                            var zan2= document.createElement("img");
+                            zan2.src="../static/img/baizan.png"
+                            zan2.className="zan"
+                            zan.appendChild(zan2)
+                            // var para=document.createElement("div");
+                            // para.className="zan"
+                            // var zan3= document.createTextNode(result['zan[' + i + ']']);
+                            // this.parentNode.appendChild(para)
+                            // para.appendChild(zan3)
                         } 
                         c.onmouseout= function(){this.className="picture";
-                        this.removeChild(document.getElementById("zan")) 
+                        this.parentNode.removeChild(document.getElementById("zan")) 
                         }
                         document.getElementById("content" + i).appendChild(c);
                         var d = document.createElement("img");
