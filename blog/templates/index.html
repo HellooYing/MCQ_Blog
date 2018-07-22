@@ -240,11 +240,11 @@
                             zan2.src="../static/img/baizan.png"
                             zan2.className="zan"
                             zan.appendChild(zan2)
-                            // var para=document.createElement("div");
-                            // para.className="zan"
-                            // var zan3= document.createTextNode(result['zan[' + i + ']']);
-                            // this.parentNode.appendChild(para)
-                            // para.appendChild(zan3)
+                            var zan1=document.createElement("span");
+                            zan1.className="zan3"
+                            var zan3= document.createTextNode(result['zan[' + String(this.id).replace('picture', '')+ ']']);
+                            zan.appendChild(zan1)
+                            zan1.appendChild(zan3)
                         } 
                         c.onmouseout= function(){this.className="picture";
                         this.parentNode.removeChild(document.getElementById("zan")) 
@@ -293,7 +293,7 @@
                         new_img_top.className = "img_top";
                         img_num = img_num + 1;
                         new_img_top.id = "img-" + img_num;
-                        document.getElementById("img_background").appendChild(new_img_top);
+                        document.body.appendChild(new_img_top);
                         var new_img = document.createElement("img");
                         new_img_id = img_num % 5;
                         new_img.src = "../static/picture/img" + new_img_id + ".jpg";

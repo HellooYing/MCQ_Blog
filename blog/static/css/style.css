@@ -142,7 +142,8 @@ a {
     transition: opacity .5s ease,transform .2s ease,-webkit-transform .2s ease;
     }
 .zan3{
-    margin-top:-12%;
+    font-size: 15px;
+    margin-top:-20px;
     margin-left: 20%;
     display: block;
     transition: transform .2s ease,-webkit-transform .2s ease;
