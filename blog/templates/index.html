@@ -232,6 +232,7 @@
                         c.className = "picture";
                         c.id = "picture" + i;
                         c.onmouseover=function(){
+                            var hao=String(this.id).replace('picture', '')
                             this.className="wc";
                             var zan= document.createElement("div");
                             zan.id="zan"
@@ -242,12 +243,34 @@
                             zan.appendChild(zan2)
                             var zan1=document.createElement("span");
                             zan1.className="zan3"
-                            var zan3= document.createTextNode(result['zan[' + String(this.id).replace('picture', '')+ ']']);
+                            var zan3= document.createTextNode(result['zan[' + hao+ ']']);
                             zan.appendChild(zan1)
                             zan1.appendChild(zan3)
+                            // var kong=''
+                            // for(var gk=0;gk<result['brief[' + hao+ ']'].length;gk++){
+                            //     if(/^[\u4e00-\u9fa5]+$/.test(result['brief[' + hao+ ']'][gk]))
+                            //         kong=kong+"  "
+                            //     else
+                            //         kong=kong+" "
+                            // }
+                            // document.getElementById("tihuan"+hao).parentNode.removeChild(document.getElementById("tihuan"+hao)) 
+                            // var j = document.createElement("span");
+                            // j.id="tihuan"+i
+                            // var k = document.createTextNode(kong);
+                            // j.appendChild(k);
+                            // document.getElementById("brief"+hao).appendChild(j)
+                            document.getElementById("tihuan"+hao).style="color:white"
                         } 
-                        c.onmouseout= function(){this.className="picture";
-                        this.parentNode.removeChild(document.getElementById("zan")) 
+                        c.onmouseout= function(){
+                            var hao=String(this.id).replace('picture', '')
+                            this.className="picture";
+                            this.parentNode.removeChild(document.getElementById("zan")) 
+                            // var j = document.createElement("span");
+                            // j.id="tihuan"+hao
+                            // var k = document.createTextNode(result['brief[' + hao+ ']']);
+                            // j.appendChild(k);
+                            // document.getElementById("brief" + hao).appendChild(j);
+                            document.getElementById("tihuan"+hao).style=""
                         }
                         document.getElementById("content" + i).appendChild(c);
                         var d = document.createElement("img");
@@ -267,6 +290,7 @@
                         h.id = "brief" + i;
                         document.getElementById("content" + i).appendChild(h);
                         var j = document.createElement("span");
+                        j.id="tihuan"+i
                         var k = document.createTextNode(result['brief[' + i + ']']);
                         j.appendChild(k);
                         document.getElementById("brief" + i).appendChild(j);
@@ -294,10 +318,10 @@
                         img_num = img_num + 1;
                         new_img_top.id = "img-" + img_num;
                         document.body.appendChild(new_img_top);
-                        var new_img = document.createElement("img");
-                        new_img_id = img_num % 5;
-                        new_img.src = "../static/picture/img" + new_img_id + ".jpg";
-                        document.getElementById("img-" + img_num).appendChild(new_img);
+                        // var new_img = document.createElement("img");
+                        // new_img_id = img_num % 5;
+                        // new_img.src = "../static/picture/img" + new_img_id + ".jpg";
+                        // document.getElementById("img-" + img_num).appendChild(new_img);
                     }
                 });
             }

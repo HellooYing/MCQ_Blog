@@ -139,6 +139,7 @@ a {
     border: 0;
     max-width: 100%;
     background: #fff;
+    opacity:0.7;
     transition: opacity .5s ease,transform .2s ease,-webkit-transform .2s ease;
     }
 .zan3{
@@ -150,7 +151,7 @@ a {
 }
 .zan{
     margin-top:-20%;
-    margin-left:30%;
+    margin-left:35%;
     display: block;
     width: 20%;
     height: 20%;
@@ -195,4 +196,3 @@ a {
     clip:rect(0,0,0,0);
     border:0;
 }
-
