@@ -117,7 +117,16 @@ nav {
     float: left;
     min-height: 300px;
 }
-  
+
+#content1 { 
+    text-align: justify;
+    width: 100%;
+    padding: 0 0 5px 0;
+    margin: 0;
+    float: left;
+    min-height: 100px;
+}  
+
 #content ul { 
     margin: 2px 0 5px 0px;
 }
@@ -173,3 +182,4 @@ footer a {
     color:#000;
 }
   
+
