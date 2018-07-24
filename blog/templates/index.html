@@ -243,33 +243,16 @@
                             zan.appendChild(zan2)
                             var zan1=document.createElement("span");
                             zan1.className="zan3"
+                            zan1.style="color:green"
                             var zan3= document.createTextNode(result['zan[' + hao+ ']']);
                             zan.appendChild(zan1)
                             zan1.appendChild(zan3)
-                            // var kong=''
-                            // for(var gk=0;gk<result['brief[' + hao+ ']'].length;gk++){
-                            //     if(/^[\u4e00-\u9fa5]+$/.test(result['brief[' + hao+ ']'][gk]))
-                            //         kong=kong+"  "
-                            //     else
-                            //         kong=kong+" "
-                            // }
-                            // document.getElementById("tihuan"+hao).parentNode.removeChild(document.getElementById("tihuan"+hao)) 
-                            // var j = document.createElement("span");
-                            // j.id="tihuan"+i
-                            // var k = document.createTextNode(kong);
-                            // j.appendChild(k);
-                            // document.getElementById("brief"+hao).appendChild(j)
                             document.getElementById("tihuan"+hao).style="color:white"
                         } 
                         c.onmouseout= function(){
                             var hao=String(this.id).replace('picture', '')
                             this.className="picture";
                             this.parentNode.removeChild(document.getElementById("zan")) 
-                            // var j = document.createElement("span");
-                            // j.id="tihuan"+hao
-                            // var k = document.createTextNode(result['brief[' + hao+ ']']);
-                            // j.appendChild(k);
-                            // document.getElementById("brief" + hao).appendChild(j);
                             document.getElementById("tihuan"+hao).style=""
                         }
                         document.getElementById("content" + i).appendChild(c);
