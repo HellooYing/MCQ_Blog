@@ -72,7 +72,12 @@ def comm(request):
     aa = Blog.objects.all()
     return render(request, "index.html",context={"all_blogs": aa})
 
-
+def zan(request):
+    post=Blog.objects.get(id=request.GET.get("id"))
+    post.zan=post.zan+1
+    post.save()
+    aa = Blog.objects.all()
+    return render(request, "index.html",context={"all_blogs": aa})
 
 
 def test(request):

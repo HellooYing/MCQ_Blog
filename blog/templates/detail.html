@@ -93,6 +93,7 @@
         <div id="site_content">
                 <div id="content">
                     <h1>{{post.title}}</h1>
+                    <button id="zan">赞</button>
                     <div style="color:black;float: right;opacity:0.7;"><h4>{{post.time}}</h4></div>
                     <p>{{post.article|linebreaksbr}}</p>
                 </div>
@@ -130,6 +131,14 @@
         var review = $("#review").val();
         var bkid = window.location.pathname.split("/")[2]
         $.get("/comm",{'name':name,'review':review,'bkid':bkid}, function(){
+            location.reload();
+        })
+      });
+    });
+    $(document).ready(function(){
+      $("#zan").click(function(){
+        var id = window.location.pathname.split("/")[2]
+        $.get("/zan",{'id':id}, function(){
             location.reload();
         })
       });

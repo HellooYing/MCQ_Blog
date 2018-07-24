@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^favicon.ico$',RedirectView.as_view(url=r'static/favicon.ico')),
     url(r'^post/(?P<pk>[0-9]+)/$', views.detail, name='detail'),
     url(r'^comm$', views.comm, name='comm'),
+    url(r'^zan$', views.zan, name='zan'),
     url(r'^test/$', views.test, name='test'),
 ]
