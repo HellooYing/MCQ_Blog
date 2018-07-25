@@ -79,6 +79,8 @@ def zan(request):
     aa = Blog.objects.all()
     return render(request, "index.html",context={"all_blogs": aa})
 
+def change(request):
+    return render(request, "change.html",context={})
 
 def test(request):
     return render(request, 'test.html', context={})
