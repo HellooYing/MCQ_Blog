@@ -84,5 +84,5 @@ def change(request):
 
 def test(request):
     color=request.GET.get("color")
-    resp={"color":"123"}
+    resp={"color":color}
     return HttpResponse(json.dumps(resp), content_type="application/json")
