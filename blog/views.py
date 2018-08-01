@@ -83,6 +83,6 @@ def change(request):
     return render(request, "change.html",context={})
 
 def test(request):
-    color=request.post.get("color")
+    color=json.loads(request.body)
     resp={"color":"123"}
     return HttpResponse(json.dumps(resp), content_type="application/json")
