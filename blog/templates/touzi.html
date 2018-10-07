@@ -11,6 +11,7 @@
     }
 </style>
 <body>
+    <button onclick="move(gl,shaderProgram)">move</button>
     <div style="width:100%;height:100%">
         <canvas id = "mycanvas"></canvas>
     </div>
@@ -37,7 +38,7 @@ var FSHADER_SOURCE =
 //获取canvas元素
 var canvas = document.getElementById('mycanvas');
 //获取绘制二维上下文
-var gl = canvas.getContext('webgl');
+window.gl = canvas.getContext('webgl');
 if (!gl) {
     console.log("Failed");
     return;
@@ -51,7 +52,7 @@ var fragShader = gl.createShader(gl.FRAGMENT_SHADER);
 gl.shaderSource(fragShader, FSHADER_SOURCE);
 gl.compileShader(fragShader);
 //合并程序
-var shaderProgram = gl.createProgram();
+window.shaderProgram = gl.createProgram();
 gl.attachShader(shaderProgram, vertShader);
 gl.attachShader(shaderProgram, fragShader);
 gl.linkProgram(shaderProgram);
@@ -101,16 +102,21 @@ var a_Position = gl.getAttribLocation(shaderProgram, 'a_Position');
 gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0);
 //连接a_Position变量与分配给它的缓冲区对象
 gl.enableVertexAttribArray(a_Position);
+return n;
+}
 
+function move(gl,shaderProgram){
 //声明偏移变量
 var Tx = 0.5,Ty = 0.5,Tz = 0.0;
-
 //将平移距离传输给定点着色器
- var u_Translation = gl.getUniformLocation(shaderProgram,'u_Translation');
+var u_Translation = gl.getUniformLocation(shaderProgram,'u_Translation');
+gl.uniform4f(u_Translation,Tx,Ty,Tz,0.0);
+var n = initBuffers(gl,shaderProgram);
+gl.clearColor(1.0, 0.0, 0.0, 0.0);
+// 清空 <canvas>
+gl.clear(gl.COLOR_BUFFER_BIT);
 
- gl.uniform4f(u_Translation,Tx,Ty,Tz,0.0);
-return n;
-
+gl.drawArrays(gl.TRIANGLES, 0, n);
 }
      </script>
 </html>
