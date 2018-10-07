@@ -22,16 +22,17 @@ window.onload = function () {
 //顶点着色器程序
 var VSHADER_SOURCE =
     "attribute vec4 a_Position;" +
+    "uniform vec4 u_Translation;" +
     "void main() {" +
         //设置坐标
-    "gl_Position = a_Position; " +
+    "gl_Position = a_Position + u_Translation; " +
     "} ";
 
 //片元着色器
 var FSHADER_SOURCE =
     "void main() {" +
         //设置颜色
-    "gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);" +
+    "gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);" +
     "}";
 //获取canvas元素
 var canvas = document.getElementById('mycanvas');
@@ -71,7 +72,7 @@ if(n<0){
     return;
 }
 // 清除指定<画布>的颜色
-gl.clearColor(0.0, 0.0, 0.0, 1.0);
+gl.clearColor(1.0, 0.0, 0.0, 0.0);
 
 // 清空 <canvas>
 gl.clear(gl.COLOR_BUFFER_BIT);
@@ -100,6 +101,14 @@ var a_Position = gl.getAttribLocation(shaderProgram, 'a_Position');
 gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0);
 //连接a_Position变量与分配给它的缓冲区对象
 gl.enableVertexAttribArray(a_Position);
+
+//声明偏移变量
+var Tx = 0.5,Ty = 0.5,Tz = 0.0;
+
+//将平移距离传输给定点着色器
+ var u_Translation = gl.getUniformLocation(shaderProgram,'u_Translation');
+
+ gl.uniform4f(u_Translation,Tx,Ty,Tz,0.0);
 return n;
 
 }
