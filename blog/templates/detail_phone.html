@@ -1,0 +1,81 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+<style>
+    #zan{
+        margin-top: 20px;
+        margin-left:90%;
+        width:30px;
+    }
+</style>
+<head>
+    <title>世界之大</title>
+    <link rel="stylesheet" href="{% static "css/style-detail-phone.css" %}">
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon" />
+</head>
+<body>
+<div id="container">
+    <div id="main">
+        <header>
+            <div id="logo"><h1>毛草球</h1></div>
+            <nav>
+                <ul class="nav-head">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/categories">Categories</a></li>
+                    <li><a href="/link">Link</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="site_content">
+                <div id="content">
+                    <a href=""><img id="zan" src="{% static "img/baizan.png" %}" onclick="zan()"></a>
+                    <span style="color:black">{{post.zan}}</span> 
+                    <h1>{{post.title}}</h1>
+                    <div style="color:black;float: right;opacity:0.7;"><h4>{{post.time}} </h4></div>
+                    <p>{{post.article|linebreaksbr}}</p>
+                </div>
+        </div>
+        <div id="site_content">
+            <div id="content1">
+                    {% for i in com %}
+                    <h4 style="font-family: FangSong;font-weight: 600;font-size: 13px;color:#000;opacity:0.8;"> 
+                        {{i.user}}      {{i.time}}</h4>
+                <p style="font-family: FangSong;font-weight: 600;font-size: 18px;color:#000;opacity:0.8;margin: 0 0 15px 0;padding: 15px 15px 15px 15px;">
+                        {{i.mean|linebreaksbr}}</p>
+                    {% endfor %}
+                    <h1 style="font-family: FangSong;font-weight: 600;font-size: 33px;color:#000;margin: 20px 20px 20px 0px;"> 
+                            添加评论</h1>
+                   <input id="name" value="匿名">
+                </br>
+                    <textarea rows="5" cols="80" id="review" placeholder="写下您想说的……"></textarea>
+                </br>
+                    <a id="tijiao">提交</a>
+            </div>
+    </div>
+        <footer>
+                <p><a href="/">Categories</a> | <a href="/categories">Home</a> | <a href="/link">Link</a> </p>
+                <p>2018.3.18 毛草球</p>
+            </footer>
+    </div>
+</div>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+<script>
+     $(document).ready(function(){
+      $("#tijiao").click(function(){
+        var name = $("#name").val();
+        var review = $("#review").val();
+        var bkid = window.location.pathname.split("/")[2]
+        $.get("/comm",{'name':name,'review':review,'bkid':bkid}, function(){
+            location.reload();
+        })
+      });
+    });
+    function zan(){
+        var id = window.location.pathname.split("/")[2]
+        $.get("/zan",{'id':id}, function(){
+            location.reload();
+        })
+    }
+</script>
