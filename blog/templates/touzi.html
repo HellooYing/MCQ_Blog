@@ -11,6 +11,9 @@
     }
 </style>
 <body>
+    x:<input id="x" value="0.5">
+    y:<input id="y" value="0.5">
+    z:<input id="z" value="0">
     <button onclick="move(gl,shaderProgram)">move</button>
     <div style="width:100%;height:100%">
         <canvas id = "mycanvas"></canvas>
@@ -33,7 +36,7 @@ var VSHADER_SOURCE =
 var FSHADER_SOURCE =
     "void main() {" +
         //设置颜色
-    "gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);" +
+    "gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);" +
     "}";
 //获取canvas元素
 var canvas = document.getElementById('mycanvas');
@@ -83,7 +86,7 @@ gl.drawArrays(gl.TRIANGLES, 0, n);
 
 function initBuffers(gl,shaderProgram) {
 var vertices = new Float32Array([
-    0.0, 0.5, -0.5, -0.5, 0.5, -0.5
+    0.0, 0.7, -0.2, -0.7, 0.2, -0.7
 ]);
 var n = 3;//点的个数
 //创建缓冲区对象
@@ -107,15 +110,23 @@ return n;
 
 function move(gl,shaderProgram){
 //声明偏移变量
-var Tx = 0.5,Ty = 0.5,Tz = 0.0;
-//将平移距离传输给定点着色器
-var u_Translation = gl.getUniformLocation(shaderProgram,'u_Translation');
-gl.uniform4f(u_Translation,Tx,Ty,Tz,0.0);
+var Tx = document.getElementById("x").value,Ty = document.getElementById("y").value,Tz =document.getElementById("z").value;
+// //将平移距离传输给定点着色器
+// var u_Translation = gl.getUniformLocation(shaderProgram,'u_Translation');
+// gl.uniform4f(u_Translation,Tx,Ty,Tz,0.0);
+var xformMatrix = new Float32Array([
+        1.0, 0.0, 0.0, 0.0,
+        0.0, 1.0, 0.0, 0.0,
+        0.0, 0.0, 1.0, 0.0,
+        Tx, Ty, Tz, 1.0
+    ]);
+//然后将矩阵传输给定点着色器
+ var u_xformMatarix = gl.getUniformLocation(shaderProgram,'u_xformMatarix');
+ gl.uniformMatrix4fv(u_xformMatarix, false, xformMatrix);
 var n = initBuffers(gl,shaderProgram);
 gl.clearColor(1.0, 0.0, 0.0, 0.0);
 // 清空 <canvas>
 gl.clear(gl.COLOR_BUFFER_BIT);
-
 gl.drawArrays(gl.TRIANGLES, 0, n);
 }
      </script>
