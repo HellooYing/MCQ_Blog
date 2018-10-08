@@ -33,7 +33,7 @@ def index_waterfall(request):
         length.append(i.id)
         dict1['brief['+str(i.id)+']']=i.brief
         dict1['time['+str(i.id)+']']=i.time
-        dict1['picture['+str(i.id)+']']='../static/picture/i'+str(i.id)+'.jpg'
+        dict1['picture['+str(i.id)+']']=i.picture
         dict1['article['+str(i.id)+']']=i.article
         dict1['zan['+str(i.id)+']']=i.zan
         path2=str(i.id)+'.jpg'
