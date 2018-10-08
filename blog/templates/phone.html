@@ -5,7 +5,7 @@
 
 <head>
     <title>从未想过如此之好</title>
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/style-phone.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/normalize.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "css/htmleaf-demo.css" %}">
     <link rel="stylesheet" href="{% static "css/style1.css" %}">
@@ -13,17 +13,24 @@
 </head>
 
 <body>
+    <img id="background" src="../static/picture/phone_background.jpg">
     <div class="wrapper">
-        <div class="cols">
-            <div id="fan0" class="col" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="back">
-                        <div class="inner">
-                            <p>从未想过如此之好</p>
+        <div class="cols" style="width:80%;margin-left: 10%;">
+                <div id="fan0" class="col" ontouchstart="this.classList.toggle('hover');">
+                        <div class="container">
+                            <div class="front" style="background-image: url({% static "img/2.jpg" %})">
+                                <div class="inner">
+                                    <p></p>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="inner">
+                                    <p>从未想过如此之好</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
             <div id="fan1" class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
                     <div class="front" style="background-image:url({% static "img/5.jpg" %})">
@@ -56,39 +63,9 @@
             </div>
         </div>
     </div>
-   <div class="img_background" id="img_background">
-        <div class="img_top" id="img-0">
-            <img src="{% static "picture/img0.jpg" %}">
-        </div>
-        <div class="img_top" id="img-1">
-            <img src="{% static "picture/img2.jpg" %}">
-        </div>
-        <div class="img_top" id="img-2">
-            <img src="{% static "picture/img1.jpg" %}">
-        </div>
-    </div>
-    <div id="nav_left" class="nav_left_temporary">
-        <div id="nav_left_head" class="nav_left_head">
-            <span>毛草球</span>
-        </div>
 
-        <div id="nav_left_content" class="nav_left_content">
-            <a href="#">Home</a>
-            <br><br>
-            <br>
-            <a href="#">Categories</a>
-            <br>
-            <br>
-            <br>
-            <a href="#">…</a>
-        </div>
 
-        <div id="nav_left_word" class="nav_left_word">
-            <span>一切源于热爱<br>
-                <br>早上好,世界</span>
-        </div>
-    </div>
-    <div id="water">
+    <div id="water" style="width:100%;">
     </div>
 </body>
 
@@ -98,9 +75,9 @@
     function main() {
         var strlen = {};
         var width = document.body.clientWidth;
-        var num = Math.floor(width * 0.77 / 236);
-        var nav_width = width * 0.21;
-        var drip_width = width * 0.76 / num;
+        var num = Math.floor((width-50) / 236);
+        var nav_width = 0;
+        var drip_width = (width-50) / num;
         var drip_left = (drip_width - 220) / 2
         var drip_height = new Array();
         var list = new Array();
@@ -111,8 +88,6 @@
             document.getElementById("fan1").className = "sr-only";
             document.getElementById("fan3").className = "sr-only";
                  }
-        if (document.body.clientWidth < 750) { document.getElementById("nav_left").className = "sr-only" }
-        else { document.getElementById("nav_left").className = "nav_left_temporary" }
         strlen.GetLength = function (str) {
             var realLength = 0, len = str.length, charCode = -1;
             for (var i = 0; i < len; i++) {
@@ -239,9 +214,6 @@
                 }
             }
         });
-        document.getElementById("nav_left_head").style.paddingTop = clientHeight * 0.25 + 'px'
-        document.getElementById("nav_left_content").style.paddingTop = clientHeight * 0.1 + 'px'
-        document.getElementById("nav_left_word").style.paddingTop = clientHeight * 0.15 + 'px'
     }
 
     main()
