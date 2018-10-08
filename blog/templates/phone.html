@@ -11,13 +11,7 @@
     <link rel="stylesheet" href="{% static "css/style1.css" %}">
     <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon" />
 </head>
-<script>
-if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
-    alert("ok")
-    window.location.href ="phone.html";
-    }
 
-</script>
 <body>
     <div class="wrapper">
         <div class="cols">
@@ -66,39 +60,9 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
                     </div>
                 </div>
             </div>
-            <div id="fan3" class="col" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="front" style="background-image:url({% static "img/6.jpg" %})">
-                        <div class="inner">
-                            <p></p>
-                            <span></span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <p>能做得更多</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="fan4" class="col" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="front" style="background-image: url({% static "img/4.jpg" %})">
-                        <div class="inner">
-                            <p></p>
-                            <span></span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <p>事在人为</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-    <!-- <div class="img_background" id="img_background">
+   <div class="img_background" id="img_background">
         <div class="img_top" id="img-0">
             <img src="{% static "picture/img0.jpg" %}">
         </div>
@@ -108,7 +72,7 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
         <div class="img_top" id="img-2">
             <img src="{% static "picture/img1.jpg" %}">
         </div>
-    </div> -->
+    </div>
     <div id="nav_left" class="nav_left_temporary">
         <div id="nav_left_head" class="nav_left_head">
             <span>毛草球</span>
@@ -149,14 +113,6 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
         var drips_left = new Array();
         var img_num = 2;
         var clientHeight = document.documentElement.clientHeight;
-        document.getElementById("fan0").className = "col";
-        document.getElementById("fan4").className = "col";
-        document.getElementById("fan1").className = "col";
-        document.getElementById("fan3").className = "col";
-        if (document.body.clientWidth < 1020) { 
-            document.getElementById("fan0").className = "sr-only";
-            document.getElementById("fan4").className = "sr-only";
-                 }
         if (document.body.clientWidth < 800) { 
             document.getElementById("fan1").className = "sr-only";
             document.getElementById("fan3").className = "sr-only";
@@ -186,7 +142,7 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
                 var i1 = result.length + 1;
                 load(i1)
                 function load(load1) {
-                    for (i = load1; i > load1 - 18 && i > 1; i--) {
+                    for (i = load1; i > 1; i--) {
                         var min = Math.min.apply(null, list)
                         title_len = strlen.GetLength(result['title[' + i + ']'])
                         brief_len = strlen.GetLength(result['brief[' + i + ']'])
@@ -287,33 +243,6 @@ if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
                         Window.newload = i - 1;
                     }
                 }
-                $(window).scroll(function () {
-                    var scrollTop = $(this).scrollTop();
-                    var scrollHeight = $(document).height();
-                    var clientHeight = $(this).height();
-                    if (scrollTop >= 500) {
-                        if (document.getElementById("nav_left").className == "nav_left_temporary") {
-                            document.getElementById("nav_left").className = "nav_left"
-                        }
-                    }
-                    if (scrollTop < 500) {
-                        if (document.getElementById("nav_left").className == "nav_left") {
-                            document.getElementById("nav_left").className = "nav_left_temporary"                        
-}
-                    }
-                    if (scrollTop + clientHeight + 300 >= scrollHeight && Window.newload > 2) {
-                        load(Window.newload)
-                        // var new_img_top = document.createElement("div");
-                        // new_img_top.className = "img_top";
-                        // img_num = img_num + 1;
-                        // new_img_top.id = "img-" + img_num;
-                        // document.body.appendChild(new_img_top);
-                        // var new_img = document.createElement("img");
-                        // new_img_id = img_num % 5;
-                        // new_img.src = "../static/picture/img" + new_img_id + ".jpg";
-                        // document.getElementById("img-" + img_num).appendChild(new_img);
-                    }
-                });
             }
         });
         document.getElementById("nav_left_head").style.paddingTop = clientHeight * 0.25 + 'px'
