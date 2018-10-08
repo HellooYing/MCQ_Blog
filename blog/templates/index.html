@@ -11,7 +11,16 @@
     <link rel="stylesheet" href="{% static "css/style1.css" %}">
     <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon" />
 </head>
-
+<script>
+if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+    alert("?????")
+    window.location.href ="iPhone.html";
+    }
+else if (/(Android)/i.test(navigator.userAgent)) {
+    alert("?????")
+    window.location.href ="Android.html";
+    } 
+</script>
 <body>
     <div class="wrapper">
         <div class="cols">
@@ -110,18 +119,18 @@
 
         <div id="nav_left_content" class="nav_left_content">
             <a href="#">Home</a>
-            <br></br>
-            </br>
+            <br><br>
+            <br>
             <a href="#">Categories</a>
-            </br>
-            </br>
-            </br>
+            <br>
+            <br>
+            <br>
             <a href="#">…</a>
         </div>
 
         <div id="nav_left_word" class="nav_left_word">
-            <span>一切源于热爱</br>
-                </br>早上好,世界</span>
+            <span>一切源于热爱<br>
+                <br>早上好,世界</span>
         </div>
     </div>
     <div id="water">
