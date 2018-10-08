@@ -259,7 +259,7 @@
                         document.getElementById("content" + i).appendChild(c);
                         var d = document.createElement("img");
                         d.className="imgg"
-                        d.src = '../static/picture/i'+i+'.jpg';
+                        d.src = result['picture[' + i + ']'];
                         document.getElementById("picture" + i).appendChild(d);
                         var e = document.createElement("div");
                         e.className = "title";
