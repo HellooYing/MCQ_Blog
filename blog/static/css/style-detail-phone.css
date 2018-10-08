@@ -10,7 +10,12 @@ html {
 article, aside, figure, footer, header, hgroup, nav, section { 
     display:block;
 }
-  
+#background{
+    width: 100%;
+    position: fixed;
+    top:-10%;
+    z-index: -1;
+  }
 body { 
     font: normal .85em arial, sans-serif;
     color: #EEE;
