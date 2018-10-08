@@ -2887,3 +2887,132 @@ Not Found: /pe.php
 [2018-07-23 13:40:46 +0800] [21477] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (21477)
 [2018-07-23 13:40:46 +0800] [21477] [INFO] Using worker: sync
 [2018-07-23 13:40:46 +0800] [21480] [INFO] Booting worker with pid: 21480
+[2018-10-08 15:15:25 +0000] [20831] [INFO] Starting gunicorn 19.7.1
+[2018-10-08 15:15:25 +0000] [20831] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (20831)
+[2018-10-08 15:15:25 +0000] [20831] [INFO] Using worker: sync
+[2018-10-08 15:15:25 +0000] [20835] [INFO] Booting worker with pid: 20835
+[2018-10-08 15:15:25 +0000] [20835] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/myblog/wsgi.py", line 12, in <module>
+    from django.core.wsgi import get_wsgi_application
+ImportError: No module named django.core.wsgi
+[2018-10-08 15:15:25 +0000] [20835] [INFO] Worker exiting (pid: 20835)
+[2018-10-08 15:15:25 +0000] [20831] [INFO] Shutting down: Master
+[2018-10-08 15:15:25 +0000] [20831] [INFO] Reason: Worker failed to boot.
+[2018-10-08 15:15:40 +0000] [20841] [INFO] Starting gunicorn 19.7.1
+[2018-10-08 15:15:40 +0000] [20841] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (20841)
+[2018-10-08 15:15:40 +0000] [20841] [INFO] Using worker: sync
+[2018-10-08 15:15:40 +0000] [20845] [INFO] Booting worker with pid: 20845
+[2018-10-08 15:15:40 +0000] [20845] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python2.7/dist-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/myblog/wsgi.py", line 12, in <module>
+    from django.core.wsgi import get_wsgi_application
+ImportError: No module named django.core.wsgi
+[2018-10-08 15:15:40 +0000] [20845] [INFO] Worker exiting (pid: 20845)
+[2018-10-08 15:15:40 +0000] [20841] [INFO] Shutting down: Master
+[2018-10-08 15:15:40 +0000] [20841] [INFO] Reason: Worker failed to boot.
+[2018-10-08 15:24:52 +0800] [20910] [INFO] Starting gunicorn 19.9.0
+[2018-10-08 15:24:52 +0800] [20910] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (20910)
+[2018-10-08 15:24:52 +0800] [20910] [INFO] Using worker: sync
+[2018-10-08 15:24:52 +0800] [20913] [INFO] Booting worker with pid: 20913
+[2018-10-08 15:33:21 +0800] [20924] [INFO] Booting worker with pid: 20924
+[2018-10-08 15:33:21 +0800] [20910] [INFO] Handling signal: hup
+[2018-10-08 15:33:21 +0800] [20910] [INFO] Hang up: Master
+[2018-10-08 15:33:21 +0800] [20925] [INFO] Booting worker with pid: 20925
+[2018-10-08 15:33:21 +0800] [20924] [INFO] Worker exiting (pid: 20924)
+Not Found: /Android.html
+Not Found: /Android.html
+Not Found: /Android.html
+Not Found: /iPhone.html
+Not Found: /phone.html
+Not Found: /phone
+Not Found: /phone
+Not Found: /phone
+Not Found: /phone
+Not Found: /phone
+Not Found: /phone/
+Not Found: /phone/
+Not Found: /phone
+[2018-10-08 15:53:28 +0800] [20925] [INFO] Parent changed, shutting down: <Worker 20925>
+[2018-10-08 15:53:28 +0800] [20925] [INFO] Worker exiting (pid: 20925)
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+[2018-10-08 15:57:59 +0800] [21463] [INFO] Starting gunicorn 19.9.0
+[2018-10-08 15:57:59 +0800] [21463] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (21463)
+[2018-10-08 15:57:59 +0800] [21463] [INFO] Using worker: sync
+[2018-10-08 15:57:59 +0800] [21466] [INFO] Booting worker with pid: 21466
+[2018-10-08 15:58:07 +0800] [21463] [INFO] Handling signal: hup
+[2018-10-08 15:58:07 +0800] [21463] [INFO] Hang up: Master
+[2018-10-08 15:58:07 +0800] [21652] [INFO] Booting worker with pid: 21652
+Not Found: /phone/post/48
+Not Found: /phone/post/48
+Not Found: /phone/post/11
+Not Found: /phone/post/48
+Not Found: /phone/post/48
+Not Found: /phone/post/46
+[2018-10-08 16:02:59 +0800] [21652] [INFO] Parent changed, shutting down: <Worker 21652>
+[2018-10-08 16:02:59 +0800] [21652] [INFO] Worker exiting (pid: 21652)
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+[2018-10-08 16:03:09 +0800] [21689] [INFO] Starting gunicorn 19.9.0
+[2018-10-08 16:03:09 +0800] [21689] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (21689)
+[2018-10-08 16:03:09 +0800] [21689] [INFO] Using worker: sync
+[2018-10-08 16:03:09 +0800] [21692] [INFO] Booting worker with pid: 21692
+[2018-10-08 17:05:05 +0800] [21930] [INFO] Booting worker with pid: 21930
+[2018-10-08 17:05:05 +0800] [21689] [INFO] Handling signal: hup
+[2018-10-08 17:05:05 +0800] [21689] [INFO] Hang up: Master
+[2018-10-08 17:05:05 +0800] [21931] [INFO] Booting worker with pid: 21931
+[2018-10-08 17:05:05 +0800] [21930] [INFO] Worker exiting (pid: 21930)
+[2018-10-08 22:57:12 +0800] [21931] [INFO] Parent changed, shutting down: <Worker 21931>
+[2018-10-08 22:57:12 +0800] [21931] [INFO] Worker exiting (pid: 21931)
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
