@@ -77,16 +77,7 @@ def detail(request, pk):
     else:
         return render(request, 'detail.html', {'post': post})
 
-def detail_phone(request, pk):
-    post = get_object_or_404(Blog, pk=pk)
-    try:
-        com = Comment.objects.filter(bkid=pk)
-    except:
-        com=0
-    if com!=0:
-        return render(request, 'detail_phone.html', {'post': post,'com':com})
-    else:
-        return render(request, 'detail_phone.html', {'post': post})
+
 
 def comm(request):
     a=Comment()
@@ -97,14 +88,6 @@ def comm(request):
     aa = Blog.objects.all()
     return render(request, "index.html",context={"all_blogs": aa})
     
-def commp(request):
-    a=Comment()
-    a.bkid=request.GET.get("bkid")  
-    a.mean=request.GET.get("review")
-    a.user=request.GET.get("name")
-    a.save()
-    aa = Blog.objects.all()
-    return render(request, "index.html",context={"all_blogs": aa})
 
 def zan(request):
     post=Blog.objects.get(id=request.GET.get("id"))

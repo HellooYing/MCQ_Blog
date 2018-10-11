@@ -13,10 +13,16 @@ article, aside, figure, footer, header, hgroup, nav, section {
   
 body { 
     font: normal .85em arial, sans-serif;
-    background: #fff url(../picture/background.jpg) no-repeat fixed top;
+    background: #fff no-repeat fixed top;
     color: #EEE;
 }
 
+#background{
+    width: 100%;
+    position: fixed;
+    top:-10%;
+    z-index: -1;
+  }
 img { 
     border: 0;
 }

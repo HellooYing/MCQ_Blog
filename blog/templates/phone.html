@@ -63,169 +63,31 @@
             </div>
         </div>
     </div>
-
-
-    <div id="water" style="width:100%;">
-    </div>
+<div style="width:80%;overflow: hidden;
+margin: 4px auto 20px auto;
+padding: 40px;
+padding-top:5em;
+border-top: 0;
+border-bottom: 0;
+background: transparent url(../static/picture/transparent.jpg);
+border-radius: 16px 16px 16px 16px;    opacity: 0.7;">
+{% for i in all_blogs %}
+<a href = "../post/{{i.id}}" style="font-family: FangSong;
+font-weight: 600;
+color: #000;
+opacity: 0.8;
+margin: 30px 30px 30px 0;
+padding: 2px 0 0 30px;
+display: block;
+text-align: justify;
+font: normal 2.6em arial, sans-serif;">
+ {{i.id}}. {{i.title}}</a>
+   <!-- <div style="float:right;margin-top:-5em"><span style="color:green;float: right;font: normal 2.6em arial, sans-serif;margin-left:0.3em">{{i.zan}}</span><img src="../static/img/baizan.png" style="width:20%;float: right;"></div> -->
+<br>
+{% endfor %}
+</div>
 </body>
 
 <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
-
-<script type="text/javascript">
-    function main() {
-        var strlen = {};
-        var width = document.body.clientWidth;
-        var num = Math.floor((width-50) / 236);
-        var nav_width = 0;
-        var drip_width = (width-50) / num;
-        var drip_left = (drip_width - 220) / 2
-        var drip_height = new Array();
-        var list = new Array();
-        var drips_left = new Array();
-        var img_num = 2;
-        var clientHeight = document.documentElement.clientHeight;
-        if (document.body.clientWidth < 800) { 
-            document.getElementById("fan1").className = "sr-only";
-            document.getElementById("fan3").className = "sr-only";
-                 }
-        strlen.GetLength = function (str) {
-            var realLength = 0, len = str.length, charCode = -1;
-            for (var i = 0; i < len; i++) {
-                charCode = str.charCodeAt(i);
-                if (charCode >= 0 && charCode <= 128)
-                    realLength += 1;
-                else
-                    realLength += 2;
-            }
-            return realLength;
-        };
-
-        $.ajax({
-            async: false,
-            url: "/index_waterfall",
-            success: function (result) {
-                for (var n = 0; n < num; n++) {
-                    list[n] = 0;
-                    drips_left[n] = drip_width * n + drip_left + nav_width
-                }
-                var i1 = result.length + 1;
-                load(i1)
-                function load(load1) {
-                    for (i = load1; i > 1; i--) {
-                        var min = Math.min.apply(null, list)
-                        title_len = strlen.GetLength(result['title[' + i + ']'])
-                        brief_len = strlen.GetLength(result['brief[' + i + ']'])
-                        var title_add_height;
-                        var brief_add_height;
-                        if (title_len < 15) {
-                            title_add_height = 0;
-                        }
-                        else if (title_len < 31) {
-                            title_add_height = 20;
-                        }
-                        else if (title_len < 46) {
-                            title_add_height = 40;
-                        }
-                        else {
-                            title_add_height = 60;
-                        }
-                        if (brief_len < 32) {
-                            brief_add_height = 0;
-                        }
-                        else if (brief_len < 64) {
-                            brief_add_height = 16;
-                        }
-                        else if (brief_len < 96) {
-                            brief_add_height = 32;
-                        }
-                        else {
-                            brief_add_height = 48;
-                        }
-                        drip_height[i] = drip_width / result['wch[' + i + ']'] + 70 + title_add_height + brief_add_height
-                        var a = document.createElement("div");
-                        a.className = "drip";
-                        a.id = "drip" + i;
-                        a.style.minHeight = drip_height[i] + 'px';
-                        for (var n = 0; n < num; n++) {
-                            if (list[n] == min) {
-                                a.style.left = drips_left[n] + 'px';
-                                a.style.top = list[n] + 500 + 'px';
-                                list[n] = list[n] + drip_height[i] + 35;
-                                break;
-                            }
-                        }
-                        document.getElementById("water").appendChild(a);
-                        var b = document.createElement("a");
-                        b.className = "content";
-                        b.id = "content" + i;
-                        b.href = "post/"+i;
-                        document.getElementById("drip" + i).appendChild(b);
-                        var c = document.createElement("div");
-                        c.className = "picture";
-                        c.id = "picture" + i;
-                        c.onmouseover=function(){
-                            var hao=String(this.id).replace('picture', '')
-                            this.className="wc";
-                            var zan= document.createElement("div");
-                            zan.id="zan"
-                            this.parentNode.appendChild(zan)
-                            var zan2= document.createElement("img");
-                            zan2.src="../static/img/baizan.png"
-                            zan2.className="zan"
-                            zan.appendChild(zan2)
-                            var zan1=document.createElement("span");
-                            zan1.className="zan3"
-                            zan1.style="color:green"
-                            var zan3= document.createTextNode(result['zan[' + hao+ ']']);
-                            zan.appendChild(zan1)
-                            zan1.appendChild(zan3)
-                            document.getElementById("tihuan"+hao).style="color:white"
-                        } 
-                        c.onmouseout= function(){
-                            var hao=String(this.id).replace('picture', '')
-                            this.className="picture";
-                            this.parentNode.removeChild(document.getElementById("zan")) 
-                            document.getElementById("tihuan"+hao).style=""
-                        }
-                        document.getElementById("content" + i).appendChild(c);
-                        var d = document.createElement("img");
-                        d.className="imgg"
-                        d.src = result['picture[' + i + ']'];
-                        document.getElementById("picture" + i).appendChild(d);
-                        var e = document.createElement("div");
-                        e.className = "title";
-                        e.id = "title" + i;
-                        document.getElementById("content" + i).appendChild(e);
-                        var f = document.createElement("span");
-                        var g = document.createTextNode(result['title[' + i + ']']);
-                        f.appendChild(g);
-                        document.getElementById("title" + i).appendChild(f);
-                        var h = document.createElement("div");
-                        h.className = "brief";
-                        h.id = "brief" + i;
-                        document.getElementById("content" + i).appendChild(h);
-                        var j = document.createElement("span");
-                        j.id="tihuan"+i
-                        var k = document.createTextNode(result['brief[' + i + ']']);
-                        j.appendChild(k);
-                        document.getElementById("brief" + i).appendChild(j);
-                        Window.newload = i - 1;
-                    }
-                }
-            }
-        });
-    }
-
-    main()
-    window.onresize = function () {
-        var parent = document.body;
-        var child = document.getElementById("water");
-        parent.removeChild(child);
-        var water = document.createElement("div");
-        water.id = "water";
-        document.body.appendChild(water);
-        main()
-    }
-</script>
 
 </html>
