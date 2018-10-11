@@ -39,7 +39,26 @@ a {
     margin-top: -560px;
 }
 
-
+.tdiv{
+    width:80%;overflow: hidden;
+    margin: 4px auto 20px auto;
+    padding: 40px;
+    padding-top:5em;
+    border-top: 0;
+    border-bottom: 0;
+    background: transparent url(../static/picture/transparent.jpg);
+    border-radius: 16px 16px 16px 16px;    opacity: 0.7;}
+.t{
+font-family: FangSong;
+font-weight: 600;
+color: #000;
+opacity: 0.8;
+margin: 30px 30px 30px 0;
+padding: 2px 0 0 30px;
+display: block;
+text-align: justify;
+font: normal 2.6em arial, sans-serif;
+}
 
 .drip {
     width: 220px;
