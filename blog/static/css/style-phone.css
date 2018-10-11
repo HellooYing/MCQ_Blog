@@ -38,15 +38,18 @@ a {
 .img_background{
     margin-top: -560px;
 }
+
 .tdiv{
-    width:80%;overflow: hidden;
+    width:80%;
+    overflow: hidden;
     margin: 4px auto 20px auto;
     padding: 40px;
     padding-top:5em;
     border-top: 0;
     border-bottom: 0;
-    background: transparent url(../static/picture/transparent.jpg);
-    border-radius: 16px 16px 16px 16px;    opacity: 0.7;}
+    background: transparent url(../picture/transparent.jpg);
+    border-radius: 16px 16px 16px 16px;
+        opacity: 0.7;}
 .t{
 font-family: FangSong;
 font-weight: 600;
