@@ -96,6 +96,15 @@ def comm(request):
     a.save()
     aa = Blog.objects.all()
     return render(request, "index.html",context={"all_blogs": aa})
+    
+def commp(request):
+    a=Comment()
+    a.bkid=request.GET.get("bkid")  
+    a.mean=request.GET.get("review")
+    a.user=request.GET.get("name")
+    a.save()
+    aa = Blog.objects.all()
+    return render(request, "index.html",context={"all_blogs": aa})
 
 def zan(request):
     post=Blog.objects.get(id=request.GET.get("id"))

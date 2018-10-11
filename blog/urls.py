@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^post/(?P<pk>[0-9]+)/$', views.detail, name='detail'),
     url(r'^phone/post/(?P<pk>[0-9]+)/$', views.detail_phone, name='detail_phone'),
     url(r'^comm$', views.comm, name='comm'),
+    url(r'^/commp$', views.commp, name='commp'),
     url(r'^zan$', views.zan, name='zan'),
     url(r'^change/$', views.change, name='change'),
     url(r'^test/$', views.test, name='test'),

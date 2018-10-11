@@ -67,8 +67,8 @@
       $("#tijiao").click(function(){
         var name = $("#name").val();
         var review = $("#review").val();
-        var bkid = window.location.pathname.split("/")[2]
-        $.get("/comm",{'name':name,'review':review,'bkid':bkid}, function(){
+        var bkid = window.location.pathname.split("/")[3]
+        $.get("/commp",{'name':name,'review':review,'bkid':bkid}, function(){
             location.reload();
         })
       });
