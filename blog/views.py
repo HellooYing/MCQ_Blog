@@ -99,6 +99,9 @@ def zan(request):
 def change(request):
     return render(request, "change.html",context={})
 
+# def change_img(request):
+#     i=request.GET.get("id")
+
 def test(request):
     color=request.GET.get("color")
     resp={"color":color}
