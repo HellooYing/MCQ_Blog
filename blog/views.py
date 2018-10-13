@@ -99,8 +99,27 @@ def zan(request):
 def change(request):
     return render(request, "change.html",context={})
 
-# def change_img(request):
-#     i=request.GET.get("id")
+def change_img(request):
+    if request.method == 'POST':
+        myFile =request.FILES["pic"]
+        file_name="i"+request.POST['bkid']+".jpg"
+        p=os.getcwd()
+        path=os.path.join(p+"\static\picture",file_name)
+        if os.path.exists(path):
+            os.remove(path)
+        path=os.path.join(p+r"\blog\static\picture",file_name)
+        if os.path.exists(path):
+            os.remove(path)
+        destination = open(os.path.join(p+r"\static\picture",file_name),'wb+')
+        for chunk in myFile.chunks():
+            destination.write(chunk)  
+        destination = open(os.path.join(p+r"\blog\static\picture",file_name),'wb+')
+        for chunk in myFile.chunks():
+            destination.write(chunk)  
+        destination.close()  
+        return redirect('/change/')
+    else:
+        return render(request,'change.html')
 
 def test(request):
     color=request.GET.get("color")

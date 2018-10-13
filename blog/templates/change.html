@@ -6,12 +6,13 @@
 <body>
     <div style="width:30px;height:30px;" id="img">
     </div>
-    <form enctype='multipart/form-data' method="post">
-        <input id="bkid">
+    <form enctype='multipart/form-data' method="post" id="upload">
+        {% csrf_token %}
+        <input type="text" id="bkid" name='bkid'>
         <br><br><br>
-        <input type="file" name='pic'>
+        <input type="file" name='pic' id="pic">
         <br><br><br>
-        <input type="submit">
+        <input type="submit" onclick="uploadPic();">
     </form >
     <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
     <script>
@@ -26,6 +27,28 @@
                 p.appendChild(i)
             });
         });
+    function uploadPic() { 
+    var form = document.getElementById('upload'), 
+        formData = new FormData(form); 
+            $.ajax({ 
+                url:"/change_img", 
+                type:"post", 
+                data:formData, 
+                processData:false, 
+                contentType:false, 
+                success:function(res){ 
+                    if(res){ 
+                        alert("上传成功！"); 
+                    } 
+                    console.log(res); 
+                    $("#pic").val(""); 
+                }, 
+                error:function(err){ 
+                    alert("网络连接失败,稍后重试",err); 
+                } 
+  
+            }) 
+        }
     </script>
 </body>
 </html>
