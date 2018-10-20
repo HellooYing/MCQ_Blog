@@ -122,9 +122,7 @@ def change_img(request):
         return render(request,'change.html')
 
 def test(request):
-    color=request.GET.get("color")
-    resp={"color":color}
-    return HttpResponse(json.dumps(resp), content_type="application/json")
+    return render(request, "test.html",context={})
 
-def touzi(request):
-    return render(request, "touzi.html",context={})
+def move(request):
+    return render(request, "move.html",context={})

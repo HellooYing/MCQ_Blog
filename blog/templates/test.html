@@ -1,0 +1,397 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>骰子</title>
+<style>
+* { margin:0; padding:0; }
+
+body { background:#efefef; overflow:hidden; }
+
+h1 { 
+	text-align:center; margin-top:40px; text-shadow:1px 1px 3px #000; font-size:40px; color:#fff;
+
+}
+
+#shadow {
+	height:300px; width:600px; position:absolute; top:400px; left:0; z-index:0;
+	background:-webkit-radial-gradient(center center , 150px 50px, #cfcfcf, #efefef );
+	background:-moz-radial-gradient(center center , 150px 50px, #cfcfcf, #efefef );
+	background:-ms-radial-gradient(center center , 150px 50px, #cfcfcf, #efefef );
+	background:-o-radial-gradient(center center , 150px 50px, #cfcfcf, #efefef );
+	background:radial-gradient(center center , 150px 50px, #cfcfcf, #efefef );
+	-webkit-transform:perspective(100px) rotateX(60deg) rotateY(0deg);
+	-moz-transform:perspective(100px) rotateX(60deg) rotateY(0deg);
+	-ms-transform:perspective(100px) rotateX(60deg) rotateY(0deg);
+	-o-transform:perspective(100px) rotateX(60deg) rotateY(0deg);
+	transform:perspective(100px) rotateX(60deg) rotateY(0deg);
+	opacity:0;
+}
+
+#container {
+	/*background:black;*/
+	height:240px; width:240px; position:absolute; top:180px; z-index:1;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	-ms-transform-style:preserve-3d;
+	-o-transform-style:preserve-3d;
+	transform-style:preserve-3d;
+	-webkit-transform:perspective(2000px) rotateX(-10deg) rotateY(45deg) ;
+	-moz-transform:perspective(2000px) rotateX(-10deg) rotateY(45deg) ;
+	-ms-transform:perspective(2000px) rotateX(-10deg) rotateY(45deg) ;
+	-o-transform:perspective(2000px) rotateX(-10deg) rotateY(45deg) ;
+	transform:perspective(2000px) rotateX(-10deg) rotateY(45deg) ;
+}
+#container p {
+	position:absolute;
+	top:40%;
+	left:35%;
+	padding:5px;
+	word-spacing:0.2em;
+	line-height:20px;
+	background:black;
+	color:#fff;
+	text-align:center;
+}
+#container div { 
+	 height:240px; width:240px; position:absolute; left:0; top:0; color:#fff; line-height:240px; text-align:center; font-weight:bold; font-size:80px; cursor:pointer; 
+	 background:rgba( 239,239,239, 1 );
+	 -webkit-transition:500ms all ease;
+	 -moz-transition:500ms all ease;
+	 -ms-transition:500ms all ease;
+	 -o-transition:500ms all ease;
+	 transition:500ms all ease;
+}
+#container div div {
+	border:1px solid #fff; /* rgba( 255,255,255, 1 ) */
+	box-shadow:1px 0 3px #fff,1px 0px 10px #efefef;
+    border-radius:8px;
+	background:-webkit-radial-gradient(center, #d81002, #b20c00 );
+	background:-moz-radial-gradient(center, #d81002, #b20c00 );
+	background:-ms-radial-gradient(center, #d81002, #b20c00 );
+	background:-o-radial-gradient(center, #d81002, #b20c00 );
+	background:radial-gradient(center, #d81002, #b20c00 );
+}
+#container div div:hover {
+	background:-webkit-radial-gradient(center, #f00, #b20c00 );
+	background:-moz-radial-gradient(center, #f00, #b20c00 );
+	background:-ms-radial-gradient(center, #f00, #b20c00 );
+	background:-o-radial-gradient(center, #f00, #b20c00 );
+	background:radial-gradient(center, #f00, #b20c00 );
+}
+#container div ul {
+	list-style:none;
+	margin:30px;
+}
+#container div li {
+	width: 60px;
+	height:60px;
+	float:left;
+	overflow:hidden;
+	-webkit-transition:500ms all ease;
+	-moz-transition:500ms all ease;
+	-ms-transition:500ms all ease;
+	-o-transition:500ms all ease;
+	transition:500ms all ease;
+}
+
+#container div li span  { 
+	width:50px; height:50px; margin:5px auto;
+	display:block;
+	background:-webkit-linear-gradient(top, #eee, #fff );
+	background:-moz-linear-gradient(top, #eee, #fff );
+	background:-ms-linear-gradient(top, #eee, #fff );
+	background:-o-linear-gradient(top, #eee, #fff );
+	background:linear-gradient(top, #eee, #fff );
+	border-radius:25px;
+	box-shadow:-1px -1px 2px #000;
+}
+</style>
+<script src="Aui-core-1.42-min.js" language="javascript" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+Aui.ready( function()
+{
+	if( /ie/g.test( Aui.browser() ) )
+	{
+		Aui("body").html("Adam CSS 3.0 effect，支持非IE浏览器。你懂的！")
+				   .setStyle(
+				   {
+				   	"color" : "#000",
+				   	"text-align" : "center",
+				    "font-size" : "50px",
+				    "font-weight" : "bolder",
+				    "line-height" : "500px"
+				   });
+	}
+	else
+	{
+		var oDoc = Aui(document),
+			docWidth = oDoc.width();
+			
+		Aui("body").html("<div id=\"container\" style=\"left:"+ ( ( docWidth - 240 )*0.5 ) +"px;\"></div><strong id=\"shadow\" style=\"left:"+ ( ( docWidth - 600 )*0.5 ) +"px;\"></strong>");
+		
+		var oContainer = Aui.byID("#container")[0],
+			AuiCon = Aui( oContainer ),
+			AuiShadow = Aui("#shadow"),
+			
+			transform = function( elem, value, key )
+			{
+				key = key || "transform";
+				
+				[ "-webkit-", "-moz-", "-ms-", "-o-", "" ].forEach( function( pre )
+				{
+					elem.style[ pre + key ] = value;
+				});	
+				
+				return elem;
+			},
+			piece = function( value, key )
+			{
+				var str = "";
+				
+				key = key || "transform";
+				
+				[ "-webkit-", "-moz-", "-ms-", "-o-",  "" ].forEach( function( pre )
+				{
+					str += ( pre + key + ":" + value );
+					return false;
+				});	
+				
+				return str;
+			},
+			startMove = function startMove( obj )
+			{
+				obj.timer = obj.timer || null;
+				
+				clearInterval( obj.timer );
+				
+				obj.timer = setInterval (function ()
+				{
+					x -= speedY;
+					y += speedX;
+					
+					speedY *= 0.95;
+					speedX *= 0.95;
+					
+					if( Math.abs( speedX ) < 0.1 && Math.abs( speedY ) < 0.1 )
+					{
+						stopMove( obj.timer );
+					};
+					
+					transform( obj, "perspective(" + pers + "px) rotateX("+ x +"deg) rotateY(" + y +"deg)" );
+					
+				}, 30);
+			},
+			
+			stopMove = function( t )
+			{
+				clearInterval( t );
+			},
+			
+			addEvent = function ( obj, sEvent, fn )
+			{
+				if( obj.attachEvent )
+				{
+					obj.attachEvent( "on" + sEvent, fn );
+				}
+				else
+				{
+					obj.addEventListener( sEvent, fn, false );
+				};
+			},
+			
+			onMouseWheel = function( e )
+			{
+				if( e.wheelDelta ? e.wheelDelta < 0 : e.detail > 0 )
+				{
+					if( pers < 2000 )
+					{
+						pers += 50;
+						_top -= 0.5;
+					};
+				}
+				else
+				{
+					if( pers > 50 )
+					{
+						pers -= 50;
+						_top += 0.5;
+					};
+				};
+				
+				AuiShadow.setStyle( "top", _top );
+				transform( oContainer, "perspective(" + pers + "px) rotateX("+ x +"deg) rotateY(" + y +"deg)" );
+				
+				if( e.preventDefault )
+				{
+					e.preventDefault();
+				};
+				
+				return false;
+			},
+			
+			setNum = function( obj, n )
+			{
+				var arr = [
+					[ 4 ],
+					[ 0, 8 ],
+					[ 0, 4, 8 ],
+					[ 0, 2, 6, 8 ],
+					[ 0, 2, 4, 6, 8 ],
+					[ 0, 2, 3, 5, 6, 8]
+				];
+				Aui.each( arr[n], function( i , v )
+				{
+					obj.find("li")
+					   .eq( v )
+					   .html("<span></span>");
+				});
+			}; 
+			
+			x = -10,
+			y = 45,
+			speedX = 0,
+			speedY = 0,
+			i = 1,
+			d_x = 0,
+			d_y = 0,
+			d_z = 519,
+			pers = 2000,
+			_top = 400;
+			
+		while( i < 7 )
+		{
+			if( i < 5 )
+			{
+				d_x = 0;
+				d_y = i * 90;
+			}
+			else if( i === 5 )
+			{
+				d_x = 90;
+				d_y = 0;
+			}
+			else 
+			{
+				d_x = -90;
+				d_y = 0;
+			};
+			AuiCon.append( "<div id=\"box-"+ i +"\" style=\""+ piece("rotateX(" + d_x + "deg) rotateY(" + d_y + "deg) translateZ(" + d_z + "px) scaleX( 0.4 ) scaleY( 0.4 );") +"opacity:0;\"><div><ul><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div></div>" );
+			
+			i += 1;
+		};
+		
+		var oDiv = AuiCon.children("div");
+		
+		Aui.each( oDiv, function( i )
+		{
+			( function( d , obj )
+			{
+				setTimeout( function()
+				{
+					obj.style.opacity = 1;
+					
+					setTimeout( function()
+					{
+						setNum( Aui( obj ), d );
+						
+						if( d < 4 )
+						{
+							transform( obj, "rotateX(0deg) rotateY(" + ( i * 90 )+"deg) translateZ(180px) scaleX( 1 ) scaleY( 1 )" );
+						}
+						else if( d === 5 )
+						{
+							transform( obj, "rotateX(90deg) rotateY(0deg) translateZ(180px) scaleX( 1 ) scaleY( 1 )" );
+							
+							setTimeout( function()
+							{
+								AuiShadow.fx({ opacity : 1 }, 400 );
+								
+								Aui.each( oDiv, function( x )
+								{
+									if(  x < 4 )
+									{
+										transform( this, "rotateX(0deg) rotateY(" + ( x * 90 )+"deg) translateZ(72px) scaleX( 0.6 ) scaleY( 0.6 )" );
+									}
+									else if( x === 5 )
+									{
+										transform( this, "rotateX(90deg) rotateY(0deg) translateZ(72px) scaleX( 0.6 ) scaleY( 0.6 )" );
+									}
+									else if( x === 4)
+									{
+										transform( this, "rotateX(-90deg) rotateY(0deg) translateZ(72px) scaleX( 0.6 ) scaleY( 0.6 )" );
+									};
+								});
+							}, 400 );
+						}
+						else if( d === 4)
+						{
+							transform( obj, "rotateX(-90deg) rotateY(0deg) translateZ(180px) scaleX( 1 ) scaleY( 1 )" );
+						};
+					} , 100 );
+				
+				} , d * 200 );
+	
+			})( i, this );
+			
+		});
+		
+		oDoc.mousedown( function( e )
+		{
+			
+			var moveX = e.clientX,
+				moveY = e.clientY;
+				
+			var startX = x;
+			var startY = y;
+			
+			var lastX = moveX;
+			var lastY = moveY;
+			
+			speedX = speedY = 0;
+	
+			oDoc.mousemove( function( e )
+			{
+	
+				y = startY + ( e.clientX - moveX )/5;
+				x = startX - ( e.clientY - moveY )/5;
+					
+				transform( oContainer, "perspective(" + pers + "px) rotateX("+ Math.ceil( x ) +"deg) rotateY(" + Math.ceil( y ) +"deg)" );
+				
+				speedX = Math.ceil( ( e.clientX - lastX )/2 );
+				
+				speedY = Math.ceil( ( e.clientY - lastY )/2 );
+				
+				lastX = e.clientX;
+				lastY = e.clientY;
+				
+			});
+			
+			oDoc.mouseup( function()
+			{
+				this.onmousemove = null;
+				this.onmouseup = null;
+				startMove( oContainer );
+			});
+			
+			stopMove( oContainer.timer );
+			
+			return false;
+		});
+		
+		var wheel = function( e )
+		{
+			onMouseWheel.call( null, e || window.event );
+		};
+		
+		addEvent( oDoc[0], "mousewheel", wheel );
+		addEvent( oDoc[0], "DOMMouseScroll", wheel );
+	};
+			
+});
+</script>
+</head>
+
+<body>
+</body>
+</html>
