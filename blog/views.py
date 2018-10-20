@@ -121,8 +121,5 @@ def change_img(request):
     else:
         return render(request,'change.html')
 
-def test(request):
-    return render(request, "test.html",context={})
-
-def move(request):
-    return render(request, "move.html",context={})
+def touzi(request):
+    return render(request, "touzi.html",context={})

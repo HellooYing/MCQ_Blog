@@ -14,6 +14,5 @@ urlpatterns = [
     url(r'^change_img$', views.change_img, name='change_img'),
     url(r'^zan$', views.zan, name='zan'),
     url(r'^change/$', views.change, name='change'),
-    url(r'^test/$', views.test, name='test'),
-    url(r'^move/$', views.move, name='move'),
+    url(r'^touzi/$', views.touzi, name='touzi'),
 ]
