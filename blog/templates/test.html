@@ -1,130 +1,14 @@
+{% load staticfiles %}
 <!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
 <title>骰子</title>
-<style>
-* { margin:0; padding:0; }
-
-body { background:#efefef; overflow:hidden; }
-
-h1 { 
-	text-align:center; margin-top:40px; text-shadow:1px 1px 3px #000; font-size:40px; color:#fff;
-
-}
-
-#shadow {
-	height:300px; width:600px; position:absolute; top:400px; left:0; z-index:0;
-	background:-webkit-radial-gradient(center center , 150px 50px, #cfcfcf, #efefef );
-	background:-moz-radial-gradient(center center , 150px 50px, #cfcfcf, #efefef );
-	background:-ms-radial-gradient(center center , 150px 50px, #cfcfcf, #efefef );
-	background:-o-radial-gradient(center center , 150px 50px, #cfcfcf, #efefef );
-	background:radial-gradient(center center , 150px 50px, #cfcfcf, #efefef );
-	-webkit-transform:perspective(100px) rotateX(60deg) rotateY(0deg);
-	-moz-transform:perspective(100px) rotateX(60deg) rotateY(0deg);
-	-ms-transform:perspective(100px) rotateX(60deg) rotateY(0deg);
-	-o-transform:perspective(100px) rotateX(60deg) rotateY(0deg);
-	transform:perspective(100px) rotateX(60deg) rotateY(0deg);
-	opacity:0;
-}
-
-#container {
-	/*background:black;*/
-	height:240px; width:240px; position:absolute; top:180px; z-index:1;
-	-webkit-transform-style:preserve-3d;
-	-moz-transform-style:preserve-3d;
-	-ms-transform-style:preserve-3d;
-	-o-transform-style:preserve-3d;
-	transform-style:preserve-3d;
-	-webkit-transform:perspective(2000px) rotateX(-10deg) rotateY(45deg) ;
-	-moz-transform:perspective(2000px) rotateX(-10deg) rotateY(45deg) ;
-	-ms-transform:perspective(2000px) rotateX(-10deg) rotateY(45deg) ;
-	-o-transform:perspective(2000px) rotateX(-10deg) rotateY(45deg) ;
-	transform:perspective(2000px) rotateX(-10deg) rotateY(45deg) ;
-}
-#container p {
-	position:absolute;
-	top:40%;
-	left:35%;
-	padding:5px;
-	word-spacing:0.2em;
-	line-height:20px;
-	background:black;
-	color:#fff;
-	text-align:center;
-}
-#container div { 
-	 height:240px; width:240px; position:absolute; left:0; top:0; color:#fff; line-height:240px; text-align:center; font-weight:bold; font-size:80px; cursor:pointer; 
-	 background:rgba( 239,239,239, 1 );
-	 -webkit-transition:500ms all ease;
-	 -moz-transition:500ms all ease;
-	 -ms-transition:500ms all ease;
-	 -o-transition:500ms all ease;
-	 transition:500ms all ease;
-}
-#container div div {
-	border:1px solid #fff; /* rgba( 255,255,255, 1 ) */
-	box-shadow:1px 0 3px #fff,1px 0px 10px #efefef;
-    border-radius:8px;
-	background:-webkit-radial-gradient(center, #d81002, #b20c00 );
-	background:-moz-radial-gradient(center, #d81002, #b20c00 );
-	background:-ms-radial-gradient(center, #d81002, #b20c00 );
-	background:-o-radial-gradient(center, #d81002, #b20c00 );
-	background:radial-gradient(center, #d81002, #b20c00 );
-}
-#container div div:hover {
-	background:-webkit-radial-gradient(center, #f00, #b20c00 );
-	background:-moz-radial-gradient(center, #f00, #b20c00 );
-	background:-ms-radial-gradient(center, #f00, #b20c00 );
-	background:-o-radial-gradient(center, #f00, #b20c00 );
-	background:radial-gradient(center, #f00, #b20c00 );
-}
-#container div ul {
-	list-style:none;
-	margin:30px;
-}
-#container div li {
-	width: 60px;
-	height:60px;
-	float:left;
-	overflow:hidden;
-	-webkit-transition:500ms all ease;
-	-moz-transition:500ms all ease;
-	-ms-transition:500ms all ease;
-	-o-transition:500ms all ease;
-	transition:500ms all ease;
-}
-
-#container div li span  { 
-	width:50px; height:50px; margin:5px auto;
-	display:block;
-	background:-webkit-linear-gradient(top, #eee, #fff );
-	background:-moz-linear-gradient(top, #eee, #fff );
-	background:-ms-linear-gradient(top, #eee, #fff );
-	background:-o-linear-gradient(top, #eee, #fff );
-	background:linear-gradient(top, #eee, #fff );
-	border-radius:25px;
-	box-shadow:-1px -1px 2px #000;
-}
-</style>
-<script src="Aui-core-1.42-min.js" language="javascript" type="text/javascript"></script>
+<link rel="stylesheet" href="{% static "css/touzi.css" %}">
+<script src="{% static "js/Aui-core-1.42-min.js" %}"></script>
 <script language="javascript" type="text/javascript">
 Aui.ready( function()
 {
-	if( /ie/g.test( Aui.browser() ) )
-	{
-		Aui("body").html("Adam CSS 3.0 effect，支持非IE浏览器。你懂的！")
-				   .setStyle(
-				   {
-				   	"color" : "#000",
-				   	"text-align" : "center",
-				    "font-size" : "50px",
-				    "font-weight" : "bolder",
-				    "line-height" : "500px"
-				   });
-	}
-	else
-	{
 		var oDoc = Aui(document),
 			docWidth = oDoc.width();
 			
@@ -305,7 +189,7 @@ Aui.ready( function()
 							
 							setTimeout( function()
 							{
-								AuiShadow.fx({ opacity : 1 }, 400 );
+								AuiShadow.fx({ opacity : 0.2 }, 400 );
 								
 								Aui.each( oDiv, function( x )
 								{
@@ -386,8 +270,6 @@ Aui.ready( function()
 		
 		addEvent( oDoc[0], "mousewheel", wheel );
 		addEvent( oDoc[0], "DOMMouseScroll", wheel );
-	};
-			
 });
 </script>
 </head>
