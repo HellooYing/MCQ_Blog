@@ -3023,3 +3023,75 @@ Not Found: /phone/post/46
 [2018-10-13 23:09:26 +0800] [30153] [INFO] Handling signal: hup
 [2018-10-13 23:09:26 +0800] [30153] [INFO] Hang up: Master
 [2018-10-13 23:09:26 +0800] [30158] [INFO] Booting worker with pid: 30158
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-15 00:08:23.951069) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-15 19:18:04.929586) while time zone support is active.
+  RuntimeWarning)
+Not Found: /link
+Not Found: /categories
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-15 20:56:48.408469) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-17 12:03:05.636620) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-17 14:01:18.450067) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-17 21:08:42.094836) while time zone support is active.
+  RuntimeWarning)
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /.DS_Store
+Not Found: /.DS_Store
+[2018-10-18 22:06:15 +0800] [1457] [INFO] Starting gunicorn 19.9.0
+[2018-10-18 22:06:15 +0800] [1457] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (1457)
+[2018-10-18 22:06:15 +0800] [1457] [INFO] Using worker: sync
+[2018-10-18 22:06:15 +0800] [1460] [INFO] Booting worker with pid: 1460
+[2018-10-18 22:07:44 +0800] [1687] [INFO] Booting worker with pid: 1687
+[2018-10-18 22:07:44 +0800] [1457] [INFO] Handling signal: hup
+[2018-10-18 22:07:44 +0800] [1457] [INFO] Hang up: Master
+[2018-10-18 22:07:44 +0800] [1689] [INFO] Booting worker with pid: 1689
+[2018-10-18 22:07:44 +0800] [1687] [INFO] Worker exiting (pid: 1687)
+Not Found: /robots.txt
+Not Found: /robots.txt
