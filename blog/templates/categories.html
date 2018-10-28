@@ -16,21 +16,21 @@
     <img id="background" src="../static/picture/phone_background.jpg">
     <div class="wrapper">
         <div class="cols" style="width:80%;margin-left: 10%;">
-                <div id="fan0" class="col" ontouchstart="this.classList.toggle('hover');">
-                        <div class="container">
-                            <div class="front" style="background-image: url({% static "img/2.jpg" %})">
-                                <div class="inner">
-                                    <p></p>
-                                    <span></span>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="inner">
-                                    <p>从未想过如此之好</p>
-                                </div>
-                            </div>
+            <div id="fan0" class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url({% static "img/2.jpg" %})">
+                        <div class="inner">
+                            <p></p>
+                            <span></span>
                         </div>
                     </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>从未想过如此之好</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="fan1" class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
                     <div class="front" style="background-image:url({% static "img/5.jpg" %})">
@@ -61,6 +61,36 @@
                     </div>
                 </div>
             </div>
+            <div id="fan3" class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image:url({% static "img/6.jpg" %})">
+                        <div class="inner">
+                            <p></p>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>能做得更多</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fan4" class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front" style="background-image: url({% static "img/4.jpg" %})">
+                        <div class="inner">
+                            <p></p>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <p>事在人为</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 <div class="tdiv">
@@ -72,9 +102,9 @@
 <br>
 <small><small>{{i.brief}}</small></small>
 </a>
- {% endifequal %}
    <!-- <div style="float:right;margin-top:-5em"><span style="color:green;float: right;font: normal 2.6em arial, sans-serif;margin-left:0.3em">{{i.zan}}</span><img src="../static/img/baizan.png" style="width:20%;float: right;"></div> -->
 <br>
+{% endifequal %}
 {% endfor %}
 </div>
 </body>
