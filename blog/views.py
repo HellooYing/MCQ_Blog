@@ -36,6 +36,20 @@ def phone(request):
     a = Blog.objects.all()
     return render(request, "phone.html",context={"all_blogs": a})
 
+def categories(request):
+    path=os.path.realpath(__file__)
+    path1=path.strip(r'views.py')
+    shutil.copy(path1+"../db.sqlite3",path1+"../../db.sqlite3")
+    filelist = os.listdir(path1+'static/picture')
+    for files in filelist:
+        Olddir = os.path.join(path1+'static/picture', files)
+        filename = os.path.splitext(files)[0]
+        filetype = os.path.splitext(files)[1]
+        Newdir = os.path.join(path1+'static/picture', filename + ".jpg")
+        os.rename(Olddir, Newdir)
+    a = Blog.objects.all()
+    return render(request, "categories.html",context={"all_blogs": a})
+
 def index_waterfall(request):
     a = Blog.objects.all()
     dict1={}
