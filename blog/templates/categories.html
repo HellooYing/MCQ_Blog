@@ -65,8 +65,9 @@
     </div>
 <div class="tdiv">
 {% for i in all_blogs %}
+{% ifequal i.kind 3 %}
 <a href = "../post/{{i.id}}" class="t" style="font: normal 1.7em arial, sans-serif;margin-top: 10px;margin-right: 30px;margin-bottom: 10px;margin-left: 0px;">
-    {% ifequal i.kind 3 %}
+
  {{i.id}}. {{i.title}}
 <br>
 <small><small>{{i.brief}}</small></small>
