@@ -3095,3 +3095,494 @@ Not Found: /.DS_Store
 [2018-10-18 22:07:44 +0800] [1687] [INFO] Worker exiting (pid: 1687)
 Not Found: /robots.txt
 Not Found: /robots.txt
+[2018-10-21 00:11:46 +0800] [1689] [ERROR] Error handling request /touzi/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 130, in touzi
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: touzi.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/deprecation.py", line 91, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 125, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 94, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 333, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 264, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 422, in get_traceback_frames
+    filename, lineno, 7, loader, module_name,
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 383, in _get_lines_from_file
+    context_line = source[lineno]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/deprecation.py", line 91, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 125, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 94, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 333, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 264, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 422, in get_traceback_frames
+    filename, lineno, 7, loader, module_name,
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 383, in _get_lines_from_file
+    context_line = source[lineno]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/deprecation.py", line 91, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 125, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 94, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 333, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 264, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 422, in get_traceback_frames
+    filename, lineno, 7, loader, module_name,
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 383, in _get_lines_from_file
+    context_line = source[lineno]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/deprecation.py", line 91, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 125, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 94, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 333, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 264, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 422, in get_traceback_frames
+    filename, lineno, 7, loader, module_name,
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 383, in _get_lines_from_file
+    context_line = source[lineno]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/deprecation.py", line 91, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 125, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 94, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 333, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 264, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 422, in get_traceback_frames
+    filename, lineno, 7, loader, module_name,
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 383, in _get_lines_from_file
+    context_line = source[lineno]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/deprecation.py", line 91, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 125, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 94, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 333, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 264, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 422, in get_traceback_frames
+    filename, lineno, 7, loader, module_name,
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 383, in _get_lines_from_file
+    context_line = source[lineno]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/utils/deprecation.py", line 91, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 125, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 94, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 333, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 264, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 422, in get_traceback_frames
+    filename, lineno, 7, loader, module_name,
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 383, in _get_lines_from_file
+    context_line = source[lineno]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python3.5/dist-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/wsgi.py", line 142, in __call__
+    response = self.get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 78, in get_response
+    response = self._middleware_chain(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 36, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 90, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 125, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 94, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 333, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 264, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 422, in get_traceback_frames
+    filename, lineno, 7, loader, module_name,
+  File "/usr/local/lib/python3.5/dist-packages/django/views/debug.py", line 383, in _get_lines_from_file
+    context_line = source[lineno]
+IndexError: list index out of range
+[2018-10-21 00:14:10 +0800] [4670] [INFO] Starting gunicorn 19.9.0
+[2018-10-21 00:14:10 +0800] [4670] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (4670)
+[2018-10-21 00:14:10 +0800] [4670] [INFO] Using worker: sync
+[2018-10-21 00:14:10 +0800] [4673] [INFO] Booting worker with pid: 4673
+Not Found: /test/
+[2018-10-21 00:14:46 +0800] [4675] [INFO] Booting worker with pid: 4675
+[2018-10-21 00:14:46 +0800] [4670] [INFO] Handling signal: hup
+[2018-10-21 00:14:46 +0800] [4670] [INFO] Hang up: Master
+[2018-10-21 00:14:46 +0800] [4676] [INFO] Booting worker with pid: 4676
+[2018-10-21 00:14:46 +0800] [4675] [INFO] Worker exiting (pid: 4675)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-21 20:54:29.201761) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-21 21:25:25.952857) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-22 00:48:09.764834) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-22 00:52:35.359636) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-22 16:46:13.054101) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-22 21:00:04.460099) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+Not Found: /robots.txt
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-23 00:34:58.360279) while time zone support is active.
+  RuntimeWarning)
+Not Found: /link
+Not Found: /categories
+Not Found: /categories
+Not Found: /categories
+Not Found: /link
+Not Found: /categories
+Not Found: /link
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-23 00:38:39.992463) while time zone support is active.
+  RuntimeWarning)
+Internal Server Error: /comm
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/sqlite3/base.py", line 296, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: blog_comment.mean
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 87, in comm
+    a.save()
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/sql/compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/backends/sqlite3/base.py", line 296, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: blog_comment.mean
+Not Found: /MCQ_Blog/db.sqlite3
+Not Found: /db.sqlite3
+Not Found: /MCQ_Blog/db.sqlite3
+Internal Server Error: /zan
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 93, in zan
+    post=Blog.objects.get(id=request.GET.get("id"))
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 399, in get
+    self.model._meta.object_name
+blog.models.Blog.DoesNotExist: Blog matching query does not exist.
+Not Found: /MCQ_Blog/touzi
+Not Found: /MCQ_Blog/touzi/123
+Not Found: /MCQ_Blog/admin
+Not Found: /robots.txt
+Internal Server Error: /zan
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 93, in zan
+    post=Blog.objects.get(id=request.GET.get("id"))
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/db/models/query.py", line 399, in get
+    self.model._meta.object_name
+blog.models.Blog.DoesNotExist: Blog matching query does not exist.
+Not Found: /MCQ_Blog/db.sqlite3
+Not Found: /MCQ_Blog/db.sqlite
+Not Found: /MCQ_Blog/
+Not Found: /db.sqlite3
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-23 14:13:46.316339) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-23 21:18:35.117467) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-23 21:26:51.143440) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+Not Found: /robots.txt
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-25 22:46:36.083662) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-26 22:04:11.363040) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /categories
+[2018-10-28 22:21:01 +0800] [12927] [INFO] Starting gunicorn 19.9.0
+[2018-10-28 22:21:01 +0800] [12927] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (12927)
+[2018-10-28 22:21:01 +0800] [12927] [INFO] Using worker: sync
+[2018-10-28 22:21:01 +0800] [12930] [INFO] Booting worker with pid: 12930
+[2018-10-28 22:22:21 +0800] [13148] [INFO] Booting worker with pid: 13148
+[2018-10-28 22:22:21 +0800] [12927] [INFO] Handling signal: hup
+[2018-10-28 22:22:21 +0800] [12927] [INFO] Hang up: Master
+[2018-10-28 22:22:21 +0800] [13150] [INFO] Booting worker with pid: 13150
+[2018-10-28 22:22:22 +0800] [13148] [INFO] Worker exiting (pid: 13148)
+Not Found: /robots.txt
+Not Found: /robots.txt
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-10-30 01:44:14.445734) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-03 21:16:47.424297) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-03 21:42:29.448648) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-03 22:07:51.071705) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-04 12:56:57.680482) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 69, in index_waterfall
+    img2=Image.open(img)
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2543, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i65.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 69, in index_waterfall
+    img2=Image.open(img)
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2543, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i65.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 69, in index_waterfall
+    img2=Image.open(img)
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2543, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i65.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 69, in index_waterfall
+    img2=Image.open(img)
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2543, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i65.jpg'
+[2018-11-09 15:00:02 +0800] [15640] [INFO] Starting gunicorn 19.9.0
+[2018-11-09 15:00:02 +0800] [15640] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (15640)
+[2018-11-09 15:00:02 +0800] [15640] [INFO] Using worker: sync
+[2018-11-09 15:00:02 +0800] [15643] [INFO] Booting worker with pid: 15643
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 69, in index_waterfall
+    img2=Image.open(img)
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2543, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i65.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 69, in index_waterfall
+    img2=Image.open(img)
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2543, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i65.jpg'
+[2018-11-09 15:00:32 +0800] [15640] [INFO] Handling signal: hup
+[2018-11-09 15:00:32 +0800] [15640] [INFO] Hang up: Master
+[2018-11-09 15:00:32 +0800] [15845] [INFO] Booting worker with pid: 15845
