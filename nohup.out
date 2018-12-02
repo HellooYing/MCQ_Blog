@@ -3586,3 +3586,301 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoq
 [2018-11-09 15:00:32 +0800] [15640] [INFO] Handling signal: hup
 [2018-11-09 15:00:32 +0800] [15640] [INFO] Hang up: Master
 [2018-11-09 15:00:32 +0800] [15845] [INFO] Booting worker with pid: 15845
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 69, in index_waterfall
+    img2=Image.open(img)
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2543, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i65.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 69, in index_waterfall
+    img2=Image.open(img)
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2543, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i65.jpg'
+[2018-11-09 15:05:59 +0800] [15845] [INFO] Parent changed, shutting down: <Worker 15845>
+[2018-11-09 15:05:59 +0800] [15845] [INFO] Worker exiting (pid: 15845)
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+[2018-11-09 15:07:58 +0800] [16155] [INFO] Starting gunicorn 19.9.0
+[2018-11-09 15:07:58 +0800] [16155] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (16155)
+[2018-11-09 15:07:58 +0800] [16155] [INFO] Using worker: sync
+[2018-11-09 15:07:58 +0800] [16158] [INFO] Booting worker with pid: 16158
+[2018-11-09 15:29:17 +0800] [16155] [INFO] Handling signal: hup
+[2018-11-09 15:29:17 +0800] [16155] [INFO] Hang up: Master
+[2018-11-09 15:29:17 +0800] [17044] [INFO] Booting worker with pid: 17044
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /link
+Not Found: /link
+Not Found: /scripts/cfformhistory.cfm
+Not Found: /cf_scripts/scripts/cfformhistory.cfm
+Not Found: /CFIDE/scripts/cfformhistory.cfm
+Not Found: /wwscripts/cfformhistory.cfm
+Not Found: /FormScripts/cfformhistory.cfm
+Not Found: /index.cfm
+Not Found: /CFIDE/Administrator/index.cfm
+Not Found: /scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /CFIDE/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /CFIDE/cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /wwscripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /FormScripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /flex2gateway/amf
+Not Found: /CFIDE/probe.cfm
+Not Found: /robots.txt
+Not Found: /link
+Not Found: /link
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /scripts/cfformhistory.cfm
+Not Found: /cf_scripts/scripts/cfformhistory.cfm
+Not Found: /CFIDE/scripts/cfformhistory.cfm
+Not Found: /wwscripts/cfformhistory.cfm
+Not Found: /FormScripts/cfformhistory.cfm
+Not Found: /index.cfm
+Not Found: /CFIDE/Administrator/index.cfm
+Not Found: /scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /CFIDE/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /CFIDE/cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /wwscripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /wwscripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /FormScripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /flex2gateway/amf
+Not Found: /link
+Not Found: /scripts/cfformhistory.cfm
+Not Found: /cf_scripts/scripts/cfformhistory.cfm
+Not Found: /CFIDE/scripts/cfformhistory.cfm
+Not Found: /wwscripts/cfformhistory.cfm
+Not Found: /FormScripts/cfformhistory.cfm
+Not Found: /index.cfm
+Not Found: /CFIDE/Administrator/index.cfm
+Not Found: /scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /CFIDE/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /CFIDE/cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /wwscripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /FormScripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /flex2gateway/amf
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-15 18:06:35.855544) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+Not Found: /scripts/cfformhistory.cfm
+Not Found: /cf_scripts/scripts/cfformhistory.cfm
+Not Found: /CFIDE/scripts/cfformhistory.cfm
+Not Found: /wwscripts/cfformhistory.cfm
+Not Found: /wwscripts/cfformhistory.cfm
+Not Found: /FormScripts/cfformhistory.cfm
+Not Found: /index.cfm
+Not Found: /CFIDE/Administrator/index.cfm
+Not Found: /scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /CFIDE/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /CFIDE/cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /wwscripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /FormScripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /flex2gateway/amf
+Not Found: /scripts/cfformhistory.cfm
+Not Found: /cf_scripts/scripts/cfformhistory.cfm
+Not Found: /CFIDE/scripts/cfformhistory.cfm
+Not Found: /wwscripts/cfformhistory.cfm
+Not Found: /FormScripts/cfformhistory.cfm
+Not Found: /index.cfm
+Not Found: /CFIDE/Administrator/index.cfm
+Not Found: /scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /CFIDE/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /CFIDE/cf_scripts/scripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /wwscripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /FormScripts/ajax/ckeditor/plugins/filemanager/filemanager.cfm
+Not Found: /flex2gateway/amf
+Not Found: /ads.txt
+Not Found: /link
+Not Found: /robots.txt
+Not Found: /link
+Not Found: /link
+Not Found: /link
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-17 23:49:23.300100) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-18 00:03:13.690645) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-18 00:26:59.685224) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-18 00:27:34.456580) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-18 01:09:30.648744) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-18 01:10:15.423550) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-18 03:39:15.510527) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-18 03:42:20.955447) while time zone support is active.
+  RuntimeWarning)
+Not Found: /link
+Not Found: /link
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-18 18:32:28.438120) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-19 01:28:40.507389) while time zone support is active.
+  RuntimeWarning)
+Not Found: /link
+Not Found: /.git/config
+Not Found: /.git/config
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-19 10:57:25.081682) while time zone support is active.
+  RuntimeWarning)
+Not Found: /.ssh/id_rsa
+Not Found: /.ssh/id_dsa
+Not Found: /.ssh/id_ed25519
+Not Found: /.ssh/id_ecdsa
+Not Found: /.ssh/id_rsa
+Not Found: /.ssh/id_dsa
+Not Found: /.ssh/id_ed25519
+Not Found: /.ssh/id_ecdsa
+Not Found: /robots.txt
+Not Found: /link
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /link
+Not Found: /link
+Not Found: /link
+Not Found: /robots.txt
+Not Found: /link
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-11-22 15:24:43.012409) while time zone support is active.
+  RuntimeWarning)
+Not Found: /link
+Not Found: /robots.txt
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /wp-admin/admin-ajax.php
+Not Found: /wp/wp-admin/admin-ajax.php
+Not Found: /wordpress/wp-admin/admin-ajax.php
+Not Found: /blog/wp-admin/admin-ajax.php
+Not Found: /wp-admin/admin-ajax.php
+Not Found: /wp/wp-admin/admin-ajax.php
+Not Found: /wordpress/wp-admin/admin-ajax.php
+Not Found: /blog/wp-admin/admin-ajax.php
+Not Found: /wp/
+Not Found: /wordpress/
+Not Found: /blog/
+Not Found: /wp-login.php
+Not Found: /wp/wp-login.php
+Not Found: /wordpress/wp-login.php
+Not Found: /blog/wp-login.php
+Not Found: /wp/
+Not Found: /wordpress/
+Not Found: /blog/
+Not Found: /wp-login.php
+Not Found: /wp/wp-login.php
+Not Found: /wordpress/wp-login.php
+Not Found: /blog/wp-login.php
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /wp-includes/js/wpdialog.js
+Not Found: /robots.txt
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /.git/config
+Not Found: /wp-login.php
