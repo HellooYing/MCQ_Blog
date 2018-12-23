@@ -14,5 +14,7 @@ urlpatterns = [
     url(r'^change_img$', views.change_img, name='change_img'),
     url(r'^zan$', views.zan, name='zan'),
     url(r'^change/$', views.change, name='change'),
+    url(r'^compiler/$', views.compiler, name='compiler'),
+    url(r'^compiler_get/$', views.compiler_get, name='compiler_get'),
     url(r'^touzi/$', views.touzi, name='touzi'),
 ]

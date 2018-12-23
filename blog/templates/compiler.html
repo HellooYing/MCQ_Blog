@@ -108,7 +108,7 @@
 	                        <div class="tab-content tabs">
 	                            <div role="tabpanel" class="tab-pane fade in active" id="Section1">
                                         <h3>请输入</h3>
-                                        <textarea id="in" style="width:80%;height:200px;">
+                                        <textarea id="in" style="width:80%;height:300px;">
 {{c}}
                                         </textarea>
                                         <div style="text-align:center;width:100%;">
@@ -116,13 +116,15 @@
                                         </div>
 	                            </div>
 	                            <div role="tabpanel" class="tab-pane fade" id="Section2">
-	                                <h3>中间代码</h3>
+                                    <h3>中间代码</h3>
+                                    <br>
 	                                {% for i in four %}
                 <ul>{{i}}</ul>
                 {% endfor %}
 	                            </div>
 	                            <div role="tabpanel" class="tab-pane fade" id="Section3">
-	                                <h3>目标代码</h3>
+                                    <h3>目标代码</h3>
+                                    <br>
                                     {% for i in oc %}
                                     <ul>{{i}}</ul>
                                     {% endfor %}
@@ -140,6 +142,7 @@
                     var inp = $("#in").val();
                     $.get("/compiler_get",{'code':inp}, function(){
                         console.log("ok")
+                        window.location.reload()
                     })
             }
             </script>

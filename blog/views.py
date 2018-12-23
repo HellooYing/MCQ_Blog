@@ -8,6 +8,7 @@ import json
 from datetime import datetime
 from PIL import Image
 import shutil
+
 def index(request):
     path=os.path.realpath(__file__)
     path1=path.strip(r'views.py')
@@ -137,3 +138,32 @@ def change_img(request):
 
 def touzi(request):
     return render(request, "touzi.html",context={})
+
+def compiler(request):
+    dict2={}
+    with open('..\z.c语言代码输入.txt', 'r') as f:
+        dict2['c']=f.read()
+    with open('..\z.token序列.txt', 'r') as f:
+        dict2['token']=f.read()
+    with open('..\z.符号表.txt', 'r') as f:
+        dict2['synbl']=f.read()
+    with open('..\z.四元式.txt', 'r') as f:
+        dict2['four']=f.read()
+    with open('..\z.优化后的四元式.txt', 'r') as f:
+        dict2['op']=f.read()
+    with open('..\z.目标代码.txt', 'r') as f:
+        dict2['oc']=f.read()
+    c=dict2['c']
+    token=dict2['token'].split(" ")
+    synbl=dict2['synbl']
+    four=dict2['four'].split(" ")
+    op=dict2['op'].split(" ")
+    oc=dict2['oc'].split("\n")
+    return render(request, "compiler.html",context={"c":c,"token":token,"synbl":synbl,"four":four,"op":op,"oc":oc })
+
+def compiler_get(request):
+    c=request.GET.get("code")
+    with open('..\z.c语言代码输入.txt', 'w') as f:
+        f.write(c)
+    os.system('java -jar cp.jar')  
+    return render(request, "compiler.html",context={})
