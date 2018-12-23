@@ -141,17 +141,17 @@ def touzi(request):
 
 def compiler(request):
     dict2={}
-    with open(r'..\1.txt', 'r') as f:
+    with open(r'..\1.txt', 'wr') as f:
         dict2['c']=f.read()
-    with open(r'..\2.txt', 'r') as f:
+    with open(r'..\2.txt', 'wr') as f:
         dict2['token']=f.read()
-    with open(r'..\6.txt', 'r') as f:
+    with open(r'..\6.txt', 'wr') as f:
         dict2['synbl']=f.read()
-    with open(r'..\4.txt', 'r') as f:
+    with open(r'..\4.txt', 'wr') as f:
         dict2['four']=f.read()
-    with open(r'..\3.txt', 'r') as f:
+    with open(r'..\3.txt', 'wr') as f:
         dict2['op']=f.read()
-    with open(r'..\5.txt', 'r') as f:
+    with open(r'..\5.txt', 'wr') as f:
         dict2['oc']=f.read()
     c=dict2['c']
     token=dict2['token'].split(" ")
