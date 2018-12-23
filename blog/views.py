@@ -141,6 +141,13 @@ def touzi(request):
 
 def compiler(request):
     dict2={}
+    mkdir(r'..\1.txt')
+    mkdir(r'..\2.txt')
+    mkdir(r'..\3.txt')
+    mkdir(r'..\4.txt')
+    mkdir(r'..\5.txt')
+    mkdir(r'..\6.txt')
+    
     with open(r'..\1.txt', 'r') as f:
         dict2['c']=f.read()
     with open(r'..\2.txt', 'r') as f:
@@ -167,3 +174,8 @@ def compiler_get(request):
         f.write(c)
     os.system('java -jar cp.jar')  
     return render(request, "compiler.html",context={})
+
+def mkdir(path):
+	folder = os.path.exists(path)
+	if not folder:                   #判断是否存在文件夹如果不存在则创建为文件夹
+		os.makedirs(path) 
