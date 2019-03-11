@@ -141,24 +141,17 @@ def touzi(request):
 
 def compiler(request):
     dict2={}
-    mkdir(r'..\1.txt')
-    mkdir(r'..\2.txt')
-    mkdir(r'..\3.txt')
-    mkdir(r'..\4.txt')
-    mkdir(r'..\5.txt')
-    mkdir(r'..\6.txt')
-    
-    with open(r'..\1.txt', 'r') as f:
+    with open('..\z.c语言代码输入.txt', 'r') as f:
         dict2['c']=f.read()
-    with open(r'..\2.txt', 'r') as f:
+    with open('..\z.token序列.txt', 'r') as f:
         dict2['token']=f.read()
-    with open(r'..\6.txt', 'r') as f:
+    with open('..\z.符号表.txt', 'r') as f:
         dict2['synbl']=f.read()
-    with open(r'..\4.txt', 'r') as f:
+    with open('..\z.四元式.txt', 'r') as f:
         dict2['four']=f.read()
-    with open(r'..\3.txt', 'r') as f:
+    with open('..\z.优化后的四元式.txt', 'r') as f:
         dict2['op']=f.read()
-    with open(r'..\5.txt', 'r') as f:
+    with open('..\z.目标代码.txt', 'r') as f:
         dict2['oc']=f.read()
     c=dict2['c']
     token=dict2['token'].split(" ")
@@ -170,12 +163,7 @@ def compiler(request):
 
 def compiler_get(request):
     c=request.GET.get("code")
-    with open(r'..\1.txt', 'w') as f:
+    with open('..\z.c语言代码输入.txt', 'w') as f:
         f.write(c)
     os.system('java -jar cp.jar')  
     return render(request, "compiler.html",context={})
-
-def mkdir(path):
-	folder = os.path.exists(path)
-	if not folder:                   #判断是否存在文件夹如果不存在则创建为文件夹
-		os.makedirs(path) 
