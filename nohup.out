@@ -4143,3 +4143,2418 @@ Not Found: /compiler
 [2018-12-23 14:16:33 +0800] [26025] [ERROR] Retrying in 1 second.
 [2018-12-23 14:16:34 +0800] [26025] [ERROR] Retrying in 1 second.
 [2018-12-23 14:16:35 +0800] [26025] [ERROR] Can't connect to /tmp/47.95.214.83.socket
+[2018-12-23 14:54:33 +0800] [27614] [INFO] Starting gunicorn 19.9.0
+[2018-12-23 14:54:33 +0800] [27614] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (27614)
+[2018-12-23 14:54:33 +0800] [27614] [INFO] Using worker: sync
+[2018-12-23 14:54:33 +0800] [27617] [INFO] Booting worker with pid: 27617
+[2018-12-23 14:54:35 +0800] [27614] [INFO] Handling signal: hup
+[2018-12-23 14:54:35 +0800] [27614] [INFO] Hang up: Master
+[2018-12-23 14:54:35 +0800] [27619] [INFO] Booting worker with pid: 27619
+Not Found: /robots.txt
+Internal Server Error: /compiler/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 151, in compiler
+    with open(r'..\1.txt', 'r') as f:
+IsADirectoryError: [Errno 21] Is a directory: '..\\1.txt'
+[2018-12-23 23:04:45 +0800] [13894] [INFO] Starting gunicorn 19.9.0
+[2018-12-23 23:04:45 +0800] [13894] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (13894)
+[2018-12-23 23:04:45 +0800] [13894] [INFO] Using worker: sync
+[2018-12-23 23:04:45 +0800] [13897] [INFO] Booting worker with pid: 13897
+
+原始四元式：
+= 8.0 _ x1 
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 1.0 2.0 t1 
+* 3.0 4.0 t2 
+* t2 5.0 t3 
++ t1 t3 t4 
++ t4 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 t8 
+= t8 _ i 
+fe _ _ _ 
+
+优化后的四元式：
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 63.0 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 i 
+fe _ _ _ 
+
+
+总表：
+变量名：x1 类型：int 偏移地址：0 其他：-1
+变量名：x2 类型：int 偏移地址：1 其他：-1
+变量名：x3 类型：int 偏移地址：2 其他：-1
+变量名：a 类型：int 偏移地址：3 其他：-1
+变量名：b 类型：int 偏移地址：4 其他：-1
+变量名：w1 类型：int 偏移地址：5 其他：-1
+变量名：f 类型：function 偏移地址：0 其他：0
+变量名：i 类型：int 偏移地址：6 其他：-1
+
+
+函数表：
+
+函数名：f
+形参：
+int c
+int d
+函数的局部变量：
+变量名：c 类型：int 偏移地址：0 其他：0
+变量名：d 类型：int 偏移地址：1 其他：0
+变量名：e 类型：int 偏移地址：2 其他：-1
+
+
+活动记录：main 
+DATAS SEGMENT
+  x1 DB ?
+  x2 DB ?
+  x3 DB ?
+  a DB ?
+  b DB ?
+  w1 DB ?
+  i DB ?
+DATAS ENDS
+STACKS SEGMENT
+  STK DB 20 DUP (0)
+STACKS ENDS
+CODES SEGMENT
+  ASSUME CS:CODES,DS:DATAS,SS:STACKS
+START:
+  MOV AX,DATAS
+  MOV DS,AX
+  MOV SP,BP
+  MOV AL,OFFSET 2D
+  MOV [x2],AL
+  MOV AL,OFFSET 3D
+  MOV [x3],AL
+  MOV AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,DS:[2]
+  MOV [x2],AL
+  MOV AL,DS:[0]
+  MOV [x3],AL
+  MOV AL,DS:[2]
+  ADD AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,OFFSET 10D
+  MOV [b],AL
+  MOV AL,OFFSET 63D
+  ADD AL,DS:[4]
+  MOV [a],AL
+  JMP JMPF0
+f PROC NEAR
+  MOV AL,SS:[BP]
+  ADD AL,SS:[BP+1]
+  MOV SS:[BP+2],AL
+  MOV AL,SS:[BP+2]
+  RET
+f ENDP
+JMPF0:
+  MOV AL,OFFSET 10D
+  MOV SS:[BP],AL
+  MOV AL,OFFSET 15D
+  MOV SS:[BP+1],AL
+  CALL f
+  MOV [a],AL
+  MOV AL,OFFSET 1D
+  MOV [w1],AL
+  MOV CX,02H
+WH1:
+  INC CX
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 5D
+  CMP AL,AH
+  JAE WE2
+  MOV AL,DS:[4]
+  ADD AL,OFFSET 2D
+  MOV [w1],AL
+  MOV [w1],AL
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 3D
+  CMP AL,AH
+  JBE ES3
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 200D
+  MOV [a],AL
+  JMP WE2
+  JMP IE4
+ES3:
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 2D
+  MOV [a],AL
+IE4:
+  LOOP WH1
+WE2:
+  MOV AL,OFFSET 0D
+  MOV [i],AL
+  MOV CX,02H
+FOR5:
+  INC CX
+  MOV AL,DS:[6]
+  MOV AH,OFFSET 6D
+  CMP AL,AH
+  JA FE6
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 9D
+  MOV [a],AL
+  MOV AL,DS:[6]
+  ADD AL,OFFSET 1D
+  MOV [i],AL
+  LOOP FOR5
+FE6:
+  MOV AH,4CH
+  INT 21H
+CODES ENDS
+  END START
+
+原始四元式：
+= 9.0 _ x1 
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 1.0 2.0 t1 
+* 3.0 4.0 t2 
+* t2 5.0 t3 
++ t1 t3 t4 
++ t4 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 t8 
+= t8 _ i 
+fe _ _ _ 
+
+优化后的四元式：
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 63.0 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 i 
+fe _ _ _ 
+
+
+总表：
+变量名：x1 类型：int 偏移地址：0 其他：-1
+变量名：x2 类型：int 偏移地址：1 其他：-1
+变量名：x3 类型：int 偏移地址：2 其他：-1
+变量名：a 类型：int 偏移地址：3 其他：-1
+变量名：b 类型：int 偏移地址：4 其他：-1
+变量名：w1 类型：int 偏移地址：5 其他：-1
+变量名：f 类型：function 偏移地址：0 其他：0
+变量名：i 类型：int 偏移地址：6 其他：-1
+
+
+函数表：
+
+函数名：f
+形参：
+int c
+int d
+函数的局部变量：
+变量名：c 类型：int 偏移地址：0 其他：0
+变量名：d 类型：int 偏移地址：1 其他：0
+变量名：e 类型：int 偏移地址：2 其他：-1
+
+
+活动记录：main 
+DATAS SEGMENT
+  x1 DB ?
+  x2 DB ?
+  x3 DB ?
+  a DB ?
+  b DB ?
+  w1 DB ?
+  i DB ?
+DATAS ENDS
+STACKS SEGMENT
+  STK DB 20 DUP (0)
+STACKS ENDS
+CODES SEGMENT
+  ASSUME CS:CODES,DS:DATAS,SS:STACKS
+START:
+  MOV AX,DATAS
+  MOV DS,AX
+  MOV SP,BP
+  MOV AL,OFFSET 2D
+  MOV [x2],AL
+  MOV AL,OFFSET 3D
+  MOV [x3],AL
+  MOV AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,DS:[2]
+  MOV [x2],AL
+  MOV AL,DS:[0]
+  MOV [x3],AL
+  MOV AL,DS:[2]
+  ADD AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,OFFSET 10D
+  MOV [b],AL
+  MOV AL,OFFSET 63D
+  ADD AL,DS:[4]
+  MOV [a],AL
+  JMP JMPF0
+f PROC NEAR
+  MOV AL,SS:[BP]
+  ADD AL,SS:[BP+1]
+  MOV SS:[BP+2],AL
+  MOV AL,SS:[BP+2]
+  RET
+f ENDP
+JMPF0:
+  MOV AL,OFFSET 10D
+  MOV SS:[BP],AL
+  MOV AL,OFFSET 15D
+  MOV SS:[BP+1],AL
+  CALL f
+  MOV [a],AL
+  MOV AL,OFFSET 1D
+  MOV [w1],AL
+  MOV CX,02H
+WH1:
+  INC CX
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 5D
+  CMP AL,AH
+  JAE WE2
+  MOV AL,DS:[4]
+  ADD AL,OFFSET 2D
+  MOV [w1],AL
+  MOV [w1],AL
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 3D
+  CMP AL,AH
+  JBE ES3
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 200D
+  MOV [a],AL
+  JMP WE2
+  JMP IE4
+ES3:
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 2D
+  MOV [a],AL
+IE4:
+  LOOP WH1
+WE2:
+  MOV AL,OFFSET 0D
+  MOV [i],AL
+  MOV CX,02H
+FOR5:
+  INC CX
+  MOV AL,DS:[6]
+  MOV AH,OFFSET 6D
+  CMP AL,AH
+  JA FE6
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 9D
+  MOV [a],AL
+  MOV AL,DS:[6]
+  ADD AL,OFFSET 1D
+  MOV [i],AL
+  LOOP FOR5
+FE6:
+  MOV AH,4CH
+  INT 21H
+CODES ENDS
+  END START
+[2018-12-23 23:05:51 +0800] [13894] [INFO] Handling signal: hup
+[2018-12-23 23:05:51 +0800] [13894] [INFO] Hang up: Master
+[2018-12-23 23:05:51 +0800] [13976] [INFO] Booting worker with pid: 13976
+Not Found: /robots.txt
+Not Found: /robots.txt
+
+原始四元式：
+= 9.0 _ x1 
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 1.0 2.0 t1 
+* 3.0 4.0 t2 
+* t2 5.0 t3 
++ t1 t3 t4 
++ t4 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 t8 
+= t8 _ i 
+fe _ _ _ 
+
+优化后的四元式：
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 63.0 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 i 
+fe _ _ _ 
+
+
+总表：
+变量名：x1 类型：int 偏移地址：0 其他：-1
+变量名：x2 类型：int 偏移地址：1 其他：-1
+变量名：x3 类型：int 偏移地址：2 其他：-1
+变量名：a 类型：int 偏移地址：3 其他：-1
+变量名：b 类型：int 偏移地址：4 其他：-1
+变量名：w1 类型：int 偏移地址：5 其他：-1
+变量名：f 类型：function 偏移地址：0 其他：0
+变量名：i 类型：int 偏移地址：6 其他：-1
+
+
+函数表：
+
+函数名：f
+形参：
+int c
+int d
+函数的局部变量：
+变量名：c 类型：int 偏移地址：0 其他：0
+变量名：d 类型：int 偏移地址：1 其他：0
+变量名：e 类型：int 偏移地址：2 其他：-1
+
+
+活动记录：main 
+DATAS SEGMENT
+  x1 DB ?
+  x2 DB ?
+  x3 DB ?
+  a DB ?
+  b DB ?
+  w1 DB ?
+  i DB ?
+DATAS ENDS
+STACKS SEGMENT
+  STK DB 20 DUP (0)
+STACKS ENDS
+CODES SEGMENT
+  ASSUME CS:CODES,DS:DATAS,SS:STACKS
+START:
+  MOV AX,DATAS
+  MOV DS,AX
+  MOV SP,BP
+  MOV AL,OFFSET 2D
+  MOV [x2],AL
+  MOV AL,OFFSET 3D
+  MOV [x3],AL
+  MOV AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,DS:[2]
+  MOV [x2],AL
+  MOV AL,DS:[0]
+  MOV [x3],AL
+  MOV AL,DS:[2]
+  ADD AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,OFFSET 10D
+  MOV [b],AL
+  MOV AL,OFFSET 63D
+  ADD AL,DS:[4]
+  MOV [a],AL
+  JMP JMPF0
+f PROC NEAR
+  MOV AL,SS:[BP]
+  ADD AL,SS:[BP+1]
+  MOV SS:[BP+2],AL
+  MOV AL,SS:[BP+2]
+  RET
+f ENDP
+JMPF0:
+  MOV AL,OFFSET 10D
+  MOV SS:[BP],AL
+  MOV AL,OFFSET 15D
+  MOV SS:[BP+1],AL
+  CALL f
+  MOV [a],AL
+  MOV AL,OFFSET 1D
+  MOV [w1],AL
+  MOV CX,02H
+WH1:
+  INC CX
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 5D
+  CMP AL,AH
+  JAE WE2
+  MOV AL,DS:[4]
+  ADD AL,OFFSET 2D
+  MOV [w1],AL
+  MOV [w1],AL
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 3D
+  CMP AL,AH
+  JBE ES3
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 200D
+  MOV [a],AL
+  JMP WE2
+  JMP IE4
+ES3:
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 2D
+  MOV [a],AL
+IE4:
+  LOOP WH1
+WE2:
+  MOV AL,OFFSET 0D
+  MOV [i],AL
+  MOV CX,02H
+FOR5:
+  INC CX
+  MOV AL,DS:[6]
+  MOV AH,OFFSET 6D
+  CMP AL,AH
+  JA FE6
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 9D
+  MOV [a],AL
+  MOV AL,DS:[6]
+  ADD AL,OFFSET 1D
+  MOV [i],AL
+  LOOP FOR5
+FE6:
+  MOV AH,4CH
+  INT 21H
+CODES ENDS
+  END START
+
+原始四元式：
+= 9.0 _ x1 
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 1.0 2.0 t1 
+* 3.0 4.0 t2 
+* t2 5.0 t3 
++ t1 t3 t4 
++ t4 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 t8 
+= t8 _ i 
+fe _ _ _ 
+
+优化后的四元式：
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 63.0 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 i 
+fe _ _ _ 
+
+
+总表：
+变量名：x1 类型：int 偏移地址：0 其他：-1
+变量名：x2 类型：int 偏移地址：1 其他：-1
+变量名：x3 类型：int 偏移地址：2 其他：-1
+变量名：a 类型：int 偏移地址：3 其他：-1
+变量名：b 类型：int 偏移地址：4 其他：-1
+变量名：w1 类型：int 偏移地址：5 其他：-1
+变量名：f 类型：function 偏移地址：0 其他：0
+变量名：i 类型：int 偏移地址：6 其他：-1
+
+
+函数表：
+
+函数名：f
+形参：
+int c
+int d
+函数的局部变量：
+变量名：c 类型：int 偏移地址：0 其他：0
+变量名：d 类型：int 偏移地址：1 其他：0
+变量名：e 类型：int 偏移地址：2 其他：-1
+
+
+活动记录：main 
+DATAS SEGMENT
+  x1 DB ?
+  x2 DB ?
+  x3 DB ?
+  a DB ?
+  b DB ?
+  w1 DB ?
+  i DB ?
+DATAS ENDS
+STACKS SEGMENT
+  STK DB 20 DUP (0)
+STACKS ENDS
+CODES SEGMENT
+  ASSUME CS:CODES,DS:DATAS,SS:STACKS
+START:
+  MOV AX,DATAS
+  MOV DS,AX
+  MOV SP,BP
+  MOV AL,OFFSET 2D
+  MOV [x2],AL
+  MOV AL,OFFSET 3D
+  MOV [x3],AL
+  MOV AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,DS:[2]
+  MOV [x2],AL
+  MOV AL,DS:[0]
+  MOV [x3],AL
+  MOV AL,DS:[2]
+  ADD AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,OFFSET 10D
+  MOV [b],AL
+  MOV AL,OFFSET 63D
+  ADD AL,DS:[4]
+  MOV [a],AL
+  JMP JMPF0
+f PROC NEAR
+  MOV AL,SS:[BP]
+  ADD AL,SS:[BP+1]
+  MOV SS:[BP+2],AL
+  MOV AL,SS:[BP+2]
+  RET
+f ENDP
+JMPF0:
+  MOV AL,OFFSET 10D
+  MOV SS:[BP],AL
+  MOV AL,OFFSET 15D
+  MOV SS:[BP+1],AL
+  CALL f
+  MOV [a],AL
+  MOV AL,OFFSET 1D
+  MOV [w1],AL
+  MOV CX,02H
+WH1:
+  INC CX
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 5D
+  CMP AL,AH
+  JAE WE2
+  MOV AL,DS:[4]
+  ADD AL,OFFSET 2D
+  MOV [w1],AL
+  MOV [w1],AL
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 3D
+  CMP AL,AH
+  JBE ES3
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 200D
+  MOV [a],AL
+  JMP WE2
+  JMP IE4
+ES3:
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 2D
+  MOV [a],AL
+IE4:
+  LOOP WH1
+WE2:
+  MOV AL,OFFSET 0D
+  MOV [i],AL
+  MOV CX,02H
+FOR5:
+  INC CX
+  MOV AL,DS:[6]
+  MOV AH,OFFSET 6D
+  CMP AL,AH
+  JA FE6
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 9D
+  MOV [a],AL
+  MOV AL,DS:[6]
+  ADD AL,OFFSET 1D
+  MOV [i],AL
+  LOOP FOR5
+FE6:
+  MOV AH,4CH
+  INT 21H
+CODES ENDS
+  END START
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-12-26 20:22:13.275547) while time zone support is active.
+  RuntimeWarning)
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-12-29 16:12:45.623412) while time zone support is active.
+  RuntimeWarning)
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-12-29 16:13:37.229533) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2018-12-31 02:26:29.425944) while time zone support is active.
+  RuntimeWarning)
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-01-02 15:52:26.130452) while time zone support is active.
+  RuntimeWarning)
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-01-03 11:14:40.118477) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: //wp-login.php
+Not Found: //xmlrpc.php
+Not Found: /robots.txt
+Not Found: /robots.txt
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-01-08 10:49:26.901944) while time zone support is active.
+  RuntimeWarning)
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-01-08 10:50:16.872918) while time zone support is active.
+  RuntimeWarning)
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /robots.txt
+Not Found: /robots.txt
+
+原始四元式：
+= 9.0 _ x1 
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 1.0 2.0 t1 
+* 3.0 4.0 t2 
+* t2 5.0 t3 
++ t1 t3 t4 
++ t4 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 t8 
+= t8 _ i 
+fe _ _ _ 
+
+优化后的四元式：
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 63.0 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 i 
+fe _ _ _ 
+
+
+总表：
+变量名：x1 类型：int 偏移地址：0 其他：-1
+变量名：x2 类型：int 偏移地址：1 其他：-1
+变量名：x3 类型：int 偏移地址：2 其他：-1
+变量名：a 类型：int 偏移地址：3 其他：-1
+变量名：b 类型：int 偏移地址：4 其他：-1
+变量名：w1 类型：int 偏移地址：5 其他：-1
+变量名：f 类型：function 偏移地址：0 其他：0
+变量名：i 类型：int 偏移地址：6 其他：-1
+
+
+函数表：
+
+函数名：f
+形参：
+int c
+int d
+函数的局部变量：
+变量名：c 类型：int 偏移地址：0 其他：0
+变量名：d 类型：int 偏移地址：1 其他：0
+变量名：e 类型：int 偏移地址：2 其他：-1
+
+
+活动记录：main 
+DATAS SEGMENT
+  x1 DB ?
+  x2 DB ?
+  x3 DB ?
+  a DB ?
+  b DB ?
+  w1 DB ?
+  i DB ?
+DATAS ENDS
+STACKS SEGMENT
+  STK DB 20 DUP (0)
+STACKS ENDS
+CODES SEGMENT
+  ASSUME CS:CODES,DS:DATAS,SS:STACKS
+START:
+  MOV AX,DATAS
+  MOV DS,AX
+  MOV SP,BP
+  MOV AL,OFFSET 2D
+  MOV [x2],AL
+  MOV AL,OFFSET 3D
+  MOV [x3],AL
+  MOV AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,DS:[2]
+  MOV [x2],AL
+  MOV AL,DS:[0]
+  MOV [x3],AL
+  MOV AL,DS:[2]
+  ADD AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,OFFSET 10D
+  MOV [b],AL
+  MOV AL,OFFSET 63D
+  ADD AL,DS:[4]
+  MOV [a],AL
+  JMP JMPF0
+f PROC NEAR
+  MOV AL,SS:[BP]
+  ADD AL,SS:[BP+1]
+  MOV SS:[BP+2],AL
+  MOV AL,SS:[BP+2]
+  RET
+f ENDP
+JMPF0:
+  MOV AL,OFFSET 10D
+  MOV SS:[BP],AL
+  MOV AL,OFFSET 15D
+  MOV SS:[BP+1],AL
+  CALL f
+  MOV [a],AL
+  MOV AL,OFFSET 1D
+  MOV [w1],AL
+  MOV CX,02H
+WH1:
+  INC CX
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 5D
+  CMP AL,AH
+  JAE WE2
+  MOV AL,DS:[4]
+  ADD AL,OFFSET 2D
+  MOV [w1],AL
+  MOV [w1],AL
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 3D
+  CMP AL,AH
+  JBE ES3
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 200D
+  MOV [a],AL
+  JMP WE2
+  JMP IE4
+ES3:
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 2D
+  MOV [a],AL
+IE4:
+  LOOP WH1
+WE2:
+  MOV AL,OFFSET 0D
+  MOV [i],AL
+  MOV CX,02H
+FOR5:
+  INC CX
+  MOV AL,DS:[6]
+  MOV AH,OFFSET 6D
+  CMP AL,AH
+  JA FE6
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 9D
+  MOV [a],AL
+  MOV AL,DS:[6]
+  ADD AL,OFFSET 1D
+  MOV [i],AL
+  LOOP FOR5
+FE6:
+  MOV AH,4CH
+  INT 21H
+CODES ENDS
+  END START
+Not Found: /robots.txt
+Not Found: /xmlrpc.php
+Not Found: /blog/robots.txt
+Not Found: /blog/
+Not Found: /wordpress/
+Not Found: /wp/
+Not Found: /robots.txt
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /robots.txt
+Not Found: /robots.txt
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-01-16 21:02:49.198457) while time zone support is active.
+  RuntimeWarning)
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-01-19 23:42:01.705528) while time zone support is active.
+  RuntimeWarning)
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-01-19 23:45:13.574052) while time zone support is active.
+  RuntimeWarning)
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-01-19 23:51:37.225448) while time zone support is active.
+  RuntimeWarning)
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-01-20 01:33:05.488735) while time zone support is active.
+  RuntimeWarning)
+Not Found: /.git/config
+Not Found: /.git/config
+Not Found: /.git/config
+Not Found: /.git/config
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /link
+Not Found: /apple-touch-icon-120x120-precomposed.png
+Not Found: /apple-touch-icon-120x120.png
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /robots.txt
+Not Found: /link
+Not Found: /link.html
+Not Found: /link.php
+Not Found: /apple-touch-icon-120x120-precomposed.png
+Not Found: /apple-touch-icon-120x120.png
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: //install/index.php.bak
+Not Found: /apple-touch-icon-120x120-precomposed.png
+Not Found: /apple-touch-icon-120x120.png
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: /apple-touch-icon-120x120-precomposed.png
+Not Found: /apple-touch-icon-120x120.png
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /robots.txt
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: /oihfoe09fposf.php
+Not Found: /ads.txt
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Not Found: /apple-touch-icon-120x120-precomposed.png
+Not Found: /apple-touch-icon-120x120.png
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: /wp-login.php
+Not Found: /wp-login.php
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Not Found: /robots.txt
+Not Found: /robots.txt
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Not Found: /wp-login.php
+Not Found: //wp-login.php
+Not Found: /wp-login.php
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /1.pdf
+Not Found: /1.pdf
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Not Found: /robots.txt
+Not Found: /robots.txt
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Not Found: /apple-touch-icon-120x120-precomposed.png
+Not Found: /apple-touch-icon-120x120.png
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-02-20 02:46:26.375014) while time zone support is active.
+  RuntimeWarning)
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-02-20 10:43:51.737823) while time zone support is active.
+  RuntimeWarning)
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-02-20 10:44:22.260938) while time zone support is active.
+  RuntimeWarning)
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+
+原始四元式：
+= 9.0 _ x1 
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 1.0 2.0 t1 
+* 3.0 4.0 t2 
+* t2 5.0 t3 
++ t1 t3 t4 
++ t4 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 t8 
+= t8 _ i 
+fe _ _ _ 
+
+优化后的四元式：
+= 2.0 _ x2 
+= 3.0 _ x3 
+= x2 _ x1 
+= x3 _ x2 
+= x1 _ x3 
++ x3 x2 x1 
+= 10.0 _ b 
++ 63.0 b a 
+fun f _ _ 
++ c d e 
+rt e _ _ 
+sf f _ a 
+xc c 10.0 _ 
+xc d 15.0 _ 
+esf f a _ 
+= 1.0 _ w1 
+wh _ _ _ 
+< w1 5.0 t5 
+dw t5 _ _ 
++ b 2.0 a 
++ w1 1.0 w1 
+> w1 3.0 t6 
+if t6 _ _ 
++ a 200.0 a 
+bk _ _ _ 
+es _ _ _ 
++ a 2.0 a 
+ie _ _ _ 
+we _ _ _ 
+= 0.0 _ i 
+for _ _ _ 
+<= i 6.0 t7 
+df t7 _ _ 
++ a 9.0 a 
++ i 1.0 i 
+fe _ _ _ 
+
+
+总表：
+变量名：x1 类型：int 偏移地址：0 其他：-1
+变量名：x2 类型：int 偏移地址：1 其他：-1
+变量名：x3 类型：int 偏移地址：2 其他：-1
+变量名：a 类型：int 偏移地址：3 其他：-1
+变量名：b 类型：int 偏移地址：4 其他：-1
+变量名：w1 类型：int 偏移地址：5 其他：-1
+变量名：f 类型：function 偏移地址：0 其他：0
+变量名：i 类型：int 偏移地址：6 其他：-1
+
+
+函数表：
+
+函数名：f
+形参：
+int c
+int d
+函数的局部变量：
+变量名：c 类型：int 偏移地址：0 其他：0
+变量名：d 类型：int 偏移地址：1 其他：0
+变量名：e 类型：int 偏移地址：2 其他：-1
+
+
+活动记录：main 
+DATAS SEGMENT
+  x1 DB ?
+  x2 DB ?
+  x3 DB ?
+  a DB ?
+  b DB ?
+  w1 DB ?
+  i DB ?
+DATAS ENDS
+STACKS SEGMENT
+  STK DB 20 DUP (0)
+STACKS ENDS
+CODES SEGMENT
+  ASSUME CS:CODES,DS:DATAS,SS:STACKS
+START:
+  MOV AX,DATAS
+  MOV DS,AX
+  MOV SP,BP
+  MOV AL,OFFSET 2D
+  MOV [x2],AL
+  MOV AL,OFFSET 3D
+  MOV [x3],AL
+  MOV AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,DS:[2]
+  MOV [x2],AL
+  MOV AL,DS:[0]
+  MOV [x3],AL
+  MOV AL,DS:[2]
+  ADD AL,DS:[1]
+  MOV [x1],AL
+  MOV AL,OFFSET 10D
+  MOV [b],AL
+  MOV AL,OFFSET 63D
+  ADD AL,DS:[4]
+  MOV [a],AL
+  JMP JMPF0
+f PROC NEAR
+  MOV AL,SS:[BP]
+  ADD AL,SS:[BP+1]
+  MOV SS:[BP+2],AL
+  MOV AL,SS:[BP+2]
+  RET
+f ENDP
+JMPF0:
+  MOV AL,OFFSET 10D
+  MOV SS:[BP],AL
+  MOV AL,OFFSET 15D
+  MOV SS:[BP+1],AL
+  CALL f
+  MOV [a],AL
+  MOV AL,OFFSET 1D
+  MOV [w1],AL
+  MOV CX,02H
+WH1:
+  INC CX
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 5D
+  CMP AL,AH
+  JAE WE2
+  MOV AL,DS:[4]
+  ADD AL,OFFSET 2D
+  MOV [w1],AL
+  MOV [w1],AL
+  MOV AL,DS:[5]
+  MOV AH,OFFSET 3D
+  CMP AL,AH
+  JBE ES3
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 200D
+  MOV [a],AL
+  JMP WE2
+  JMP IE4
+ES3:
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 2D
+  MOV [a],AL
+IE4:
+  LOOP WH1
+WE2:
+  MOV AL,OFFSET 0D
+  MOV [i],AL
+  MOV CX,02H
+FOR5:
+  INC CX
+  MOV AL,DS:[6]
+  MOV AH,OFFSET 6D
+  CMP AL,AH
+  JA FE6
+  MOV AL,DS:[3]
+  ADD AL,OFFSET 9D
+  MOV [a],AL
+  MOV AL,DS:[6]
+  ADD AL,OFFSET 1D
+  MOV [i],AL
+  LOOP FOR5
+FE6:
+  MOV AH,4CH
+  INT 21H
+CODES ENDS
+  END START
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-02-23 00:25:12.607712) while time zone support is active.
+  RuntimeWarning)
+Not Found: /robots.txt
+Not Found: /Jwlsjd_baaqifg.php
+Not Found: /administrator/index.php
+Not Found: /apple-touch-icon-120x120-precomposed.png
+Not Found: /apple-touch-icon-120x120.png
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Not Found: /wp-login.php
+Not Found: /wp/wp-login.php
+Not Found: /wordpress/wp-login.php
+Not Found: /siteserver/login.aspx
+Not Found: /siteserver/assets/bootstrap/js/bootstrap.min.js
+Not Found: /robots.txt
+Not Found: /siteserver/inc/style.css
+Not Found: /home/assets/js/jquery.js
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Not Found: /robots.txt
+Not Found: /explicit_not_exist_path
+Not Found: /index.html
+Not Found: /index.php
+Not Found: /index.jsp
+Not Found: /wp-login.php
+Not Found: /readme.html
+Not Found: /license.txt
+Not Found: /wp-includes/js/wplink.js
+Not Found: /wp-admin/js/customize-controls.js
+Not Found: /wp-admin/js/nav-menu.js
+Not Found: /wp-includes/js/plupload/handlers.js
+Not Found: /wp-includes/js/tinymce/wp-tinymce.js.gz
+Not Found: /robots.txt
+Not Found: /README
+Not Found: /404.html
+Not Found: /500.html
+Not Found: /stylesheets/application.css
+Not Found: /solr/
+Not Found: /wcm/
+Not Found: /phpMyAdmin/
+Not Found: /phpmyadmin/
+Not Found: /pma/
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Not Found: /robots.txt
+Not Found: /robots.txt
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Not Found: /apple-touch-icon-120x120-precomposed.png
+Not Found: /apple-touch-icon-120x120.png
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Not Found: /wp-login.php
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Not Found: /wordpress/wp-login.php
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/home/mcq/sites/hellomcq.top/env/lib/python3.5/site-packages/PIL/Image.py", line 2609, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+[2019-03-11 11:51:44 +0800] [13976] [INFO] Parent changed, shutting down: <Worker 13976>
+[2019-03-11 11:51:44 +0800] [13976] [INFO] Worker exiting (pid: 13976)
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+/home/mcq/sites/maocaoqiu.cn/MCQ_Blog
+[2019-03-11 13:53:08 +0800] [25382] [INFO] Starting gunicorn 19.9.0
+[2019-03-11 13:53:08 +0800] [25382] [INFO] Listening at: unix:/tmp/47.95.214.83.socket (25382)
+[2019-03-11 13:53:08 +0800] [25382] [INFO] Using worker: sync
+[2019-03-11 13:53:08 +0800] [25385] [INFO] Booting worker with pid: 25385
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2543, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2543, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+[2019-03-11 14:10:09 +0800] [25944] [INFO] Booting worker with pid: 25944
+[2019-03-11 14:10:09 +0800] [25382] [INFO] Handling signal: hup
+[2019-03-11 14:10:09 +0800] [25382] [INFO] Hang up: Master
+[2019-03-11 14:10:09 +0800] [25946] [INFO] Booting worker with pid: 25946
+[2019-03-11 14:10:10 +0800] [25944] [INFO] Worker exiting (pid: 25944)
+Internal Server Error: /index_waterfall/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/views.py", line 70, in index_waterfall
+    img2=Image.open(img)
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2543, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
+Not Found: /link
+Not Found: /link

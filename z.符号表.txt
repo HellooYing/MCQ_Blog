@@ -6,7 +6,6 @@ b int 4 -1
 w1 int 5 -1
 f function 0 0
 i int 6 -1
-shuzu int[] 7 20
 
 f
 int c
