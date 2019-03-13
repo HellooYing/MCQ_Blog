@@ -6558,3 +6558,24 @@ Traceback (most recent call last):
 FileNotFoundError: [Errno 2] No such file or directory: '/home/mcq/sites/maocaoqiu.cn/MCQ_Blog/blog/static/picture/i78.jpg'
 Not Found: /link
 Not Found: /link
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-03-12 11:22:37.159407) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-03-12 11:37:25.519454) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-03-12 11:43:01.440769) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-03-12 11:52:00.583180) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-03-12 11:53:44.545266) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-03-12 12:16:08.521805) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-03-12 13:52:52.953430) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-03-12 13:53:01.086644) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-03-12 14:13:40.656593) while time zone support is active.
+  RuntimeWarning)
+/usr/local/lib/python3.5/dist-packages/django/db/models/fields/__init__.py:1421: RuntimeWarning: DateTimeField Comment.time received a naive datetime (2019-03-12 15:36:02.668092) while time zone support is active.
+  RuntimeWarning)
+Not Found: /wp-login.php
