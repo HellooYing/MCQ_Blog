@@ -141,7 +141,6 @@ def touzi(request):
 
 def compiler(request):
     dict2={}
-<<<<<<< HEAD
     path=os.path.abspath(os.path.join(os.getcwd(), ".."))
     with open(path+r'/z.c语言代码输入.txt', 'r') as f:
         dict2['c']=f.read()
@@ -154,19 +153,6 @@ def compiler(request):
     with open(path+r'/z.优化后的四元式.txt', 'r') as f:
         dict2['op']=f.read()
     with open(path+r'/z.目标代码.txt', 'r') as f:
-=======
-    with open('..\z.c语言代码输入.txt', 'r') as f:
-        dict2['c']=f.read()
-    with open('..\z.token序列.txt', 'r') as f:
-        dict2['token']=f.read()
-    with open('..\z.符号表.txt', 'r') as f:
-        dict2['synbl']=f.read()
-    with open('..\z.四元式.txt', 'r') as f:
-        dict2['four']=f.read()
-    with open('..\z.优化后的四元式.txt', 'r') as f:
-        dict2['op']=f.read()
-    with open('..\z.目标代码.txt', 'r') as f:
->>>>>>> refs/remotes/origin/master
         dict2['oc']=f.read()
     c=dict2['c']
     token=dict2['token'].split(" ")
@@ -178,16 +164,9 @@ def compiler(request):
 
 def compiler_get(request):
     c=request.GET.get("code")
-<<<<<<< HEAD
     path=os.path.abspath(os.path.join(os.getcwd(), ".."))
     with open(path+r'/z.c语言代码输入.txt', 'w') as f:
         f.write(c)
     os.system('java -jar cp.jar')  
     return render(request, "compiler.html",context={})
 
-=======
-    with open('..\z.c语言代码输入.txt', 'w') as f:
-        f.write(c)
-    os.system('java -jar cp.jar')  
-    return render(request, "compiler.html",context={})
->>>>>>> refs/remotes/origin/master
